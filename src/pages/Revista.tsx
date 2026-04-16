@@ -173,12 +173,12 @@ function VolumeCard({ volume }: { volume: typeof volumes[0] }) {
 }
 
 export function Revista() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [selectedYear, setSelectedYear] = useState<string>('');
-  const [selectedVolume, setSelectedVolume] = useState<string>(searchParams.get('volumen') || '');
+  const [selectedYear, setSelectedYear] = useState<string>('all');
+  const [selectedVolume, setSelectedVolume] = useState<string>('all');
 
   // Get unique years from articles
   const years = useMemo(() => {
@@ -198,10 +198,10 @@ export function Revista() {
       const matchesCategory = selectedCategories.length === 0 || 
         selectedCategories.includes(article.category);
       
-      const matchesYear = selectedYear === '' || 
+      const matchesYear = selectedYear === 'all' || 
         article.year.toString() === selectedYear;
       
-      const matchesVolume = selectedVolume === '' || 
+      const matchesVolume = selectedVolume === 'all' || 
         article.volume.toString() === selectedVolume;
       
       return matchesSearch && matchesCategory && matchesYear && matchesVolume;
@@ -219,12 +219,12 @@ export function Revista() {
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedCategories([]);
-    setSelectedYear('');
-    setSelectedVolume('');
+    setSelectedYear('all');
+    setSelectedVolume('all');
     setSearchParams({});
   };
 
-  const hasActiveFilters = searchQuery || selectedCategories.length > 0 || selectedYear || selectedVolume;
+  const hasActiveFilters = searchQuery || selectedCategories.length > 0 || selectedYear !== 'all' || selectedVolume !== 'all';
 
   return (
     <main className="min-h-screen pt-24 pb-16">
@@ -297,7 +297,7 @@ export function Revista() {
                   <SelectValue placeholder="Año" />
                 </SelectTrigger>
                 <SelectContent className="bg-ula-navy-light border-white/10">
-                  <SelectItem value="" className="text-white/80 hover:bg-white/10">Todos</SelectItem>
+                  <SelectItem value="all" className="text-white/80 hover:bg-white/10">Todos los años</SelectItem>
                   {years.map(year => (
                     <SelectItem key={year} value={year.toString()} className="text-white/80 hover:bg-white/10">
                       {year}
@@ -312,7 +312,7 @@ export function Revista() {
                   <SelectValue placeholder="Volumen" />
                 </SelectTrigger>
                 <SelectContent className="bg-ula-navy-light border-white/10">
-                  <SelectItem value="" className="text-white/80 hover:bg-white/10">Todos</SelectItem>
+                  <SelectItem value="all" className="text-white/80 hover:bg-white/10">Todos</SelectItem>
                   {volumes.map(vol => (
                     <SelectItem key={vol.id} value={vol.number.toString()} className="text-white/80 hover:bg-white/10">
                       Vol. {vol.number}
@@ -370,16 +370,16 @@ export function Revista() {
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => toggleCategory(cat)} />
                 </Badge>
               ))}
-              {selectedYear && (
+              {selectedYear !== 'all' && (
                 <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
                   Año: {selectedYear}
-                  <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedYear('')} />
+                  <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedYear('all')} />
                 </Badge>
               )}
-              {selectedVolume && (
+              {selectedVolume !== 'all' && (
                 <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
                   Volumen: {selectedVolume}
-                  <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedVolume('')} />
+                  <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedVolume('all')} />
                 </Badge>
               )}
             </div>
