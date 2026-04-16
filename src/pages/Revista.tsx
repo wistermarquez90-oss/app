@@ -30,7 +30,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { ArticleCard } from '@/components/ui-custom/ArticleCard';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { articles, volumes, categories } from '@/data/fermentum-data';
 import type { Article } from '@/types';
 
@@ -180,8 +179,6 @@ export function Revista() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState<string>('');
   const [selectedVolume, setSelectedVolume] = useState<string>(searchParams.get('volumen') || '');
-  
-  const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
 
   // Get unique years from articles
   const years = useMemo(() => {
@@ -245,7 +242,7 @@ export function Revista() {
       </section>
 
       {/* Filters & Content */}
-      <section ref={ref} className="py-8 lg:py-12">
+      <section className="py-8 lg:py-12">
         <div className="w-full section-padding">
           {/* Search & Filter Bar */}
           <div className="flex flex-col lg:flex-row gap-4 mb-8">
@@ -395,28 +392,20 @@ export function Revista() {
             </p>
           </div>
 
-          {/* Articles Grid/List - SIEMPRE VISIBLE */}
+          {/* Articles Grid/List */}
           {filteredArticles.length > 0 ? (
             viewMode === 'grid' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredArticles.map((article, index) => (
-                  <div 
-                    key={article.id}
-                    className={isVisible ? 'animate-fade-in-up' : ''}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
+                {filteredArticles.map((article) => (
+                  <div key={article.id}>
                     <ArticleCard article={article} />
                   </div>
                 ))}
               </div>
             ) : (
               <div className="flex flex-col gap-4">
-                {filteredArticles.map((article, index) => (
-                  <div 
-                    key={article.id}
-                    className={isVisible ? 'animate-fade-in-up' : ''}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
+                {filteredArticles.map((article) => (
+                  <div key={article.id}>
                     <ArticleListItem article={article} />
                   </div>
                 ))}
@@ -453,12 +442,8 @@ export function Revista() {
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {volumes.map((volume, index) => (
-              <div 
-                key={volume.id}
-                className={isVisible ? 'animate-fade-in-up' : ''}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {volumes.map((volume) => (
+              <div key={volume.id}>
                 <VolumeCard volume={volume} />
               </div>
             ))}
