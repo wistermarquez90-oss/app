@@ -8,6 +8,7 @@ import { QuienesSomos } from '@/pages/QuienesSomos';
 import { Normas } from '@/pages/Normas';
 import { Contacto } from '@/pages/Contacto';
 import { Catalogo } from '@/pages/Catalogo';
+import { NewsletterModal } from '@/components/NewsletterModal';
 import { Toaster } from '@/components/ui/sonner';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/catalogo" element={<Catalogo />} />
         </Routes>
         <Footer />
+        <NewsletterModal />
         <Toaster 
           position="bottom-right"
           toastOptions={{
