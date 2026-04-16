@@ -395,14 +395,14 @@ export function Revista() {
             </p>
           </div>
 
-          {/* Articles Grid/List */}
+          {/* Articles Grid/List - SIEMPRE VISIBLE */}
           {filteredArticles.length > 0 ? (
             viewMode === 'grid' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredArticles.map((article, index) => (
                   <div 
                     key={article.id}
-                    className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                    className={isVisible ? 'animate-fade-in-up' : ''}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <ArticleCard article={article} />
@@ -414,7 +414,7 @@ export function Revista() {
                 {filteredArticles.map((article, index) => (
                   <div 
                     key={article.id}
-                    className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                    className={isVisible ? 'animate-fade-in-up' : ''}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <ArticleListItem article={article} />
@@ -456,7 +456,7 @@ export function Revista() {
             {volumes.map((volume, index) => (
               <div 
                 key={volume.id}
-                className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}
+                className={isVisible ? 'animate-fade-in-up' : ''}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <VolumeCard volume={volume} />
