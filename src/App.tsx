@@ -7,6 +7,7 @@ import { Autores } from '@/pages/Autores';
 import { QuienesSomos } from '@/pages/QuienesSomos';
 import { Normas } from '@/pages/Normas';
 import { Contacto } from '@/pages/Contacto';
+import { Catalogo } from '@/pages/Catalogo';
 import { Toaster } from '@/components/ui/sonner';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/normas" element={<Normas />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/catalogo" element={<Catalogo />} />
         </Routes>
         <Footer />
         <Toaster 

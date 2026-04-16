@@ -23,6 +23,7 @@ const navLinks = [
   { name: 'Autores', href: '/autores' },
   { name: 'Quiénes Somos', href: '/quienes-somos' },
   { name: 'Normas', href: '/normas' },
+  { name: 'Catálogo', href: '/catalogo' },
   { name: 'Contacto', href: '/contacto' },
 ];
 

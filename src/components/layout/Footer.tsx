@@ -7,6 +7,7 @@ const quickLinks = [
   { name: 'Revista', href: '/revista' },
   { name: 'Autores', href: '/autores' },
   { name: 'Quiénes Somos', href: '/quienes-somos' },
+  { name: 'Catálogo', href: '/catalogo' },
   { name: 'Normas de Publicación', href: '/normas' },
   { name: 'Contacto', href: '/contacto' },
 ];
