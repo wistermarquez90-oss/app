@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ExternalLink } from 'lucide-react';
+import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ExternalLink } from 'lucide-react';
 import { contactInfo, socialLinks } from '@/data/fermentum-data';
 
 const quickLinks = [
@@ -40,21 +40,21 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 group mb-6">
               <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-humanic-green to-neon-lime rounded-xl transition-transform duration-300 group-hover:scale-105">
-                <BookOpen className="w-7 h-7 text-ula-navy-dark" />
+                <Building2 className="w-7 h-7 text-ula-navy-dark" />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white font-serif">
-                  FERMENTUM
+                  HUMANIC
                 </span>
                 <span className="text-xs text-white/60 uppercase tracking-widest">
-                  Revista Científica
+                  Centro ULA
                 </span>
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Revista científica de la Universidad de Los Andes dedicada a la 
-              difusión del conocimiento investigativo sobre la región andina 
-              y sus diversas dimensiones.
+              Centro de Investigaciones en Ciencias Humanas de la Universidad de Los Andes. 
+              Difundimos el conocimiento investigativo sobre la región andina a través de 
+              nuestra revista FERMENTUM.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -164,8 +164,8 @@ export function Footer() {
         <div className="section-padding py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm text-center md:text-left">
-              &copy; {new Date().getFullYear()} FERMENTUM - Revista Científica. 
-              Universidad de Los Andes. Todos los derechos reservados.
+              &copy; {new Date().getFullYear()} HUMANIC - Centro de Investigaciones ULA. 
+              Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-6">
               <Link 

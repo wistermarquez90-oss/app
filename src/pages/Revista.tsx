@@ -235,7 +235,7 @@ export function Revista() {
         <div className="relative w-full section-padding">
           <SectionHeader
             title="Revista FERMENTUM"
-            subtitle="Publicaciones Científicas"
+            subtitle="Publicación del Centro HUMANIC"
             description="Explora nuestro archivo de artículos científicos arbitrados sobre la región andina"
           />
         </div>

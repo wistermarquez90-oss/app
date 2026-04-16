@@ -53,8 +53,8 @@ export function QuienesSomos() {
         <div className="relative w-full section-padding">
           <SectionHeader
             title="Quiénes Somos"
-            subtitle="Sobre FERMENTUM"
-            description="Conoce nuestra historia, misión y el equipo que hace posible la difusión del conocimiento científico sobre la región andina"
+            subtitle="Sobre HUMANIC"
+            description="Conoce nuestra historia, misión y el equipo que hace posible la investigación y difusión del conocimiento sobre las ciencias humanas en la región andina"
           />
         </div>
       </section>
@@ -72,21 +72,24 @@ export function QuienesSomos() {
               </h2>
               <div className="space-y-4 text-white/70 leading-relaxed">
                 <p>
-                  FERMENTUM nace en 1979 como iniciativa de un grupo de investigadores de la Universidad 
-                  de Los Andes comprometidos con el estudio científico de la región andina venezolana. 
-                  Desde entonces, se ha consolidado como una de las publicaciones académicas más 
-                  importantes del país en el ámbito de las ciencias sociales y naturales.
+                  <strong className="text-white">HUMANIC</strong> (Centro de Investigaciones en Ciencias Humanas) 
+                  nace en 1979 como iniciativa de un grupo de investigadores de la Universidad 
+                  de Los Andes comprometidos con el estudio científico de las ciencias humanas 
+                  y sociales en la región andina venezolana. Desde entonces, se ha consolidado 
+                  como uno de los centros de investigación más importantes del país.
                 </p>
                 <p>
-                  El nombre "FERMENTUM" evoca el proceso de transformación y crecimiento que caracteriza 
-                  tanto a la región andina como al conocimiento científico en constante evolución. 
+                  Como parte de su misión de difusión del conocimiento, HUMANIC publica la revista 
+                  <strong className="text-white"> FERMENTUM</strong>, una publicación semestral con 
+                  arbitraje internacional especializada en ciencias sociales, economía, humanidades 
+                  y ciencias naturales. El nombre "FERMENTUM" evoca el proceso de transformación 
+                  y crecimiento que caracteriza tanto a la región andina como al conocimiento científico.
+                </p>
+                <p>
                   Nuestra revista ha publicado más de 1,200 artículos de investigadores nacionales e 
-                  internacionales, contribuyendo significativamente al desarrollo académico de la región.
-                </p>
-                <p>
-                  Actualmente, FERMENTUM mantiene un riguroso proceso de arbitraje internacional y está 
-                  indexada en múltiples bases de datos académicas, garantizando la visibilidad y el 
-                  impacto de las investigaciones que publicamos.
+                  internacionales, contribuyendo significativamente al desarrollo académico de la región. 
+                  Actualmente, FERMENTUM mantiene un riguroso proceso de arbitraje y está 
+                  indexada en múltiples bases de datos académicas.
                 </p>
               </div>
             </div>

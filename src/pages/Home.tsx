@@ -50,20 +50,20 @@ function HeroSection() {
 
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white font-serif leading-tight mb-4">
-                FERMENTUM
+                HUMANIC
               </h1>
               <p className="text-xl sm:text-2xl text-neon-lime font-medium mb-2">
-                Revista Científica
+                Centro de Investigaciones en Ciencias Humanas
               </p>
               <p className="text-white/60 text-lg max-w-xl">
-                Universidad de Los Andes - Centro de Investigaciones
+                Universidad de Los Andes - ULA
               </p>
             </div>
 
             <p className="text-white/70 text-base lg:text-lg leading-relaxed max-w-xl">
-              Difusión del conocimiento investigativo sobre la región andina. 
-              Publicación semestral con arbitraje internacional especializada en 
-              ciencias sociales, economía, humanidades y ciencias naturales.
+              Centro de investigación dedicado al estudio y difusión del conocimiento 
+              sobre las ciencias humanas en la región andina. Publicamos la revista 
+              FERMENTUM y promovemos la investigación académica de excelencia.
             </p>
 
             <div className="flex flex-wrap gap-4">

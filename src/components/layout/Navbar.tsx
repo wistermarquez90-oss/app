@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, ChevronDown } from 'lucide-react';
+import { Menu, X, Building2, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -64,14 +64,14 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-humanic-green to-neon-lime rounded-lg transition-transform duration-300 group-hover:scale-105">
-              <BookOpen className="w-6 h-6 text-ula-navy-dark" />
+              <Building2 className="w-6 h-6 text-ula-navy-dark" />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold text-white font-serif tracking-tight">
-                FERMENTUM
+                HUMANIC
               </span>
               <span className="text-[10px] text-white/60 uppercase tracking-widest">
-                Revista Científica
+                Centro de Investigaciones ULA
               </span>
             </div>
           </Link>
