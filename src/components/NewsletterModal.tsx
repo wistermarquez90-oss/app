@@ -21,9 +21,14 @@ import {
 
 interface NewsletterModalProps {
   variant?: 'button' | 'banner' | 'inline';
+  onSubscribe?: () => void;
 }
 
-export function NewsletterModal({ variant = 'button' }: NewsletterModalProps) {
+// ID del formulario de Formspree - Reemplazar con el tuyo
+// Obtener gratis en: https://formspree.io/register
+const FORMSPREE_URL = 'https://formspree.io/f/mldjvdnq';
+
+export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -34,50 +39,43 @@ export function NewsletterModal({ variant = 'button' }: NewsletterModalProps) {
     interest: '',
   });
 
-  // ID del formulario de Google Forms (debes reemplazar esto con el tuyo)
-  // Para obtenerlo: Abre tu formulario en Google Forms → Enviar → <> → copia el URL del action del form
-  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/TU_FORM_ID/formResponse';
-  
-  // Entry IDs de tu formulario (se obtienen del código de incrustación)
-  const FORM_ENTRIES = {
-    name: 'entry.1234567890',      // Reemplazar con tu entry ID
-    email: 'entry.0987654321',     // Reemplazar con tu entry ID
-    institution: 'entry.1111111111', // Reemplazar con tu entry ID
-    interest: 'entry.2222222222',    // Reemplazar con tu entry ID
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Crear FormData para enviar a Google Forms
-      const formDataToSend = new FormData();
-      formDataToSend.append(FORM_ENTRIES.name, formData.name);
-      formDataToSend.append(FORM_ENTRIES.email, formData.email);
-      formDataToSend.append(FORM_ENTRIES.institution, formData.institution || 'No especificada');
-      formDataToSend.append(FORM_ENTRIES.interest, formData.interest || 'Todas las áreas');
-
-      // Enviar a Google Forms (usando no-cors porque Google no permite CORS)
-      await fetch(GOOGLE_FORM_URL, {
+      // Enviar a Formspree
+      const response = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          institution: formData.institution || 'No especificada',
+          interest: formData.interest || 'Todas las áreas',
+          _subject: 'Nueva suscripción a Newsletter HUMANIC',
+        }),
       });
 
-      // Mostrar éxito
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', institution: '', interest: '' });
-      
-      // Cerrar después de 3 segundos
-      setTimeout(() => {
-        setIsSuccess(false);
-        setIsOpen(false);
-      }, 3000);
-
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', institution: '', interest: '' });
+        
+        // Cerrar después de 3 segundos
+        setTimeout(() => {
+          setIsSuccess(false);
+          setIsOpen(false);
+          onSubscribe?.();
+        }, 3000);
+      } else {
+        throw new Error('Error en el envío');
+      }
     } catch (error) {
       console.error('Error al suscribir:', error);
-      alert('Hubo un error. Por favor intenta de nuevo.');
+      alert('Hubo un error al procesar tu suscripción. Por favor intenta de nuevo.');
     } finally {
       setIsSubmitting(false);
     }
@@ -87,7 +85,7 @@ export function NewsletterModal({ variant = 'button' }: NewsletterModalProps) {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  // Variant: Botón flotante
+  // Variant: Botón flotante (default)
   if (variant === 'button') {
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -110,7 +108,7 @@ export function NewsletterModal({ variant = 'button' }: NewsletterModalProps) {
     );
   }
 
-  // Variant: Banner
+  // Variant: Banner (para usar en secciones de página)
   if (variant === 'banner') {
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArticleCard } from '@/components/ui-custom/ArticleCard';
 import { StatsSection } from '@/components/ui-custom/StatCounter';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
+import { NewsletterModal } from '@/components/NewsletterModal';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { articles, volumes, statistics, categories, authors } from '@/data/fermentum-data';
 
@@ -283,6 +284,22 @@ function CategoriesSection() {
   );
 }
 
+function NewsletterSection() {
+  const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+
+  return (
+    <section ref={ref} className="relative py-16 lg:py-20 bg-ula-navy-dark/50">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/5 via-transparent to-transparent"></div>
+      
+      <div className="relative w-full section-padding">
+        <div className={`max-w-4xl mx-auto ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <NewsletterModal variant="banner" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CTASection() {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
@@ -335,6 +352,7 @@ export function Home() {
       <StatsSectionWrapper />
       <FeaturedArticlesSection />
       <CategoriesSection />
+      <NewsletterSection />
       <CTASection />
     </main>
   );
