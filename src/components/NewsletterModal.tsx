@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, X, Bell, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, Bell, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -85,17 +85,24 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  // Variant: Botón flotante (default)
+  // Variant: Botón flotante (default) - AHORA CON Z-INDEX MÁS ALTO Y POSICIÓN AJUSTADA
   if (variant === 'button') {
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <button className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-neon-lime text-ula-navy-dark font-semibold rounded-full shadow-lg hover:shadow-glow transition-all duration-300 hover:scale-105 group">
+          <button 
+            className="fixed bottom-6 right-6 z-[9999] flex items-center gap-2 px-5 py-3.5 bg-[#a3e635] text-[#152a45] font-bold rounded-full shadow-[0_4px_20px_rgba(163,230,53,0.4)] hover:shadow-[0_6px_30px_rgba(163,230,53,0.6)] transition-all duration-300 hover:scale-105 group"
+            style={{ 
+              position: 'fixed',
+              bottom: '24px',
+              right: '24px'
+            }}
+          >
             <Bell className="w-5 h-5 group-hover:animate-bounce" />
             <span className="hidden sm:inline">Suscríbete</span>
           </button>
         </DialogTrigger>
-        <DialogContent className="bg-ula-navy-light border-white/10 max-w-md">
+        <DialogContent className="bg-[#1e3a5f] border-white/10 max-w-md">
           <NewsletterFormContent 
             isSuccess={isSuccess}
             isSubmitting={isSubmitting}
@@ -112,11 +119,11 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
   if (variant === 'banner') {
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <div className="bg-gradient-to-r from-humanic-green/20 to-neon-lime/10 rounded-2xl border border-humanic-green/30 p-6 lg:p-8">
+        <div className="bg-gradient-to-r from-[#2d8659]/20 to-[#a3e635]/10 rounded-2xl border border-[#2d8659]/30 p-6 lg:p-8">
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <div className="flex-1 text-center lg:text-left">
               <h3 className="text-xl font-bold text-white mb-2">
-                <Mail className="w-5 h-5 inline mr-2 text-neon-lime" />
+                <Mail className="w-5 h-5 inline mr-2 text-[#a3e635]" />
                 Suscríbete a nuestro Newsletter
               </h3>
               <p className="text-white/70">
@@ -124,14 +131,14 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
               </p>
             </div>
             <DialogTrigger asChild>
-              <Button className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold px-6">
+              <Button className="bg-[#a3e635] text-[#152a45] hover:bg-[#bef264] font-semibold px-6">
                 Suscribirme
                 <Bell className="w-4 h-4 ml-2" />
               </Button>
             </DialogTrigger>
           </div>
         </div>
-        <DialogContent className="bg-ula-navy-light border-white/10 max-w-md">
+        <DialogContent className="bg-[#1e3a5f] border-white/10 max-w-md">
           <NewsletterFormContent 
             isSuccess={isSuccess}
             isSubmitting={isSubmitting}
@@ -153,7 +160,7 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
           Newsletter
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-ula-navy-light border-white/10 max-w-md">
+      <DialogContent className="bg-[#1e3a5f] border-white/10 max-w-md">
         <NewsletterFormContent 
           isSuccess={isSuccess}
           isSubmitting={isSubmitting}
@@ -199,7 +206,7 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
     <>
       <DialogHeader>
         <DialogTitle className="text-white flex items-center gap-2">
-          <Bell className="w-5 h-5 text-neon-lime" />
+          <Bell className="w-5 h-5 text-[#a3e635]" />
           Suscríbete al Newsletter
         </DialogTitle>
         <DialogDescription className="text-white/60">
@@ -250,7 +257,7 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
             <SelectTrigger className="bg-white/5 border-white/20 text-white">
               <SelectValue placeholder="Selecciona un área" />
             </SelectTrigger>
-            <SelectContent className="bg-ula-navy-light border-white/10">
+            <SelectContent className="bg-[#1e3a5f] border-white/10">
               <SelectItem value="ciencias-sociales" className="text-white/80">Ciencias Sociales</SelectItem>
               <SelectItem value="economia" className="text-white/80">Economía</SelectItem>
               <SelectItem value="humanidades" className="text-white/80">Humanidades</SelectItem>
@@ -261,7 +268,7 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
 
         <Button 
           type="submit" 
-          className="w-full bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold"
+          className="w-full bg-[#a3e635] text-[#152a45] hover:bg-[#bef264] font-semibold"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
