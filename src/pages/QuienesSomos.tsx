@@ -35,6 +35,7 @@ const values = [
 
 export function QuienesSomos() {
   const { ref: missionRef, isVisible: missionVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const { ref: objectivesRef, isVisible: objectivesVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const { ref: linesRef, isVisible: linesVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const { ref: teamRef, isVisible: teamVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
@@ -151,6 +152,99 @@ export function QuienesSomos() {
                 producción de conocimientos y tecnología social en las ciencias humanas.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Objectives */}
+      <section ref={objectivesRef} className="py-12 lg:py-20">
+        <div className="w-full section-padding">
+          <SectionHeader
+            title="Objetivos"
+            subtitle="Propósitos Institucionales"
+            description="Los fines que orientan el quehacer de HUMANIC en la Universidad y la sociedad"
+          />
+
+          {/* General Objective */}
+          <div className={`mb-12 ${objectivesVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div className="p-8 bg-white/5 rounded-2xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-humanic-green"></div>
+              <div className="flex items-start gap-6">
+                <div className="w-14 h-14 rounded-xl bg-humanic-green/20 flex items-center justify-center shrink-0">
+                  <Target className="w-7 h-7 text-humanic-green" />
+                </div>
+                <div>
+                  <Badge className="bg-humanic-green/20 text-humanic-green border-humanic-green/30 mb-3">
+                    Objetivo General
+                  </Badge>
+                  <p className="text-white/80 text-lg leading-relaxed">
+                    Incentivar la reflexión, el estudio y la investigación de las distintas 
+                    manifestaciones de <strong className="text-white">lo humano</strong> y de la 
+                    <strong className="text-white"> vida en sociedad</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Specific Objectives */}
+          <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 ${objectivesVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '150ms' }}>
+            {[
+              {
+                num: '01',
+                title: 'Líneas de investigación',
+                desc: 'Desarrollar las líneas de investigación definidas por el Centro.',
+              },
+              {
+                num: '02',
+                title: 'Formación continua',
+                desc: 'Realizar talleres, seminarios y cursos no conducentes a grado académico.',
+              },
+              {
+                num: '03',
+                title: 'Recursos humanos',
+                desc: 'Formar recursos humanos para la investigación a nivel de Pre y Postgrado.',
+              },
+              {
+                num: '04',
+                title: 'Asesorías y consultorías',
+                desc: 'Prestar asesorías, consultorías y servicios para y con la comunidad local, regional, nacional e internacional.',
+              },
+              {
+                num: '05',
+                title: 'Intercambios institucionales',
+                desc: 'Sostener intercambios con organizaciones afines en el plano académico, ONG y organizaciones gubernamentales.',
+              },
+              {
+                num: '06',
+                title: 'Difusión de resultados',
+                desc: 'Difundir los productos y resultados de las investigaciones a través de los distintos medios (impresos, informáticos y digitales).',
+              },
+              {
+                num: '07',
+                title: 'Acompañamiento social',
+                desc: 'Llevar a cabo actividades de acompañamiento social en las comunidades.',
+              },
+            ].map((obj, index) => (
+              <div
+                key={obj.num}
+                className="group p-6 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl font-bold text-humanic-green/40 group-hover:text-humanic-green/60 transition-colors shrink-0">
+                    {obj.num}
+                  </span>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
+                      {obj.title}
+                    </h3>
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      {obj.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
