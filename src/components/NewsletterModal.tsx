@@ -91,7 +91,7 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <button 
-            className="fixed bottom-6 right-6 z-[9999] flex items-center gap-2 px-5 py-3.5 bg-[#a3e635] text-[#152a45] font-bold rounded-full shadow-[0_4px_20px_rgba(163,230,53,0.4)] hover:shadow-[0_6px_30px_rgba(163,230,53,0.6)] transition-all duration-300 hover:scale-105 group"
+            className="fixed bottom-6 right-6 z-[9999] flex items-center gap-2 px-5 py-3.5 bg-neon-lime text-slate-800 font-bold rounded-full shadow-[0_4px_20px_rgba(163,230,53,0.4)] hover:shadow-[0_6px_30px_rgba(163,230,53,0.6)] transition-all duration-300 hover:scale-105 group"
             style={{ 
               position: 'fixed',
               bottom: '24px',
@@ -102,7 +102,7 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
             <span className="hidden sm:inline">Suscríbete</span>
           </button>
         </DialogTrigger>
-        <DialogContent className="bg-[#1e3a5f] border-slate-200 max-w-md">
+        <DialogContent className="bg-white border-slate-200 max-w-md">
           <NewsletterFormContent 
             isSuccess={isSuccess}
             isSubmitting={isSubmitting}
@@ -119,11 +119,11 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
   if (variant === 'banner') {
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <div className="bg-gradient-to-r from-[#2d8659]/20 to-[#a3e635]/10 rounded-2xl border border-[#2d8659]/30 p-6 lg:p-8">
+        <div className="bg-gradient-to-r from-humanic-green/20 to-neon-lime/20 rounded-2xl border border-humanic-green/30 p-6 lg:p-8">
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <div className="flex-1 text-center lg:text-left">
               <h3 className="text-xl font-bold text-slate-800 mb-2">
-                <Mail className="w-5 h-5 inline mr-2 text-[#a3e635]" />
+                <Mail className="w-5 h-5 inline mr-2 text-neon-lime" />
                 Suscríbete a nuestro Newsletter
               </h3>
               <p className="text-slate-600">
@@ -131,14 +131,14 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
               </p>
             </div>
             <DialogTrigger asChild>
-              <Button className="bg-[#a3e635] text-[#152a45] hover:bg-[#bef264] font-semibold px-6">
+              <Button className="bg-neon-lime text-slate-800 hover:bg-neon-lime-light font-semibold px-6">
                 Suscribirme
                 <Bell className="w-4 h-4 ml-2" />
               </Button>
             </DialogTrigger>
           </div>
         </div>
-        <DialogContent className="bg-[#1e3a5f] border-slate-200 max-w-md">
+        <DialogContent className="bg-white border-slate-200 max-w-md">
           <NewsletterFormContent 
             isSuccess={isSuccess}
             isSubmitting={isSubmitting}
@@ -160,7 +160,7 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
           Newsletter
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-[#1e3a5f] border-slate-200 max-w-md">
+      <DialogContent className="bg-white border-slate-200 max-w-md">
         <NewsletterFormContent 
           isSuccess={isSuccess}
           isSubmitting={isSubmitting}
@@ -191,8 +191,8 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
   if (isSuccess) {
     return (
       <div className="py-8 text-center">
-        <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8 text-green-400" />
+        <div className="w-16 h-16 bg-humanic-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-humanic-green" />
         </div>
         <h3 className="text-xl font-bold text-slate-800 mb-2">¡Suscripción exitosa!</h3>
         <p className="text-slate-600">
@@ -257,7 +257,7 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
             <SelectTrigger className="bg-white border-slate-200 text-slate-800">
               <SelectValue placeholder="Selecciona un área" />
             </SelectTrigger>
-            <SelectContent className="bg-[#1e3a5f] border-slate-200">
+            <SelectContent className="bg-white border-slate-200">
               <SelectItem value="ciencias-sociales" className="text-slate-700">Ciencias Sociales</SelectItem>
               <SelectItem value="economia" className="text-slate-700">Economía</SelectItem>
               <SelectItem value="humanidades" className="text-slate-700">Humanidades</SelectItem>
@@ -268,7 +268,7 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
 
         <Button 
           type="submit" 
-          className="w-full bg-[#a3e635] text-[#152a45] hover:bg-[#bef264] font-semibold"
+          className="w-full bg-neon-lime text-slate-800 hover:bg-neon-lime-light font-semibold"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
