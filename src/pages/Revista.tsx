@@ -53,7 +53,7 @@ const categoryColors: Record<string, string> = {
 
 function ArticleListItem({ article }: { article: Article }) {
   return (
-    <div className="group flex flex-col lg:flex-row gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-all duration-300 hover:bg-white/[0.07]">
+    <div className="group flex flex-col lg:flex-row gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:bg-white/[0.07]">
       <div className="flex-1 min-w-0">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <Badge 
@@ -62,27 +62,27 @@ function ArticleListItem({ article }: { article: Article }) {
           >
             {categoryNames[article.category]}
           </Badge>
-          <span className="text-white/40 text-xs flex items-center gap-1">
+          <span className="text-slate-400 text-xs flex items-center gap-1">
             <Calendar className="w-3 h-3" />
             {new Date(article.publishedDate).toLocaleDateString('es-ES', { 
               year: 'numeric', 
               month: 'short' 
             })}
           </span>
-          <span className="text-white/40 text-xs">
+          <span className="text-slate-400 text-xs">
             Vol. {article.volume}, N° {article.issue}
           </span>
         </div>
         
-        <h4 className="text-white font-medium group-hover:text-neon-lime transition-colors line-clamp-2 mb-2">
+        <h4 className="text-slate-800 font-medium group-hover:text-neon-lime transition-colors line-clamp-2 mb-2">
           {article.title}
         </h4>
         
-        <p className="text-white/50 text-sm line-clamp-1 mb-2">
+        <p className="text-slate-400 text-sm line-clamp-1 mb-2">
           {article.authors.map(a => a.name).join(', ')}
         </p>
         
-        <p className="text-white/40 text-sm line-clamp-2">
+        <p className="text-slate-400 text-sm line-clamp-2">
           {article.abstract}
         </p>
       </div>
@@ -93,27 +93,27 @@ function ArticleListItem({ article }: { article: Article }) {
             <Button 
               size="sm" 
               variant="outline"
-              className="border-white/20 text-white/70 hover:text-white hover:bg-white/10"
+              className="border-slate-200 text-slate-600 hover:text-slate-800 hover:bg-slate-50"
             >
               <FileText className="w-4 h-4 mr-1" />
               Abstract
             </Button>
           </DialogTrigger>
-          <DialogContent className="bg-ula-navy-light border-white/10 max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogContent className="bg-ula-navy-light border-slate-200 max-w-2xl max-h-[80vh] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle className="text-white text-xl">{article.title}</DialogTitle>
-              <DialogDescription className="text-white/60">
+              <DialogTitle className="text-slate-800 text-xl">{article.title}</DialogTitle>
+              <DialogDescription className="text-slate-500">
                 {article.authors.map(a => a.name).join(', ')}
               </DialogDescription>
             </DialogHeader>
             <div className="mt-4">
               <h4 className="text-neon-lime font-semibold mb-2">Resumen</h4>
-              <p className="text-white/80 leading-relaxed">{article.abstract}</p>
+              <p className="text-slate-700 leading-relaxed">{article.abstract}</p>
               
               <h4 className="text-neon-lime font-semibold mt-6 mb-2">Palabras Clave</h4>
               <div className="flex flex-wrap gap-2">
                 {article.keywords.map((keyword) => (
-                  <Badge key={keyword} variant="secondary" className="bg-white/10 text-white/80">
+                  <Badge key={keyword} variant="secondary" className="bg-slate-50 text-slate-700">
                     {keyword}
                   </Badge>
                 ))}
@@ -136,24 +136,24 @@ function ArticleListItem({ article }: { article: Article }) {
 
 function VolumeCard({ volume }: { volume: typeof volumes[0] }) {
   return (
-    <div className="group bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg">
+    <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg">
       <div className="aspect-[3/4] bg-gradient-to-br from-ula-navy-light to-ula-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
           <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
-          <span className="text-6xl font-bold text-white/20 font-serif">{volume.number}</span>
-          <span className="text-xl text-white/40 mt-2">{volume.year}</span>
+          <span className="text-6xl font-bold text-slate-300 font-serif">{volume.number}</span>
+          <span className="text-xl text-slate-400 mt-2">{volume.year}</span>
         </div>
       </div>
       <div className="p-5">
-        <h3 className="text-white font-semibold mb-2 line-clamp-2 group-hover:text-neon-lime transition-colors">
+        <h3 className="text-slate-800 font-semibold mb-2 line-clamp-2 group-hover:text-neon-lime transition-colors">
           {volume.title}
         </h3>
-        <p className="text-white/50 text-sm line-clamp-2 mb-4">
+        <p className="text-slate-400 text-sm line-clamp-2 mb-4">
           {volume.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="text-white/40 text-sm">
+          <span className="text-slate-400 text-sm">
             {volume.articles.length} artículos
           </span>
           <Button 
@@ -229,7 +229,7 @@ export function Revista() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="relative py-12 lg:py-20 bg-sky-50/80">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
@@ -248,13 +248,13 @@ export function Revista() {
           <div className="flex flex-col lg:flex-row gap-4 mb-8">
             {/* Search */}
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
               <Input
                 type="text"
                 placeholder="Buscar por título, autor, palabra clave..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-humanic-green focus:ring-humanic-green/20"
+                className="pl-12 bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-humanic-green focus:ring-humanic-green/20"
               />
             </div>
 
@@ -265,7 +265,7 @@ export function Revista() {
                 <DropdownMenuTrigger asChild>
                   <Button 
                     variant="outline" 
-                    className="border-white/20 text-white/80 hover:bg-white/10"
+                    className="border-slate-200 text-slate-700 hover:bg-slate-50"
                   >
                     <Filter className="w-4 h-4 mr-2" />
                     Categorías
@@ -277,13 +277,13 @@ export function Revista() {
                     <ChevronDown className="w-4 h-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-ula-navy-light border-white/10 min-w-[200px]">
+                <DropdownMenuContent className="bg-ula-navy-light border-slate-200 min-w-[200px]">
                   {categories.map((cat) => (
                     <DropdownMenuCheckboxItem
                       key={cat.id}
                       checked={selectedCategories.includes(cat.id)}
                       onCheckedChange={() => toggleCategory(cat.id)}
-                      className="text-white/80 hover:text-white hover:bg-white/10"
+                      className="text-slate-700 hover:text-slate-800 hover:bg-slate-50"
                     >
                       {cat.name}
                     </DropdownMenuCheckboxItem>
@@ -293,13 +293,13 @@ export function Revista() {
 
               {/* Year Filter */}
               <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger className="w-[140px] bg-white/5 border-white/20 text-white">
+                <SelectTrigger className="w-[140px] bg-white border-slate-200 text-slate-800">
                   <SelectValue placeholder="Año" />
                 </SelectTrigger>
-                <SelectContent className="bg-ula-navy-light border-white/10">
-                  <SelectItem value="all" className="text-white/80 hover:bg-white/10">Todos los años</SelectItem>
+                <SelectContent className="bg-ula-navy-light border-slate-200">
+                  <SelectItem value="all" className="text-slate-700 hover:bg-slate-50">Todos los años</SelectItem>
                   {years.map(year => (
-                    <SelectItem key={year} value={year.toString()} className="text-white/80 hover:bg-white/10">
+                    <SelectItem key={year} value={year.toString()} className="text-slate-700 hover:bg-slate-50">
                       {year}
                     </SelectItem>
                   ))}
@@ -308,13 +308,13 @@ export function Revista() {
 
               {/* Volume Filter */}
               <Select value={selectedVolume} onValueChange={setSelectedVolume}>
-                <SelectTrigger className="w-[140px] bg-white/5 border-white/20 text-white">
+                <SelectTrigger className="w-[140px] bg-white border-slate-200 text-slate-800">
                   <SelectValue placeholder="Volumen" />
                 </SelectTrigger>
-                <SelectContent className="bg-ula-navy-light border-white/10">
-                  <SelectItem value="all" className="text-white/80 hover:bg-white/10">Todos</SelectItem>
+                <SelectContent className="bg-ula-navy-light border-slate-200">
+                  <SelectItem value="all" className="text-slate-700 hover:bg-slate-50">Todos</SelectItem>
                   {volumes.map(vol => (
-                    <SelectItem key={vol.id} value={vol.number.toString()} className="text-white/80 hover:bg-white/10">
+                    <SelectItem key={vol.id} value={vol.number.toString()} className="text-slate-700 hover:bg-slate-50">
                       Vol. {vol.number}
                     </SelectItem>
                   ))}
@@ -322,11 +322,11 @@ export function Revista() {
               </Select>
 
               {/* View Mode */}
-              <div className="flex border border-white/20 rounded-md overflow-hidden">
+              <div className="flex border border-slate-200 rounded-md overflow-hidden">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className={`rounded-none ${viewMode === 'grid' ? 'bg-white/10 text-white' : 'text-white/60 hover:text-white'}`}
+                  className={`rounded-none ${viewMode === 'grid' ? 'bg-slate-50 text-slate-800' : 'text-slate-500 hover:text-slate-800'}`}
                   onClick={() => setViewMode('grid')}
                 >
                   <Grid3X3 className="w-4 h-4" />
@@ -334,7 +334,7 @@ export function Revista() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className={`rounded-none ${viewMode === 'list' ? 'bg-white/10 text-white' : 'text-white/60 hover:text-white'}`}
+                  className={`rounded-none ${viewMode === 'list' ? 'bg-slate-50 text-slate-800' : 'text-slate-500 hover:text-slate-800'}`}
                   onClick={() => setViewMode('list')}
                 >
                   <List className="w-4 h-4" />
@@ -345,7 +345,7 @@ export function Revista() {
               {hasActiveFilters && (
                 <Button
                   variant="ghost"
-                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  className="text-slate-500 hover:text-slate-800 hover:bg-slate-50"
                   onClick={clearFilters}
                 >
                   <X className="w-4 h-4 mr-2" />
@@ -359,25 +359,25 @@ export function Revista() {
           {hasActiveFilters && (
             <div className="flex flex-wrap gap-2 mb-6">
               {searchQuery && (
-                <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
+                <Badge className="bg-slate-50 text-slate-700 hover:bg-white/20">
                   Búsqueda: {searchQuery}
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSearchQuery('')} />
                 </Badge>
               )}
               {selectedCategories.map(cat => (
-                <Badge key={cat} className="bg-white/10 text-white/80 hover:bg-white/20">
+                <Badge key={cat} className="bg-slate-50 text-slate-700 hover:bg-white/20">
                   {categoryNames[cat]}
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => toggleCategory(cat)} />
                 </Badge>
               ))}
               {selectedYear !== 'all' && (
-                <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
+                <Badge className="bg-slate-50 text-slate-700 hover:bg-white/20">
                   Año: {selectedYear}
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedYear('all')} />
                 </Badge>
               )}
               {selectedVolume !== 'all' && (
-                <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
+                <Badge className="bg-slate-50 text-slate-700 hover:bg-white/20">
                   Volumen: {selectedVolume}
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedVolume('all')} />
                 </Badge>
@@ -387,8 +387,8 @@ export function Revista() {
 
           {/* Results Count */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-white/60">
-              Mostrando <span className="text-white font-semibold">{filteredArticles.length}</span> artículos
+            <p className="text-slate-500">
+              Mostrando <span className="text-slate-800 font-semibold">{filteredArticles.length}</span> artículos
             </p>
           </div>
 
@@ -413,16 +413,16 @@ export function Revista() {
             )
           ) : (
             <div className="text-center py-16">
-              <BookOpen className="w-16 h-16 text-white/20 mx-auto mb-4" />
-              <h3 className="text-white text-xl font-semibold mb-2">
+              <BookOpen className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+              <h3 className="text-slate-800 text-xl font-semibold mb-2">
                 No se encontraron artículos
               </h3>
-              <p className="text-white/50 mb-6">
+              <p className="text-slate-400 mb-6">
                 Intenta ajustar los filtros o términos de búsqueda
               </p>
               <Button 
                 variant="outline" 
-                className="border-white/20 text-white hover:bg-white/10"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50"
                 onClick={clearFilters}
               >
                 Limpiar filtros
@@ -433,7 +433,7 @@ export function Revista() {
       </section>
 
       {/* Volumes Archive */}
-      <section className="py-16 lg:py-24 bg-ula-navy-dark/30">
+      <section className="py-16 lg:py-24 bg-sky-50/60">
         <div className="w-full section-padding">
           <SectionHeader
             title="Archivo de Volúmenes"

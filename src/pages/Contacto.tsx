@@ -64,7 +64,7 @@ export function Contacto() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="relative py-12 lg:py-20 bg-sky-50/80">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
@@ -86,10 +86,10 @@ export function Contacto() {
               className={`lg:col-span-2 space-y-6 ${infoVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
             >
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6">
+                <h2 className="text-2xl font-bold text-slate-800 mb-6">
                   Información de Contacto
                 </h2>
-                <p className="text-white/70 mb-8">
+                <p className="text-slate-600 mb-8">
                   Nuestro equipo está disponible para atender tus consultas sobre el 
                   proceso de publicación, envío de manuscritos o cualquier otra 
                   información relacionada con FERMENTUM.
@@ -98,61 +98,61 @@ export function Contacto() {
 
               {/* Contact Cards */}
               <div className="space-y-4">
-                <div className="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-colors">
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-slate-200 hover:border-humanic-green/50 transition-colors">
                   <div className="w-12 h-12 rounded-lg bg-humanic-green/20 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-humanic-green" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Dirección</h3>
-                    <p className="text-white/60 text-sm">{contactInfo.address}</p>
-                    <p className="text-white/60 text-sm">{contactInfo.city}</p>
+                    <h3 className="text-slate-800 font-semibold mb-1">Dirección</h3>
+                    <p className="text-slate-500 text-sm">{contactInfo.address}</p>
+                    <p className="text-slate-500 text-sm">{contactInfo.city}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-colors">
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-slate-200 hover:border-humanic-green/50 transition-colors">
                   <div className="w-12 h-12 rounded-lg bg-neon-lime/20 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-neon-lime" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Correo Electrónico</h3>
+                    <h3 className="text-slate-800 font-semibold mb-1">Correo Electrónico</h3>
                     <a 
                       href={`mailto:${contactInfo.email}`}
-                      className="text-white/60 text-sm hover:text-neon-lime transition-colors"
+                      className="text-slate-500 text-sm hover:text-neon-lime transition-colors"
                     >
                       {contactInfo.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-colors">
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-slate-200 hover:border-humanic-green/50 transition-colors">
                   <div className="w-12 h-12 rounded-lg bg-bronze/20 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-bronze" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Teléfono</h3>
+                    <h3 className="text-slate-800 font-semibold mb-1">Teléfono</h3>
                     <a 
                       href={`tel:${contactInfo.phone}`}
-                      className="text-white/60 text-sm hover:text-bronze transition-colors"
+                      className="text-slate-500 text-sm hover:text-bronze transition-colors"
                     >
                       {contactInfo.phone}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-colors">
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-slate-200 hover:border-humanic-green/50 transition-colors">
                   <div className="w-12 h-12 rounded-lg bg-humanic-green/20 flex items-center justify-center flex-shrink-0">
                     <Clock className="w-6 h-6 text-humanic-green" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Horario de Atención</h3>
-                    <p className="text-white/60 text-sm">{contactInfo.hours}</p>
+                    <h3 className="text-slate-800 font-semibold mb-1">Horario de Atención</h3>
+                    <p className="text-slate-500 text-sm">{contactInfo.hours}</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
               <div>
-                <h3 className="text-white font-semibold mb-4">Síguenos en Redes Sociales</h3>
+                <h3 className="text-slate-800 font-semibold mb-4">Síguenos en Redes Sociales</h3>
                 <div className="flex gap-3">
                   {socialLinks.map((social) => {
                     const Icon = getIcon(social.icon);
@@ -162,7 +162,7 @@ export function Contacto() {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 text-white/60 hover:bg-humanic-green hover:text-white transition-all duration-300 border border-white/10 hover:border-humanic-green"
+                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-white text-slate-500 hover:bg-humanic-green hover:text-white transition-all duration-300 border border-slate-200 hover:border-humanic-green"
                         aria-label={social.platform}
                       >
                         <Icon className="w-5 h-5" />
@@ -178,11 +178,11 @@ export function Contacto() {
               ref={formRef}
               className={`lg:col-span-3 ${formVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}
             >
-              <div className="p-6 lg:p-8 bg-white/5 rounded-2xl border border-white/10">
-                <h2 className="text-2xl font-bold text-white mb-2">
+              <div className="p-6 lg:p-8 bg-white rounded-2xl border border-slate-200">
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">
                   Envíanos un Mensaje
                 </h2>
-                <p className="text-white/60 mb-6">
+                <p className="text-slate-500 mb-6">
                   Completa el formulario y te responderemos lo antes posible.
                 </p>
 
@@ -191,7 +191,7 @@ export function Contacto() {
                     <CheckCircle className="w-5 h-5 text-humanic-green flex-shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-humanic-green font-semibold">¡Mensaje enviado!</h4>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-slate-600 text-sm">
                         Gracias por contactarnos. Te responderemos en breve.
                       </p>
                     </div>
@@ -203,7 +203,7 @@ export function Contacto() {
                     <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-red-400 font-semibold">Error</h4>
-                      <p className="text-white/70 text-sm">{error}</p>
+                      <p className="text-slate-600 text-sm">{error}</p>
                     </div>
                   </div>
                 )}
@@ -211,7 +211,7 @@ export function Contacto() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-white/80">
+                      <Label htmlFor="name" className="text-slate-700">
                         Nombre Completo <span className="text-red-400">*</span>
                       </Label>
                       <Input
@@ -222,11 +222,11 @@ export function Contacto() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Tu nombre"
-                        className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-humanic-green focus:ring-humanic-green/20"
+                        className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-humanic-green focus:ring-humanic-green/20"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-white/80">
+                      <Label htmlFor="email" className="text-slate-700">
                         Correo Electrónico <span className="text-red-400">*</span>
                       </Label>
                       <Input
@@ -237,13 +237,13 @@ export function Contacto() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="tu@email.com"
-                        className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-humanic-green focus:ring-humanic-green/20"
+                        className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-humanic-green focus:ring-humanic-green/20"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-white/80">
+                    <Label htmlFor="subject" className="text-slate-700">
                       Asunto <span className="text-red-400">*</span>
                     </Label>
                     <Input
@@ -254,12 +254,12 @@ export function Contacto() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="¿Sobre qué nos quieres contactar?"
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-humanic-green focus:ring-humanic-green/20"
+                      className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-humanic-green focus:ring-humanic-green/20"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-white/80">
+                    <Label htmlFor="message" className="text-slate-700">
                       Mensaje <span className="text-red-400">*</span>
                     </Label>
                     <Textarea
@@ -270,7 +270,7 @@ export function Contacto() {
                       onChange={handleChange}
                       placeholder="Escribe tu mensaje aquí..."
                       rows={6}
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-humanic-green focus:ring-humanic-green/20 resize-none"
+                      className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-humanic-green focus:ring-humanic-green/20 resize-none"
                     />
                   </div>
 
@@ -300,24 +300,24 @@ export function Contacto() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 lg:py-20 bg-ula-navy-dark/30">
+      <section className="py-12 lg:py-20 bg-sky-50/60">
         <div className="w-full section-padding">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">
               Nuestra Ubicación
             </h2>
-            <p className="text-white/60">
+            <p className="text-slate-500">
               Centro de Investigaciones, Universidad de Los Andes
             </p>
           </div>
 
           {/* Map Placeholder */}
-          <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden border border-white/10">
+          <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden border border-slate-200">
             <div className="absolute inset-0 bg-gradient-to-br from-ula-navy-light to-ula-navy flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-humanic-green mx-auto mb-4" />
-                <p className="text-white font-semibold text-lg">Universidad de Los Andes</p>
-                <p className="text-white/60">Mérida, Venezuela</p>
+                <p className="text-slate-800 font-semibold text-lg">Universidad de Los Andes</p>
+                <p className="text-slate-500">Mérida, Venezuela</p>
                 <a 
                   href="https://maps.google.com/?q=Universidad+de+Los+Andes+Mérida"
                   target="_blank"
@@ -345,10 +345,10 @@ export function Contacto() {
       <section className="py-12 lg:py-20">
         <div className="w-full section-padding">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">
               ¿Tienes preguntas frecuentes?
             </h2>
-            <p className="text-white/70 mb-8">
+            <p className="text-slate-600 mb-8">
               Revisa nuestras normas de publicación para obtener información detallada 
               sobre el proceso de envío y evaluación de manuscritos.
             </p>
@@ -361,7 +361,7 @@ export function Contacto() {
               </Button>
               <Button 
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
+                className="border-white/30 text-slate-800 hover:bg-slate-50"
                 asChild
               >
                 <a href="/revista">Explorar Revista</a>

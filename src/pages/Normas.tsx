@@ -95,7 +95,7 @@ export function Normas() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="relative py-12 lg:py-20 bg-sky-50/80">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
@@ -111,32 +111,32 @@ export function Normas() {
       <section className="py-8 lg:py-12">
         <div className="w-full section-padding">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 bg-white/5 rounded-xl border border-white/10 text-center">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 text-center">
               <Clock className="w-8 h-8 text-humanic-green mx-auto mb-3" />
-              <div className="text-2xl font-bold text-white mb-1">45-60</div>
-              <div className="text-white/60 text-sm">Días promedio de evaluación</div>
+              <div className="text-2xl font-bold text-slate-800 mb-1">45-60</div>
+              <div className="text-slate-500 text-sm">Días promedio de evaluación</div>
             </div>
-            <div className="p-5 bg-white/5 rounded-xl border border-white/10 text-center">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 text-center">
               <Users className="w-8 h-8 text-neon-lime mx-auto mb-3" />
-              <div className="text-2xl font-bold text-white mb-1">Doble Ciego</div>
-              <div className="text-white/60 text-sm">Sistema de revisión por pares</div>
+              <div className="text-2xl font-bold text-slate-800 mb-1">Doble Ciego</div>
+              <div className="text-slate-500 text-sm">Sistema de revisión por pares</div>
             </div>
-            <div className="p-5 bg-white/5 rounded-xl border border-white/10 text-center">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 text-center">
               <Calendar className="w-8 h-8 text-bronze mx-auto mb-3" />
-              <div className="text-2xl font-bold text-white mb-1">2x/año</div>
-              <div className="text-white/60 text-sm">Publicaciones semestrales</div>
+              <div className="text-2xl font-bold text-slate-800 mb-1">2x/año</div>
+              <div className="text-slate-500 text-sm">Publicaciones semestrales</div>
             </div>
-            <div className="p-5 bg-white/5 rounded-xl border border-white/10 text-center">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 text-center">
               <FileCheck className="w-8 h-8 text-humanic-green mx-auto mb-3" />
-              <div className="text-2xl font-bold text-white mb-1">Gratuito</div>
-              <div className="text-white/60 text-sm">Sin costos de publicación</div>
+              <div className="text-2xl font-bold text-slate-800 mb-1">Gratuito</div>
+              <div className="text-slate-500 text-sm">Sin costos de publicación</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Evaluation Process */}
-      <section ref={processRef} className="py-12 lg:py-20 bg-ula-navy-dark/30">
+      <section ref={processRef} className="py-12 lg:py-20 bg-sky-50/60">
         <div className="w-full section-padding">
           <SectionHeader
             title="Proceso de Evaluación"
@@ -171,7 +171,7 @@ export function Normas() {
                       ${isLeft ? 'md:pr-12 lg:pr-16 md:text-right' : 'md:pl-12 lg:pl-16 md:ml-auto'}
                     `}>
                       <div className={`
-                        p-6 bg-white/5 rounded-xl border border-white/10 
+                        p-6 bg-white rounded-xl border border-slate-200 
                         hover:border-humanic-green/50 transition-all duration-300
                         ${isLeft ? 'md:ml-auto' : ''}
                       `}>
@@ -179,9 +179,9 @@ export function Normas() {
                           <div className="w-10 h-10 rounded-lg bg-humanic-green/20 flex items-center justify-center flex-shrink-0">
                             <Icon className="w-5 h-5 text-humanic-green" />
                           </div>
-                          <h3 className="text-white font-semibold text-lg">{step.title}</h3>
+                          <h3 className="text-slate-800 font-semibold text-lg">{step.title}</h3>
                         </div>
-                        <p className="text-white/60 text-sm mb-3">{step.description}</p>
+                        <p className="text-slate-500 text-sm mb-3">{step.description}</p>
                         <Badge variant="outline" className="border-neon-lime/30 text-neon-lime">
                           <Clock className="w-3 h-3 mr-1" />
                           {step.duration}
@@ -212,7 +212,7 @@ export function Normas() {
                 <div 
                   key={req.title}
                   className={`
-                    group p-6 bg-white/5 rounded-xl border border-white/10 
+                    group p-6 bg-white rounded-xl border border-slate-200 
                     hover:border-neon-lime/50 transition-all duration-300 
                     hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]
                     ${formatVisible ? 'animate-fade-in-up' : 'opacity-0'}
@@ -222,10 +222,10 @@ export function Normas() {
                   <div className="w-12 h-12 rounded-lg bg-neon-lime/10 flex items-center justify-center mb-4 group-hover:bg-neon-lime/20 transition-colors">
                     <Icon className="w-6 h-6 text-neon-lime" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-2">
+                  <h3 className="text-slate-800 font-semibold text-lg mb-2">
                     {req.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {req.description}
                   </p>
                 </div>
@@ -236,10 +236,10 @@ export function Normas() {
           {/* Download Template */}
           <div className="mt-12 p-8 bg-gradient-to-br from-humanic-green/20 to-neon-lime/10 rounded-2xl border border-humanic-green/30 text-center">
             <FileText className="w-12 h-12 text-humanic-green mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">
+            <h3 className="text-xl font-bold text-slate-800 mb-2">
               Plantilla de Manuscrito
             </h3>
-            <p className="text-white/70 mb-6 max-w-lg mx-auto">
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
               Descarga nuestra plantilla en formato Word con todos los estilos 
               predefinidos para facilitar la preparación de tu manuscrito.
             </p>
@@ -255,7 +255,7 @@ export function Normas() {
       </section>
 
       {/* Detailed Guidelines */}
-      <section className="py-12 lg:py-20 bg-ula-navy-dark/30">
+      <section className="py-12 lg:py-20 bg-sky-50/60">
         <div className="w-full section-padding">
           <SectionHeader
             title="Normas Detalladas"
@@ -269,9 +269,9 @@ export function Normas() {
                 <AccordionItem 
                   key={guideline.id} 
                   value={guideline.id}
-                  className="bg-white/5 rounded-xl border border-white/10 px-6 overflow-hidden"
+                  className="bg-white rounded-xl border border-slate-200 px-6 overflow-hidden"
                 >
-                  <AccordionTrigger className="text-white hover:text-neon-lime py-4 hover:no-underline">
+                  <AccordionTrigger className="text-slate-800 hover:text-neon-lime py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
                       <span className="w-8 h-8 rounded-lg bg-humanic-green/20 flex items-center justify-center flex-shrink-0 text-sm font-bold text-humanic-green">
                         {index + 1}
@@ -279,7 +279,7 @@ export function Normas() {
                       <span className="font-semibold">{guideline.title}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-white/70 pb-4 pl-11">
+                  <AccordionContent className="text-slate-600 pb-4 pl-11">
                     <p className="mb-4">{guideline.description}</p>
                     
                     {guideline.steps && (
@@ -322,7 +322,7 @@ export function Normas() {
                 <AlertCircle className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-amber-400 font-semibold mb-2">Consideraciones Importantes</h3>
-                  <ul className="space-y-2 text-white/70 text-sm">
+                  <ul className="space-y-2 text-slate-600 text-sm">
                     <li>• Los manuscritos deben ser originales y no haber sido publicados previamente.</li>
                     <li>• Se aceptan contribuciones en español, inglés y portugués.</li>
                     <li>• La publicación en FERMENTUM es gratuita; no se cobran tarifas de procesamiento.</li>
@@ -337,7 +337,7 @@ export function Normas() {
                 <Mail className="w-6 h-6 text-humanic-green flex-shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-humanic-green font-semibold mb-2">¿Necesitas ayuda?</h3>
-                  <p className="text-white/70 text-sm mb-4">
+                  <p className="text-slate-600 text-sm mb-4">
                     Si tienes dudas sobre el proceso de publicación o necesitas asistencia 
                     con tu manuscrito, no dudes en contactar a nuestro equipo editorial.
                   </p>
@@ -359,13 +359,13 @@ export function Normas() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="py-12 lg:py-20 bg-sky-50/80">
         <div className="w-full section-padding">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white font-serif mb-4">
+            <h2 className="text-3xl font-bold text-slate-800 font-serif mb-4">
               ¿Listo para enviar tu artículo?
             </h2>
-            <p className="text-white/70 mb-8">
+            <p className="text-slate-600 mb-8">
               Accede a nuestra plataforma OJS para iniciar el proceso de envío de tu manuscrito.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -379,7 +379,7 @@ export function Normas() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8"
+                className="border-white/30 text-slate-800 hover:bg-slate-50 px-8"
                 asChild
               >
                 <Link to="/contacto">

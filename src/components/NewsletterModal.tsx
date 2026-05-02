@@ -102,7 +102,7 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
             <span className="hidden sm:inline">Suscríbete</span>
           </button>
         </DialogTrigger>
-        <DialogContent className="bg-[#1e3a5f] border-white/10 max-w-md">
+        <DialogContent className="bg-[#1e3a5f] border-slate-200 max-w-md">
           <NewsletterFormContent 
             isSuccess={isSuccess}
             isSubmitting={isSubmitting}
@@ -122,11 +122,11 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
         <div className="bg-gradient-to-r from-[#2d8659]/20 to-[#a3e635]/10 rounded-2xl border border-[#2d8659]/30 p-6 lg:p-8">
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <div className="flex-1 text-center lg:text-left">
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-slate-800 mb-2">
                 <Mail className="w-5 h-5 inline mr-2 text-[#a3e635]" />
                 Suscríbete a nuestro Newsletter
               </h3>
-              <p className="text-white/70">
+              <p className="text-slate-600">
                 Recibe notificaciones sobre nuevas publicaciones, eventos académicos y noticias de HUMANIC.
               </p>
             </div>
@@ -138,7 +138,7 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
             </DialogTrigger>
           </div>
         </div>
-        <DialogContent className="bg-[#1e3a5f] border-white/10 max-w-md">
+        <DialogContent className="bg-[#1e3a5f] border-slate-200 max-w-md">
           <NewsletterFormContent 
             isSuccess={isSuccess}
             isSubmitting={isSubmitting}
@@ -155,12 +155,12 @@ export function NewsletterModal({ variant = 'button', onSubscribe }: NewsletterM
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+        <Button variant="outline" className="border-slate-200 text-slate-800 hover:bg-slate-50">
           <Mail className="w-4 h-4 mr-2" />
           Newsletter
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-[#1e3a5f] border-white/10 max-w-md">
+      <DialogContent className="bg-[#1e3a5f] border-slate-200 max-w-md">
         <NewsletterFormContent 
           isSuccess={isSuccess}
           isSubmitting={isSubmitting}
@@ -194,8 +194,8 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
         <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
           <CheckCircle className="w-8 h-8 text-green-400" />
         </div>
-        <h3 className="text-xl font-bold text-white mb-2">¡Suscripción exitosa!</h3>
-        <p className="text-white/70">
+        <h3 className="text-xl font-bold text-slate-800 mb-2">¡Suscripción exitosa!</h3>
+        <p className="text-slate-600">
           Gracias por unirte a nuestra comunidad. Recibirás nuestras actualizaciones pronto.
         </p>
       </div>
@@ -205,30 +205,30 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
   return (
     <>
       <DialogHeader>
-        <DialogTitle className="text-white flex items-center gap-2">
+        <DialogTitle className="text-slate-800 flex items-center gap-2">
           <Bell className="w-5 h-5 text-[#a3e635]" />
           Suscríbete al Newsletter
         </DialogTitle>
-        <DialogDescription className="text-white/60">
+        <DialogDescription className="text-slate-500">
           Recibe noticias sobre publicaciones, eventos y actividades de HUMANIC.
         </DialogDescription>
       </DialogHeader>
 
       <form onSubmit={onSubmit} className="mt-4 space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-white/80">Nombre completo *</Label>
+          <Label htmlFor="name" className="text-slate-700">Nombre completo *</Label>
           <Input
             id="name"
             value={formData.name}
             onChange={(e) => onChange('name', e.target.value)}
             placeholder="Ej: María González"
             required
-            className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
+            className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-white/80">Correo electrónico *</Label>
+          <Label htmlFor="email" className="text-slate-700">Correo electrónico *</Label>
           <Input
             id="email"
             type="email"
@@ -236,32 +236,32 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
             onChange={(e) => onChange('email', e.target.value)}
             placeholder="maria@ejemplo.com"
             required
-            className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
+            className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="institution" className="text-white/80">Institución (opcional)</Label>
+          <Label htmlFor="institution" className="text-slate-700">Institución (opcional)</Label>
           <Input
             id="institution"
             value={formData.institution}
             onChange={(e) => onChange('institution', e.target.value)}
             placeholder="Ej: Universidad de Los Andes"
-            className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
+            className="bg-white border-slate-200 text-slate-800 placeholder:text-slate-400"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="interest" className="text-white/80">Área de interés</Label>
+          <Label htmlFor="interest" className="text-slate-700">Área de interés</Label>
           <Select value={formData.interest} onValueChange={(value) => onChange('interest', value)}>
-            <SelectTrigger className="bg-white/5 border-white/20 text-white">
+            <SelectTrigger className="bg-white border-slate-200 text-slate-800">
               <SelectValue placeholder="Selecciona un área" />
             </SelectTrigger>
-            <SelectContent className="bg-[#1e3a5f] border-white/10">
-              <SelectItem value="ciencias-sociales" className="text-white/80">Ciencias Sociales</SelectItem>
-              <SelectItem value="economia" className="text-white/80">Economía</SelectItem>
-              <SelectItem value="humanidades" className="text-white/80">Humanidades</SelectItem>
-              <SelectItem value="todas" className="text-white/80">Todas las áreas</SelectItem>
+            <SelectContent className="bg-[#1e3a5f] border-slate-200">
+              <SelectItem value="ciencias-sociales" className="text-slate-700">Ciencias Sociales</SelectItem>
+              <SelectItem value="economia" className="text-slate-700">Economía</SelectItem>
+              <SelectItem value="humanidades" className="text-slate-700">Humanidades</SelectItem>
+              <SelectItem value="todas" className="text-slate-700">Todas las áreas</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -284,7 +284,7 @@ function NewsletterFormContent({ isSuccess, isSubmitting, formData, onChange, on
           )}
         </Button>
 
-        <p className="text-white/40 text-xs text-center">
+        <p className="text-slate-400 text-xs text-center">
           Al suscribirte, aceptas recibir correos de HUMANIC. Puedes darte de baja en cualquier momento.
         </p>
       </form>

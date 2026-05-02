@@ -68,10 +68,10 @@ export function Navbar() {
               <Building2 className="w-6 h-6 text-ula-navy-dark" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-white font-serif tracking-tight">
+              <span className="text-xl font-bold text-slate-800 font-serif tracking-tight">
                 HUMANIC
               </span>
-              <span className="text-[10px] text-white/60 uppercase tracking-widest">
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest">
                 Centro de Investigaciones ULA
               </span>
             </div>
@@ -86,8 +86,8 @@ export function Navbar() {
                     <button
                       className={`px-4 py-2 text-sm font-medium transition-colors duration-300 flex items-center gap-1 rounded-md ${
                         isActive(link.href)
-                          ? 'text-white bg-white/10'
-                          : 'text-white/80 hover:text-white hover:bg-white/5'
+                          ? 'text-slate-800 bg-slate-50'
+                          : 'text-slate-700 hover:text-slate-800 hover:bg-white'
                       }`}
                     >
                       {link.name}
@@ -95,14 +95,14 @@ export function Navbar() {
                     </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent 
-                    className="bg-ula-navy-light border-white/10 min-w-[180px]"
+                    className="bg-ula-navy-light border-slate-200 min-w-[180px]"
                     align="start"
                   >
                     {link.submenu.map((subItem) => (
                       <DropdownMenuItem key={subItem.name} asChild>
                         <Link
                           to={subItem.href}
-                          className="text-white/80 hover:text-white hover:bg-white/10 cursor-pointer"
+                          className="text-slate-700 hover:text-slate-800 hover:bg-slate-50 cursor-pointer"
                         >
                           {subItem.name}
                         </Link>
@@ -116,8 +116,8 @@ export function Navbar() {
                   to={link.href}
                   className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-md ${
                     isActive(link.href)
-                      ? 'text-white bg-white/10'
-                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                      ? 'text-slate-800 bg-slate-50'
+                      : 'text-slate-700 hover:text-slate-800 hover:bg-white'
                   }`}
                 >
                   {link.name}
@@ -137,7 +137,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+            className="lg:hidden p-2 text-slate-800 hover:bg-slate-50 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -155,15 +155,15 @@ export function Navbar() {
             isMobileMenuOpen ? 'max-h-96 mt-4' : 'max-h-0'
           }`}
         >
-          <nav className="flex flex-col gap-1 bg-ula-navy-light/90 backdrop-blur-md rounded-xl p-2 border border-white/10">
+          <nav className="flex flex-col gap-1 bg-ula-navy-light/90 backdrop-blur-md rounded-xl p-2 border border-slate-200">
             {navLinks.map((link) => (
               <div key={link.name}>
                 <Link
                   to={link.href}
                   className={`px-4 py-3 text-sm font-medium transition-all duration-300 rounded-lg ${
                     isActive(link.href)
-                      ? 'text-white bg-white/10'
-                      : 'text-white/80 hover:text-white hover:bg-white/5'
+                      ? 'text-slate-800 bg-slate-50'
+                      : 'text-slate-700 hover:text-slate-800 hover:bg-white'
                   }`}
                 >
                   {link.name}
@@ -174,7 +174,7 @@ export function Navbar() {
                       <Link
                         key={subItem.name}
                         to={subItem.href}
-                        className="px-4 py-2 text-xs text-white/60 hover:text-white transition-colors"
+                        className="px-4 py-2 text-xs text-slate-500 hover:text-slate-800 transition-colors"
                       >
                         {subItem.name}
                       </Link>

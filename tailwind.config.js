@@ -48,25 +48,25 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Colores institucionales FERMENTUM
+        // Colores institucionales FERMENTUM - TEMA CLARO ALEGRE
         ula: {
-          navy: "#1e3a5f",
-          "navy-light": "#2a4a73",
-          "navy-dark": "#152a45",
+          navy: "#eaf2f8",
+          "navy-light": "#d4e5f0",
+          "navy-dark": "#3d7ab8",
         },
         humanic: {
-          green: "#2d8659",
-          "green-light": "#3da76f",
-          "green-dark": "#1f5c3d",
+          green: "#34a86e",
+          "green-light": "#4ecb8a",
+          "green-dark": "#258a56",
         },
         neon: {
-          lime: "#a3e635",
-          "lime-light": "#bef264",
-          "lime-dark": "#84cc16",
+          lime: "#84d91c",
+          "lime-light": "#a8e85a",
+          "lime-dark": "#6bb312",
         },
         bronze: {
           DEFAULT: "#d4a574",
-          light: "#e4c4a0",
+          light: "#e8c090",
           dark: "#b8885a",
         },
       },
@@ -128,8 +128,8 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, #1e3a5f 0%, #2a4a73 50%, #1e3a5f 100%)",
-        "accent-gradient": "linear-gradient(90deg, #2d8659 0%, #a3e635 100%)",
+        "hero-gradient": "linear-gradient(135deg, #d4e5f0 0%, #eaf2f8 50%, #f0f7fa 100%)",
+        "accent-gradient": "linear-gradient(90deg, #34a86e 0%, #84d91c 100%)",
       },
     },
   },

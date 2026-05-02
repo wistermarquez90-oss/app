@@ -209,7 +209,7 @@ function ProductCard({ product }: { product: Product }) {
   const CategoryIcon = categoryInfo[product.category].icon;
 
   return (
-    <div className={`group relative bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${product.featured ? 'ring-1 ring-neon-lime/30' : ''}`}>
+    <div className={`group relative bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${product.featured ? 'ring-1 ring-neon-lime/30' : ''}`}>
       {/* Featured Badge */}
       {product.featured && (
         <div className="absolute top-3 right-3 z-10">
@@ -224,7 +224,7 @@ function ProductCard({ product }: { product: Product }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
           <CategoryIcon className="w-12 h-12 text-humanic-green/40 mb-2" />
-          <span className="text-white/30 text-sm font-medium">{product.name}</span>
+          <span className="text-slate-300 text-sm font-medium">{product.name}</span>
         </div>
         
         {/* Stock Badge */}
@@ -237,10 +237,10 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="text-white font-semibold mb-2 group-hover:text-neon-lime transition-colors line-clamp-2">
+        <h3 className="text-slate-800 font-semibold mb-2 group-hover:text-neon-lime transition-colors line-clamp-2">
           {product.name}
         </h3>
-        <p className="text-white/50 text-sm line-clamp-2 mb-3">
+        <p className="text-slate-400 text-sm line-clamp-2 mb-3">
           {product.description}
         </p>
         
@@ -248,9 +248,9 @@ function ProductCard({ product }: { product: Product }) {
         <div className="flex items-center justify-between mb-4">
           <div>
             <span className="text-2xl font-bold text-neon-lime">{product.price}</span>
-            <span className="text-white/40 text-sm ml-1">USD</span>
+            <span className="text-slate-400 text-sm ml-1">USD</span>
           </div>
-          <Badge variant="outline" className="bg-white/5 text-white/60 border-white/10">
+          <Badge variant="outline" className="bg-white text-slate-500 border-slate-200">
             <Tag className="w-3 h-3 mr-1" />
             {categoryInfo[product.category].name}
           </Badge>
@@ -267,17 +267,17 @@ function ProductCard({ product }: { product: Product }) {
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="bg-ula-navy-light border-white/10 max-w-md">
+          <DialogContent className="bg-ula-navy-light border-slate-200 max-w-md">
             <DialogHeader>
-              <DialogTitle className="text-white">{product.name}</DialogTitle>
-              <DialogDescription className="text-white/60">
+              <DialogTitle className="text-slate-800">{product.name}</DialogTitle>
+              <DialogDescription className="text-slate-500">
                 {product.description}
               </DialogDescription>
             </DialogHeader>
             <div className="mt-4 space-y-4">
-              <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+              <div className="p-4 bg-white rounded-lg border border-slate-200">
                 <h4 className="text-neon-lime font-semibold mb-2">Detalles del producto</h4>
-                <p className="text-white/70 text-sm">{product.details}</p>
+                <p className="text-slate-600 text-sm">{product.details}</p>
               </div>
               
               <div className="p-4 bg-neon-lime/10 rounded-lg border border-neon-lime/20">
@@ -285,19 +285,19 @@ function ProductCard({ product }: { product: Product }) {
                   <Phone className="w-4 h-4" />
                   Contacto para pedidos
                 </h4>
-                <p className="text-white/80 text-sm mb-2">
+                <p className="text-slate-700 text-sm mb-2">
                   Para adquirir este producto, contáctanos directamente:
                 </p>
                 <div className="flex items-center gap-3 mt-3">
                   <a 
                     href="tel:+582742712345" 
-                    className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg text-slate-800 hover:bg-white/20 transition-colors"
                   >
                     <Phone className="w-4 h-4 text-neon-lime" />
                     <span className="font-mono">(0274) 271-2345</span>
                   </a>
                 </div>
-                <p className="text-white/50 text-xs mt-2">
+                <p className="text-slate-400 text-xs mt-2">
                   Horario: Lunes a Viernes, 8:00 AM - 4:00 PM
                 </p>
               </div>
@@ -338,8 +338,8 @@ export function Catalogo() {
                 <Heart className="w-6 h-6 text-neon-lime" />
               </div>
               <div>
-                <h3 className="text-white font-semibold text-lg mb-1">Tu apoyo es fundamental</h3>
-                <p className="text-white/70 text-sm leading-relaxed">
+                <h3 className="text-slate-800 font-semibold text-lg mb-1">Tu apoyo es fundamental</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Todas las ganancias de este catálogo se destinan a financiar investigaciones, 
                   becas para estudiantes y el mantenimiento de nuestras publicaciones científicas. 
                   Al comprar, estás contribuyendo al desarrollo del conocimiento en la región andina.
@@ -351,13 +351,13 @@ export function Catalogo() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-12 bg-ula-navy-dark/30">
+      <section className="py-12 bg-sky-50/60">
         <div className="w-full section-padding">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-neon-lime/20 rounded-lg flex items-center justify-center">
               <ShoppingBag className="w-5 h-5 text-neon-lime" />
             </div>
-            <h2 className="text-xl font-bold text-white">Productos Destacados</h2>
+            <h2 className="text-xl font-bold text-slate-800">Productos Destacados</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -378,7 +378,7 @@ export function Catalogo() {
               onClick={() => setActiveCategory('todos')}
               className={activeCategory === 'todos' 
                 ? 'bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light' 
-                : 'border-white/20 text-white/80 hover:bg-white/10 hover:text-white'
+                : 'border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-800'
               }
             >
               <Package className="w-4 h-4 mr-2" />
@@ -393,7 +393,7 @@ export function Catalogo() {
                   onClick={() => setActiveCategory(key)}
                   className={activeCategory === key 
                     ? 'bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light' 
-                    : 'border-white/20 text-white/80 hover:bg-white/10 hover:text-white'
+                    : 'border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-800'
                   }
                 >
                   <Icon className="w-4 h-4 mr-2" />
@@ -412,11 +412,11 @@ export function Catalogo() {
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
-              <Package className="w-16 h-16 text-white/20 mx-auto mb-4" />
-              <h3 className="text-white text-xl font-semibold mb-2">
+              <Package className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+              <h3 className="text-slate-800 text-xl font-semibold mb-2">
                 No hay productos en esta categoría
               </h3>
-              <p className="text-white/50">
+              <p className="text-slate-400">
                 Selecciona otra categoría para ver más productos
               </p>
             </div>
@@ -425,13 +425,13 @@ export function Catalogo() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="py-12 lg:py-20 bg-sky-50/80">
         <div className="w-full section-padding">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
               ¿Interesado en algún producto?
             </h2>
-            <p className="text-white/70 mb-8">
+            <p className="text-slate-600 mb-8">
               Contáctanos directamente para realizar tu pedido. Ofrecemos descuentos 
               para estudiantes, investigadores y compras al mayor.
             </p>
@@ -446,17 +446,17 @@ export function Catalogo() {
               </a>
               <a 
                 href="mailto:libreria@humanic.ula.ve"
-                className="flex items-center gap-3 px-6 py-4 bg-white/5 hover:bg-white/10 border border-white/20 rounded-xl text-white font-semibold transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-4 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-semibold transition-all duration-300"
               >
                 <Info className="w-5 h-5" />
                 libreria@humanic.ula.ve
               </a>
             </div>
 
-            <div className="mt-8 p-4 bg-white/5 rounded-xl border border-white/10 max-w-lg mx-auto">
-              <p className="text-white/50 text-sm">
+            <div className="mt-8 p-4 bg-white rounded-xl border border-slate-200 max-w-lg mx-auto">
+              <p className="text-slate-400 text-sm">
                 <Info className="w-4 h-4 inline mr-2" />
-                <strong className="text-white/70">Nota importante:</strong> Los precios están sujetos 
+                <strong className="text-slate-600">Nota importante:</strong> Los precios están sujetos 
                 a cambio sin previo aviso. El inventario se actualiza semanalmente. 
                 Recomendamos confirmar disponibilidad antes de visitarnos.
               </p>

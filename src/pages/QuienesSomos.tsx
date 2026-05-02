@@ -43,7 +43,7 @@ export function QuienesSomos() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="relative py-12 lg:py-20 bg-sky-50/80">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
@@ -63,31 +63,31 @@ export function QuienesSomos() {
               <Badge className="bg-humanic-green/20 text-humanic-green border-humanic-green/30 mb-4">
                 Nuestra Historia
               </Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white font-serif mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 font-serif mb-6">
                 Más de tres décadas de <span className="text-neon-lime">conocimiento humano</span>
               </h2>
-              <div className="space-y-4 text-white/70 leading-relaxed">
+              <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  <strong className="text-white">HUMANIC</strong> (Centro de Investigaciones en Ciencias Humanas) 
+                  <strong className="text-slate-800">HUMANIC</strong> (Centro de Investigaciones en Ciencias Humanas) 
                   tiene sus orígenes en 1989, cuando un grupo de investigadores de la Universidad de Los Andes — 
-                  encabezados por la Profesora <strong className="text-white">Carmen Teresa García</strong> y el 
-                  Profesor <strong className="text-white">Oswaldo Jiménez</strong> — concibieron la Revista 
-                  <strong className="text-white"> FERMENTUM</strong> como un espacio de encuentro para sociólogos 
+                  encabezados por la Profesora <strong className="text-slate-800">Carmen Teresa García</strong> y el 
+                  Profesor <strong className="text-slate-800">Oswaldo Jiménez</strong> — concibieron la Revista 
+                  <strong className="text-slate-800"> FERMENTUM</strong> como un espacio de encuentro para sociólogos 
                   y antropólogos de la región andina, quienes se sentían aislados del diálogo académico nacional e internacional.
                 </p>
                 <p>
                   En abril de 1991 vio la luz el primer número de Fermentum, presentado en un Congreso Latinoamericano 
                   en La Habana, Cuba. Paralelamente, el grupo formalizó sus actividades como 
-                  <strong className="text-white"> GISAC</strong> (Grupo de Investigación de Sociología y Antropología de la Ciudad), 
+                  <strong className="text-slate-800"> GISAC</strong> (Grupo de Investigación de Sociología y Antropología de la Ciudad), 
                   con el apoyo del CDCCHT (Consejo de Desarrollo Científico, Humanístico y Tecnológico) y 
                   FUNDACITE del Estado Mérida.
                 </p>
                 <p>
                   Tras la muerte del Profesor Oswaldo Jiménez en 1994 y el año sabático de la Profesora García, 
                   el grupo se fortaleció con la incorporación de nuevos investigadores como 
-                  <strong className="text-white"> Alejandrina Silva</strong>, <strong className="text-white"> Nelson Morales</strong>, 
-                  <strong className="text-white"> Luz Pargas</strong>, <strong className="text-white"> Ana Rita Tiberi</strong> y 
-                  <strong className="text-white"> María Méndez Peña</strong>. En agosto de 1999 se solicitó formalmente 
+                  <strong className="text-slate-800"> Alejandrina Silva</strong>, <strong className="text-slate-800"> Nelson Morales</strong>, 
+                  <strong className="text-slate-800"> Luz Pargas</strong>, <strong className="text-slate-800"> Ana Rita Tiberi</strong> y 
+                  <strong className="text-slate-800"> María Méndez Peña</strong>. En agosto de 1999 se solicitó formalmente 
                   al Consejo Universitario el reconocimiento como Centro de Investigaciones, cimiento de lo que hoy es HUMANIC.
                 </p>
               </div>
@@ -97,23 +97,23 @@ export function QuienesSomos() {
               <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/20 to-neon-lime/10 rounded-3xl blur-2xl"></div>
               <div className="relative grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                  <div className="p-6 bg-white backdrop-blur-sm rounded-2xl border border-slate-200">
                     <div className="text-4xl font-bold text-neon-lime mb-2">45+</div>
-                    <div className="text-white/60 text-sm">Años de trayectoria</div>
+                    <div className="text-slate-500 text-sm">Años de trayectoria</div>
                   </div>
-                  <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                  <div className="p-6 bg-white backdrop-blur-sm rounded-2xl border border-slate-200">
                     <div className="text-4xl font-bold text-humanic-green mb-2">1,200+</div>
-                    <div className="text-white/60 text-sm">Artículos publicados</div>
+                    <div className="text-slate-500 text-sm">Artículos publicados</div>
                   </div>
                 </div>
                 <div className="space-y-4 pt-8">
-                  <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                  <div className="p-6 bg-white backdrop-blur-sm rounded-2xl border border-slate-200">
                     <div className="text-4xl font-bold text-bronze mb-2">180+</div>
-                    <div className="text-white/60 text-sm">Investigadores</div>
+                    <div className="text-slate-500 text-sm">Investigadores</div>
                   </div>
-                  <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
-                    <div className="text-4xl font-bold text-white mb-2">85K+</div>
-                    <div className="text-white/60 text-sm">Descargas anuales</div>
+                  <div className="p-6 bg-white backdrop-blur-sm rounded-2xl border border-slate-200">
+                    <div className="text-4xl font-bold text-slate-800 mb-2">85K+</div>
+                    <div className="text-slate-500 text-sm">Descargas anuales</div>
                   </div>
                 </div>
               </div>
@@ -123,16 +123,16 @@ export function QuienesSomos() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 lg:py-20 bg-ula-navy-dark/30">
+      <section className="py-12 lg:py-20 bg-sky-50/60">
         <div className="w-full section-padding">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
-            <div className="p-8 bg-white/5 rounded-2xl border border-white/10">
+            <div className="p-8 bg-white rounded-2xl border border-slate-200">
               <div className="w-14 h-14 rounded-xl bg-humanic-green/20 flex items-center justify-center mb-6">
                 <Target className="w-7 h-7 text-humanic-green" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Misión</h3>
-              <p className="text-white/70 leading-relaxed">
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Misión</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Nuestro compromiso se orienta en dos vertientes: hacia la Universidad, en la búsqueda 
                 de consolidar un espacio académico para la formación de recursos humanos y la producción, 
                 discusión e intercambio de conocimientos en las ciencias humanas; hacia el entorno social, 
@@ -142,12 +142,12 @@ export function QuienesSomos() {
             </div>
 
             {/* Vision */}
-            <div className="p-8 bg-white/5 rounded-2xl border border-white/10">
+            <div className="p-8 bg-white rounded-2xl border border-slate-200">
               <div className="w-14 h-14 rounded-xl bg-neon-lime/20 flex items-center justify-center mb-6">
                 <Eye className="w-7 h-7 text-neon-lime" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Visión</h3>
-              <p className="text-white/70 leading-relaxed">
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Visión</h3>
+              <p className="text-slate-600 leading-relaxed">
                 Ser un Centro de referencia académica a escala nacional e internacional en la 
                 producción de conocimientos y tecnología social en las ciencias humanas.
               </p>
@@ -167,7 +167,7 @@ export function QuienesSomos() {
 
           {/* General Objective */}
           <div className={`mb-12 ${objectivesVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <div className="p-8 bg-white/5 rounded-2xl border border-white/10 relative overflow-hidden">
+            <div className="p-8 bg-white rounded-2xl border border-slate-200 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-humanic-green"></div>
               <div className="flex items-start gap-6">
                 <div className="w-14 h-14 rounded-xl bg-humanic-green/20 flex items-center justify-center shrink-0">
@@ -177,10 +177,10 @@ export function QuienesSomos() {
                   <Badge className="bg-humanic-green/20 text-humanic-green border-humanic-green/30 mb-3">
                     Objetivo General
                   </Badge>
-                  <p className="text-white/80 text-lg leading-relaxed">
+                  <p className="text-slate-700 text-lg leading-relaxed">
                     Incentivar la reflexión, el estudio y la investigación de las distintas 
-                    manifestaciones de <strong className="text-white">lo humano</strong> y de la 
-                    <strong className="text-white"> vida en sociedad</strong>.
+                    manifestaciones de <strong className="text-slate-800">lo humano</strong> y de la 
+                    <strong className="text-slate-800"> vida en sociedad</strong>.
                   </p>
                 </div>
               </div>
@@ -228,17 +228,17 @@ export function QuienesSomos() {
             ].map((obj) => (
               <div
                 key={obj.num}
-                className="group p-6 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]"
+                className="group p-6 bg-white rounded-xl border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]"
               >
                 <div className="flex items-start gap-4">
                   <span className="text-3xl font-bold text-humanic-green/40 group-hover:text-humanic-green/60 transition-colors shrink-0">
                     {obj.num}
                   </span>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
+                    <h3 className="text-slate-800 font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
                       {obj.title}
                     </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
+                    <p className="text-slate-500 text-sm leading-relaxed">
                       {obj.desc}
                     </p>
                   </div>
@@ -265,7 +265,7 @@ export function QuienesSomos() {
                 <div 
                   key={value.title}
                   className={`
-                    group p-6 bg-white/5 rounded-xl border border-white/10 
+                    group p-6 bg-white rounded-xl border border-slate-200 
                     hover:border-humanic-green/50 transition-all duration-300 
                     hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]
                     ${valuesVisible ? 'animate-fade-in-up' : 'opacity-0'}
@@ -275,10 +275,10 @@ export function QuienesSomos() {
                   <div className="w-12 h-12 rounded-lg bg-humanic-green/10 flex items-center justify-center mb-4 group-hover:bg-humanic-green/20 transition-colors">
                     <Icon className="w-6 h-6 text-humanic-green group-hover:text-neon-lime transition-colors" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
+                  <h3 className="text-slate-800 font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
                     {value.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -289,7 +289,7 @@ export function QuienesSomos() {
       </section>
 
       {/* Research Lines */}
-      <section id="lineas" ref={linesRef} className="py-12 lg:py-20 bg-ula-navy-dark/30">
+      <section id="lineas" ref={linesRef} className="py-12 lg:py-20 bg-sky-50/60">
         <div className="w-full section-padding">
           <SectionHeader
             title="Líneas de Investigación"
@@ -302,7 +302,7 @@ export function QuienesSomos() {
               <div 
                 key={line.id}
                 className={`
-                  group p-6 bg-white/5 rounded-xl border border-white/10 
+                  group p-6 bg-white rounded-xl border border-slate-200 
                   hover:border-neon-lime/50 transition-all duration-300 
                   hover:-translate-y-1 hover:shadow-lg
                   ${linesVisible ? 'animate-fade-in-up' : 'opacity-0'}
@@ -313,25 +313,25 @@ export function QuienesSomos() {
                   <div className="w-10 h-10 rounded-lg bg-neon-lime/10 flex items-center justify-center">
                     <Award className="w-5 h-5 text-neon-lime" />
                   </div>
-                  <Badge className="bg-white/10 text-white/70">
+                  <Badge className="bg-slate-50 text-slate-600">
                     {line.publications} publ.
                   </Badge>
                 </div>
                 
-                <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
+                <h3 className="text-slate-800 font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
                   {line.name}
                 </h3>
                 
-                <p className="text-white/60 text-sm leading-relaxed mb-4">
+                <p className="text-slate-500 text-sm leading-relaxed mb-4">
                   {line.description}
                 </p>
 
-                <div className="pt-4 border-t border-white/10">
+                <div className="pt-4 border-t border-slate-200">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-white/50">
-                      Coordinador: <span className="text-white/70">{line.leader}</span>
+                    <span className="text-slate-400">
+                      Coordinador: <span className="text-slate-600">{line.leader}</span>
                     </span>
-                    <span className="text-white/50">
+                    <span className="text-slate-400">
                       {line.members} miembros
                     </span>
                   </div>
@@ -364,7 +364,7 @@ export function QuienesSomos() {
                 <div 
                   key={member.id}
                   className={`
-                    group text-center p-6 bg-white/5 rounded-xl border border-white/10 
+                    group text-center p-6 bg-white rounded-xl border border-slate-200 
                     hover:border-humanic-green/50 transition-all duration-300 
                     hover:-translate-y-1 hover:bg-white/[0.07]
                     ${teamVisible ? 'animate-fade-in-up' : 'opacity-0'}
@@ -377,7 +377,7 @@ export function QuienesSomos() {
                     </AvatarFallback>
                   </Avatar>
                   
-                  <h3 className="text-white font-semibold mb-1 group-hover:text-neon-lime transition-colors">
+                  <h3 className="text-slate-800 font-semibold mb-1 group-hover:text-neon-lime transition-colors">
                     {member.name}
                   </h3>
                   
@@ -385,7 +385,7 @@ export function QuienesSomos() {
                     {member.role}
                   </p>
                   
-                  <p className="text-white/50 text-xs leading-relaxed">
+                  <p className="text-slate-400 text-xs leading-relaxed">
                     {member.bio}
                   </p>
                 </div>

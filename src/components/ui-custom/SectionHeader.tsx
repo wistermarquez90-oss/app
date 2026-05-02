@@ -23,9 +23,9 @@ export function SectionHeader({
     right: 'text-right',
   };
 
-  const titleColor = variant === 'light' ? 'text-ula-navy' : 'text-white';
+  const titleColor = variant === 'light' ? 'text-ula-navy' : 'text-slate-800';
   const subtitleColor = variant === 'light' ? 'text-humanic-green' : 'text-neon-lime';
-  const descColor = variant === 'light' ? 'text-ula-navy/70' : 'text-white/60';
+  const descColor = variant === 'light' ? 'text-ula-navy/70' : 'text-slate-500';
 
   return (
     <div 

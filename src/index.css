@@ -6,47 +6,47 @@
 
 @layer base {
   :root {
-    --background: 210 35% 15%;
-    --foreground: 0 0% 98%;
-    --card: 210 35% 18%;
-    --card-foreground: 0 0% 98%;
-    --popover: 210 35% 18%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 210 52% 24%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 150 50% 35%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 210 30% 25%;
-    --muted-foreground: 210 20% 70%;
-    --accent: 82 85% 55%;
-    --accent-foreground: 210 52% 15%;
+    --background: 210 35% 96%;
+    --foreground: 210 30% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 18%;
+    --primary: 210 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 50% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 25% 92%;
+    --muted-foreground: 210 15% 45%;
+    --accent: 82 80% 48%;
+    --accent-foreground: 210 30% 18%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 30% 25%;
-    --input: 210 30% 25%;
-    --ring: 82 85% 55%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 82 80% 48%;
     --radius: 0.625rem;
-    --sidebar-background: 210 35% 12%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 82 85% 55%;
-    --sidebar-primary-foreground: 210 52% 15%;
-    --sidebar-accent: 210 30% 20%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 210 30% 25%;
-    --sidebar-ring: 82 85% 55%;
+    --sidebar-background: 210 35% 98%;
+    --sidebar-foreground: 210 30% 18%;
+    --sidebar-primary: 82 80% 48%;
+    --sidebar-primary-foreground: 210 30% 18%;
+    --sidebar-accent: 210 25% 94%;
+    --sidebar-accent-foreground: 210 30% 18%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 82 80% 48%;
     
-    /* Colores institucionales */
-    --ula-navy: #1e3a5f;
-    --ula-navy-light: #2a4a73;
-    --ula-navy-dark: #152a45;
-    --humanic-green: #2d8659;
-    --humanic-green-light: #3da76f;
-    --humanic-green-dark: #1f5c3d;
-    --neon-lime: #a3e635;
-    --neon-lime-light: #bef264;
-    --neon-lime-dark: #84cc16;
+    /* Colores institucionales - TEMA CLARO */
+    --ula-navy: #eaf2f8;
+    --ula-navy-light: #d4e5f0;
+    --ula-navy-dark: #3d7ab8;
+    --humanic-green: #34a86e;
+    --humanic-green-light: #4ecb8a;
+    --humanic-green-dark: #258a56;
+    --neon-lime: #84d91c;
+    --neon-lime-light: #a8e85a;
+    --neon-lime-dark: #6bb312;
     --bronze: #d4a574;
-    --bronze-light: #e4c4a0;
+    --bronze-light: #e8c090;
     --bronze-dark: #b8885a;
   }
 }
@@ -63,6 +63,8 @@
   body {
     @apply bg-ula-navy text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(180deg, #eaf2f8 0%, #f5f9fb 50%, #eaf2f8 100%);
+    min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -72,19 +74,19 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-lime to-humanic-green;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-humanic-green to-neon-lime;
   }
   
   .btn-primary {
     @apply px-6 py-3 bg-humanic-green text-white font-medium rounded-lg 
            transition-all duration-300 hover:bg-humanic-green-light 
-           hover:shadow-glow active:scale-95;
+           hover:shadow-lg active:scale-95;
   }
   
   .btn-accent {
-    @apply px-6 py-3 bg-neon-lime text-ula-navy-dark font-semibold rounded-lg 
+    @apply px-6 py-3 bg-neon-lime text-white font-semibold rounded-lg 
            transition-all duration-300 hover:bg-neon-lime-light 
-           hover:shadow-glow-strong active:scale-95;
+           hover:shadow-lg active:scale-95;
   }
   
   .card-hover {
@@ -96,18 +98,18 @@
   }
   
   .glass-effect {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/70 backdrop-blur-md border border-slate-200/60 shadow-sm;
   }
   
   .nav-link {
-    @apply relative text-white/80 hover:text-white transition-colors duration-300
+    @apply relative text-slate-600 hover:text-slate-900 transition-colors duration-300
            after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
-           after:bg-neon-lime after:transition-all after:duration-300
+           after:bg-humanic-green after:transition-all after:duration-300
            hover:after:w-full;
   }
   
   .nav-link.active {
-    @apply text-white after:w-full;
+    @apply text-slate-900 after:w-full;
   }
 }
 
@@ -135,7 +137,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--ula-navy-dark);
+  background: #d4e5f0;
 }
 
 ::-webkit-scrollbar-thumb {

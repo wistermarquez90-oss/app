@@ -35,7 +35,7 @@ export function StatCounter({ label, value, suffix = '', icon }: StatCounterProp
   return (
     <div 
       ref={ref}
-      className="group relative p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-neon-lime/30 transition-all duration-500 hover:shadow-glow"
+      className="group relative p-6 bg-white rounded-2xl border border-slate-200 hover:border-neon-lime/30 transition-all duration-500 hover:shadow-glow"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-humanic-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
@@ -46,14 +46,14 @@ export function StatCounter({ label, value, suffix = '', icon }: StatCounterProp
         
         <div className="flex-1">
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold text-white font-serif">
+            <span className="text-4xl font-bold text-slate-800 font-serif">
               {count.toLocaleString()}
             </span>
             {suffix && (
               <span className="text-2xl font-bold text-neon-lime">{suffix}</span>
             )}
           </div>
-          <p className="text-white/60 text-sm mt-1">{label}</p>
+          <p className="text-slate-500 text-sm mt-1">{label}</p>
         </div>
       </div>
     </div>

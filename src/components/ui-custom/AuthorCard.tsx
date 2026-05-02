@@ -22,7 +22,7 @@ export function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
     return (
       <Link 
         to={`/autores/${author.id}`}
-        className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-humanic-green/50 hover:bg-white/[0.07] transition-all duration-300 group"
+        className="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-humanic-green/50 hover:bg-white/[0.07] transition-all duration-300 group"
       >
         <Avatar className="w-10 h-10 bg-humanic-green/20 border border-humanic-green/30">
           <AvatarFallback className="bg-humanic-green/20 text-humanic-green text-sm font-medium">
@@ -30,18 +30,18 @@ export function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 min-w-0">
-          <h4 className="text-white font-medium text-sm group-hover:text-neon-lime transition-colors truncate">
+          <h4 className="text-slate-800 font-medium text-sm group-hover:text-neon-lime transition-colors truncate">
             {author.name}
           </h4>
-          <p className="text-white/50 text-xs truncate">{author.affiliation}</p>
+          <p className="text-slate-400 text-xs truncate">{author.affiliation}</p>
         </div>
-        <ExternalLink className="w-4 h-4 text-white/30 group-hover:text-humanic-green transition-colors" />
+        <ExternalLink className="w-4 h-4 text-slate-300 group-hover:text-humanic-green transition-colors" />
       </Link>
     );
   }
 
   return (
-    <div className="group bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="p-6">
         <div className="flex items-start gap-4 mb-4">
           <Avatar className="w-16 h-16 bg-humanic-green/20 border-2 border-humanic-green/30">
@@ -50,16 +50,16 @@ export function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
             </AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
-            <h3 className="text-white font-semibold text-lg group-hover:text-neon-lime transition-colors">
+            <h3 className="text-slate-800 font-semibold text-lg group-hover:text-neon-lime transition-colors">
               {author.name}
             </h3>
-            <p className="text-white/50 text-sm mt-1 line-clamp-2">
+            <p className="text-slate-400 text-sm mt-1 line-clamp-2">
               {author.affiliation}
             </p>
           </div>
         </div>
         
-        <p className="text-white/60 text-sm line-clamp-3 mb-4">
+        <p className="text-slate-500 text-sm line-clamp-3 mb-4">
           {author.bio}
         </p>
         
@@ -75,14 +75,14 @@ export function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
           ))}
         </div>
         
-        <div className="flex items-center justify-between pt-4 border-t border-white/10">
-          <div className="flex items-center gap-4 text-white/50 text-sm">
+        <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+          <div className="flex items-center gap-4 text-slate-400 text-sm">
             <span className="flex items-center gap-1">
               <BookOpen className="w-4 h-4" />
               {author.articlesCount} artículos
             </span>
             {author.orcid && (
-              <span className="text-xs text-white/40">
+              <span className="text-xs text-slate-400">
                 ORCID: {author.orcid}
               </span>
             )}
@@ -92,7 +92,7 @@ export function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
             <Button 
               size="sm" 
               variant="ghost"
-              className="text-white/60 hover:text-white hover:bg-white/10"
+              className="text-slate-500 hover:text-slate-800 hover:bg-slate-50"
               asChild
             >
               <a href={`mailto:${author.email}`}>

@@ -44,24 +44,24 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white backdrop-blur-sm rounded-full border border-slate-200">
               <Sparkles className="w-4 h-4 text-neon-lime" />
-              <span className="text-sm text-white/80">Nuevo Volumen {latestVolume.year}</span>
+              <span className="text-sm text-slate-700">Nuevo Volumen {latestVolume.year}</span>
             </div>
 
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white font-serif leading-tight mb-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-800 font-serif leading-tight mb-4">
                 HUMANIC
               </h1>
               <p className="text-xl sm:text-2xl text-neon-lime font-medium mb-2">
                 Centro de Investigaciones en Ciencias Humanas
               </p>
-              <p className="text-white/60 text-lg max-w-xl">
+              <p className="text-slate-500 text-lg max-w-xl">
                 Universidad de Los Andes - ULA
               </p>
             </div>
 
-            <p className="text-white/70 text-base lg:text-lg leading-relaxed max-w-xl">
+            <p className="text-slate-600 text-base lg:text-lg leading-relaxed max-w-xl">
               Centro de investigación dedicado al estudio y difusión del conocimiento 
               sobre las ciencias humanas en la región andina. Publicamos la revista 
               FERMENTUM y promovemos la investigación académica de excelencia.
@@ -81,7 +81,7 @@ function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-white/40 px-8"
                 asChild
               >
                 <Link to="/normas">
@@ -102,8 +102,8 @@ function HeroSection() {
                 ))}
               </div>
               <div>
-                <p className="text-white font-semibold">+180 Investigadores</p>
-                <p className="text-white/50 text-sm">Red académica activa</p>
+                <p className="text-slate-800 font-semibold">+180 Investigadores</p>
+                <p className="text-slate-400 text-sm">Red académica activa</p>
               </div>
             </div>
           </div>
@@ -111,22 +111,22 @@ function HeroSection() {
           {/* Right Content - Featured Article Card */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/20 to-neon-lime/20 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 lg:p-8">
+            <div className="relative bg-white backdrop-blur-md rounded-2xl border border-slate-200 p-6 lg:p-8">
               <div className="flex items-center justify-between mb-6">
                 <Badge className="bg-neon-lime/20 text-neon-lime border-neon-lime/30">
                   <Star className="w-3 h-3 mr-1" />
                   Artículo Destacado
                 </Badge>
-                <span className="text-white/40 text-sm">
+                <span className="text-slate-400 text-sm">
                   Vol. {latestVolume.number}, N° 1
                 </span>
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 line-clamp-3">
+              <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-4 line-clamp-3">
                 {featuredArticles[0].title}
               </h3>
 
-              <p className="text-white/60 text-sm leading-relaxed mb-6 line-clamp-4">
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-4">
                 {featuredArticles[0].abstract}
               </p>
 
@@ -134,15 +134,15 @@ function HeroSection() {
                 {featuredArticles[0].keywords.slice(0, 4).map((keyword) => (
                   <span 
                     key={keyword}
-                    className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/60"
+                    className="px-3 py-1 bg-white rounded-full text-xs text-slate-500"
                   >
                     {keyword}
                   </span>
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                <div className="text-sm text-white/50">
+              <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+                <div className="text-sm text-slate-400">
                   {featuredArticles[0].authors.map(a => a.name).join(', ')}
                 </div>
                 <Button 
@@ -168,7 +168,7 @@ function StatsSectionWrapper() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section className="relative py-16 lg:py-24 bg-ula-navy-dark/50">
+    <section className="relative py-16 lg:py-24 bg-sky-50/80">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/5 via-transparent to-transparent"></div>
       
       <div ref={ref} className="relative w-full section-padding">
@@ -213,7 +213,7 @@ function FeaturedArticlesSection() {
           <Button 
             size="lg"
             variant="outline"
-            className="border-white/20 text-white hover:bg-white/10 hover:border-neon-lime/50 group"
+            className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-neon-lime/50 group"
             asChild
           >
             <Link to="/revista">
@@ -231,7 +231,7 @@ function CategoriesSection() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative py-16 lg:py-24 bg-ula-navy-dark/30">
+    <section ref={ref} className="relative py-16 lg:py-24 bg-sky-50/60">
       <div className="w-full section-padding">
         <SectionHeader
           title="Áreas de Investigación"
@@ -247,7 +247,7 @@ function CategoriesSection() {
                 key={category.id}
                 to={`/revista?categoria=${category.id}`}
                 className={`
-                  group relative p-6 bg-white/5 rounded-xl border border-white/10 
+                  group relative p-6 bg-white rounded-xl border border-slate-200 
                   hover:border-humanic-green/50 transition-all duration-300 
                   hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]
                   ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}
@@ -264,11 +264,11 @@ function CategoriesSection() {
                   />
                 </div>
                 
-                <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
+                <h3 className="text-slate-800 font-semibold text-lg mb-2 group-hover:text-neon-lime transition-colors">
                   {category.name}
                 </h3>
                 
-                <p className="text-white/50 text-sm leading-relaxed">
+                <p className="text-slate-400 text-sm leading-relaxed">
                   {category.description}
                 </p>
 
@@ -288,7 +288,7 @@ function NewsletterSection() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section ref={ref} className="relative py-16 lg:py-20 bg-ula-navy-dark/50">
+    <section ref={ref} className="relative py-16 lg:py-20 bg-sky-50/80">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/5 via-transparent to-transparent"></div>
       
       <div className="relative w-full section-padding">
@@ -308,11 +308,11 @@ function CTASection() {
       
       <div className="relative w-full section-padding">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold text-white font-serif mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 font-serif mb-6">
             ¿Tienes una investigación lista para publicar?
           </h2>
           
-          <p className="text-white/70 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">
             FERMENTUM te invita a contribuir al conocimiento científico sobre la región andina. 
             Nuestro proceso de revisión por pares garantiza la calidad académica.
           </p>
@@ -331,7 +331,7 @@ function CTASection() {
             <Button 
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 px-8"
+              className="border-white/30 text-slate-800 hover:bg-slate-50 px-8"
               asChild
             >
               <Link to="/contacto">

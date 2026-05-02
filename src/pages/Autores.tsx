@@ -51,7 +51,7 @@ export function Autores() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-ula-navy-dark/50">
+      <section className="relative py-12 lg:py-20 bg-sky-50/80">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
@@ -66,7 +66,7 @@ export function Autores() {
       {/* Featured Authors */}
       <section className="py-12 lg:py-16">
         <div className="w-full section-padding">
-          <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-humanic-green to-neon-lime flex items-center justify-center">
               <User className="w-5 h-5 text-ula-navy-dark" />
             </span>
@@ -88,29 +88,29 @@ export function Autores() {
       </section>
 
       {/* All Authors */}
-      <section ref={ref} className="py-12 lg:py-16 bg-ula-navy-dark/30">
+      <section ref={ref} className="py-12 lg:py-16 bg-sky-50/60">
         <div className="w-full section-padding">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
               <BookOpen className="w-6 h-6 text-humanic-green" />
               Todos los Autores
             </h2>
             
-            <p className="text-white/60">
-              <span className="text-white font-semibold">{filteredAuthors.length}</span> investigadores registrados
+            <p className="text-slate-500">
+              <span className="text-slate-800 font-semibold">{filteredAuthors.length}</span> investigadores registrados
             </p>
           </div>
 
           {/* Filters */}
           <div className="flex flex-col lg:flex-row gap-4 mb-8">
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
               <Input
                 type="text"
                 placeholder="Buscar por nombre, afiliación..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-humanic-green focus:ring-humanic-green/20"
+                className="pl-12 bg-white border-slate-200 text-slate-800 placeholder:text-slate-400 focus:border-humanic-green focus:ring-humanic-green/20"
               />
             </div>
 
@@ -118,7 +118,7 @@ export function Autores() {
               <select
                 value={selectedSpecialty}
                 onChange={(e) => setSelectedSpecialty(e.target.value)}
-                className="px-4 py-2 bg-white/5 border border-white/20 rounded-md text-white/80 focus:border-humanic-green focus:outline-none"
+                className="px-4 py-2 bg-white border border-slate-200 rounded-md text-slate-700 focus:border-humanic-green focus:outline-none"
               >
                 <option value="" className="bg-ula-navy">Todas las especialidades</option>
                 {specialties.map(specialty => (
@@ -131,7 +131,7 @@ export function Autores() {
               {hasActiveFilters && (
                 <Button
                   variant="ghost"
-                  className="text-white/60 hover:text-white hover:bg-white/10"
+                  className="text-slate-500 hover:text-slate-800 hover:bg-slate-50"
                   onClick={clearFilters}
                 >
                   <X className="w-4 h-4 mr-2" />
@@ -145,13 +145,13 @@ export function Autores() {
           {hasActiveFilters && (
             <div className="flex flex-wrap gap-2 mb-6">
               {searchQuery && (
-                <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
+                <Badge className="bg-slate-50 text-slate-700 hover:bg-white/20">
                   Búsqueda: {searchQuery}
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSearchQuery('')} />
                 </Badge>
               )}
               {selectedSpecialty && (
-                <Badge className="bg-white/10 text-white/80 hover:bg-white/20">
+                <Badge className="bg-slate-50 text-slate-700 hover:bg-white/20">
                   Especialidad: {selectedSpecialty}
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedSpecialty('')} />
                 </Badge>
@@ -174,7 +174,7 @@ export function Autores() {
                   <div 
                     key={author.id}
                     className={`
-                      group p-5 bg-white/5 rounded-xl border border-white/10 
+                      group p-5 bg-white rounded-xl border border-slate-200 
                       hover:border-humanic-green/50 transition-all duration-300 
                       hover:bg-white/[0.07] hover:-translate-y-1
                       ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}
@@ -188,10 +188,10 @@ export function Autores() {
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-white font-semibold group-hover:text-neon-lime transition-colors line-clamp-2">
+                        <h3 className="text-slate-800 font-semibold group-hover:text-neon-lime transition-colors line-clamp-2">
                           {author.name}
                         </h3>
-                        <p className="text-white/50 text-xs mt-1 line-clamp-2">
+                        <p className="text-slate-400 text-xs mt-1 line-clamp-2">
                           {author.affiliation}
                         </p>
                       </div>
@@ -208,8 +208,8 @@ export function Autores() {
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between pt-3 border-t border-white/10">
-                      <span className="text-white/50 text-sm flex items-center gap-1">
+                    <div className="flex items-center justify-between pt-3 border-t border-slate-200">
+                      <span className="text-slate-400 text-sm flex items-center gap-1">
                         <BookOpen className="w-4 h-4" />
                         {author.articlesCount} artículos
                       </span>
@@ -230,16 +230,16 @@ export function Autores() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <User className="w-16 h-16 text-white/20 mx-auto mb-4" />
-              <h3 className="text-white text-xl font-semibold mb-2">
+              <User className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+              <h3 className="text-slate-800 text-xl font-semibold mb-2">
                 No se encontraron autores
               </h3>
-              <p className="text-white/50 mb-6">
+              <p className="text-slate-400 mb-6">
                 Intenta ajustar los filtros de búsqueda
               </p>
               <Button 
                 variant="outline" 
-                className="border-white/20 text-white hover:bg-white/10"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50"
                 onClick={clearFilters}
               >
                 Limpiar filtros
@@ -253,10 +253,10 @@ export function Autores() {
       <section className="py-16 lg:py-24">
         <div className="w-full section-padding">
           <div className="max-w-3xl mx-auto text-center p-8 lg:p-12 bg-gradient-to-br from-humanic-green/20 to-neon-lime/10 rounded-2xl border border-humanic-green/30">
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
               ¿Eres investigador y quieres publicar?
             </h2>
-            <p className="text-white/70 mb-8">
+            <p className="text-slate-600 mb-8">
               Únete a nuestra red de investigadores y contribuye al conocimiento científico 
               sobre la región andina. Revisa nuestras normas de publicación.
             </p>
@@ -271,7 +271,7 @@ export function Autores() {
               </Button>
               <Button 
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
+                className="border-white/30 text-slate-800 hover:bg-slate-50"
                 asChild
               >
                 <Link to="/contacto">
