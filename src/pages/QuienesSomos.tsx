@@ -225,7 +225,7 @@ export function QuienesSomos() {
                 title: 'Acompañamiento social',
                 desc: 'Llevar a cabo actividades de acompañamiento social en las comunidades.',
               },
-            ].map((obj, index) => (
+            ].map((obj) => (
               <div
                 key={obj.num}
                 className="group p-6 bg-white/5 rounded-xl border border-white/10 hover:border-humanic-green/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/[0.07]"
