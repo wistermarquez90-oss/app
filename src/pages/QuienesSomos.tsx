@@ -9,32 +9,27 @@ const values = [
   {
     icon: BookOpen,
     title: 'Excelencia Académica',
-    description: 'Compromiso con los más altos estándares de calidad en la investigación científica.',
+    description: 'Compromiso con los más altos estándares de calidad en la producción, discusión e intercambio de conocimientos en las ciencias humanas.',
   },
   {
     icon: Globe,
-    title: 'Impacto Regional',
-    description: 'Contribución al desarrollo sostenible de la región andina mediante el conocimiento.',
-  },
-  {
-    icon: Users,
-    title: 'Colaboración',
-    description: 'Trabajo en red con investigadores, instituciones y comunidades locales.',
-  },
-  {
-    icon: Leaf,
-    title: 'Sostenibilidad',
-    description: 'Enfoque en el desarrollo sostenible y la preservación del patrimonio natural.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Innovación',
-    description: 'Promoción de nuevas metodologías y enfoques interdisciplinarios.',
+    title: 'Flexibilidad y Versatilidad',
+    description: 'Capacidad de adaptación a los cambios y apertura a nuevas metodologías y enfoques interdisciplinarios.',
   },
   {
     icon: Heart,
-    title: 'Compromiso Social',
-    description: 'Investigación orientada al bienestar de las comunidades andinas.',
+    title: 'Responsabilidad Social',
+    description: 'Valorización del sentido de lo humano y aporte de conocimientos para el bienestar común.',
+  },
+  {
+    icon: Users,
+    title: 'Trabajo en Equipo',
+    description: 'La conjunción de habilidades y conocimientos de los miembros en función de los propósitos comunes.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Sentido de Pertenencia',
+    description: 'Espíritu de cuerpo que incentiva la obtención de logros individuales y colectivos.',
   },
 ];
 
@@ -68,28 +63,31 @@ export function QuienesSomos() {
                 Nuestra Historia
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold text-white font-serif mb-6">
-                Cuatro décadas de <span className="text-neon-lime">conocimiento andino</span>
+                Más de tres décadas de <span className="text-neon-lime">conocimiento humano</span>
               </h2>
               <div className="space-y-4 text-white/70 leading-relaxed">
                 <p>
                   <strong className="text-white">HUMANIC</strong> (Centro de Investigaciones en Ciencias Humanas) 
-                  nace en 1979 como iniciativa de un grupo de investigadores de la Universidad 
-                  de Los Andes comprometidos con el estudio científico de las ciencias humanas 
-                  y sociales en la región andina venezolana. Desde entonces, se ha consolidado 
-                  como uno de los centros de investigación más importantes del país.
+                  tiene sus orígenes en 1989, cuando un grupo de investigadores de la Universidad de Los Andes — 
+                  encabezados por la Profesora <strong className="text-white">Carmen Teresa García</strong> y el 
+                  Profesor <strong className="text-white">Oswaldo Jiménez</strong> — concibieron la Revista 
+                  <strong className="text-white"> FERMENTUM</strong> como un espacio de encuentro para sociólogos 
+                  y antropólogos de la región andina, quienes se sentían aislados del diálogo académico nacional e internacional.
                 </p>
                 <p>
-                  Como parte de su misión de difusión del conocimiento, HUMANIC publica la revista 
-                  <strong className="text-white"> FERMENTUM</strong>, una publicación semestral con 
-                  arbitraje internacional especializada en ciencias sociales, economía, humanidades 
-                  y ciencias naturales. El nombre "FERMENTUM" evoca el proceso de transformación 
-                  y crecimiento que caracteriza tanto a la región andina como al conocimiento científico.
+                  En abril de 1991 vio la luz el primer número de Fermentum, presentado en un Congreso Latinoamericano 
+                  en La Habana, Cuba. Paralelamente, el grupo formalizó sus actividades como 
+                  <strong className="text-white"> GISAC</strong> (Grupo de Investigación de Sociología y Antropología de la Ciudad), 
+                  con el apoyo del CDCCHT (Consejo de Desarrollo Científico, Humanístico y Tecnológico) y 
+                  FUNDACITE del Estado Mérida.
                 </p>
                 <p>
-                  Nuestra revista ha publicado más de 1,200 artículos de investigadores nacionales e 
-                  internacionales, contribuyendo significativamente al desarrollo académico de la región. 
-                  Actualmente, FERMENTUM mantiene un riguroso proceso de arbitraje y está 
-                  indexada en múltiples bases de datos académicas.
+                  Tras la muerte del Profesor Oswaldo Jiménez en 1994 y el año sabático de la Profesora García, 
+                  el grupo se fortaleció con la incorporación de nuevos investigadores como 
+                  <strong className="text-white"> Alejandrina Silva</strong>, <strong className="text-white"> Nelson Morales</strong>, 
+                  <strong className="text-white"> Luz Pargas</strong>, <strong className="text-white"> Ana Rita Tiberi</strong> y 
+                  <strong className="text-white"> María Méndez Peña</strong>. En agosto de 1999 se solicitó formalmente 
+                  al Consejo Universitario el reconocimiento como Centro de Investigaciones, cimiento de lo que hoy es HUMANIC.
                 </p>
               </div>
             </div>
@@ -134,11 +132,11 @@ export function QuienesSomos() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Misión</h3>
               <p className="text-white/70 leading-relaxed">
-                Difundir el conocimiento científico de excelencia sobre la región andina, 
-                promoviendo la investigación interdisciplinaria que contribuya al desarrollo 
-                sostenible, la preservación del patrimonio cultural y natural, y el bienestar 
-                de las comunidades locales. Facilitamos un espacio de diálogo académico riguroso 
-                que conecta investigadores, instituciones y sociedad.
+                Nuestro compromiso se orienta en dos vertientes: hacia la Universidad, en la búsqueda 
+                de consolidar un espacio académico para la formación de recursos humanos y la producción, 
+                discusión e intercambio de conocimientos en las ciencias humanas; hacia el entorno social, 
+                valorizando el sentido de lo humano y aportando conocimientos y experticias para el 
+                logro del bien y del bienestar común.
               </p>
             </div>
 
@@ -149,11 +147,8 @@ export function QuienesSomos() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Visión</h3>
               <p className="text-white/70 leading-relaxed">
-                Ser la revista científica de referencia en Latinoamérica para el estudio de 
-                regiones de montaña, reconocida por la calidad académica de sus publicaciones, 
-                su impacto en políticas públicas y su contribución al desarrollo sostenible. 
-                Consolidarnos como un puente entre el conocimiento científico y las necesidades 
-                de las comunidades andinas.
+                Ser un Centro de referencia académica a escala nacional e internacional en la 
+                producción de conocimientos y tecnología social en las ciencias humanas.
               </p>
             </div>
           </div>
@@ -164,9 +159,9 @@ export function QuienesSomos() {
       <section ref={valuesRef} className="py-12 lg:py-20">
         <div className="w-full section-padding">
           <SectionHeader
-            title="Nuestros Valores"
-            subtitle="Principios Fundamentales"
-            description="Los valores que guían nuestro trabajo editorial y académico"
+            title="Nuestros Principios"
+            subtitle="Filosofía de Gestión"
+            description="Los valores y creencias que guían las acciones de los miembros de HUMANIC"
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
