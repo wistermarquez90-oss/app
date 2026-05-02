@@ -1,4 +1,4 @@
-import { Target, Eye, BookOpen, Users, Award, Globe, Leaf, Lightbulb, Heart } from 'lucide-react';
+import { Target, Eye, BookOpen, Users, Award, Globe, Lightbulb, Heart } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
