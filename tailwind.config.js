@@ -48,11 +48,11 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Colores institucionales FERMENTUM - TEMA CLARO ALEGRE
+        // Colores institucionales FERMENTUM - TEMA CLARO CELESTE
         ula: {
-          navy: "#eaf2f8",
-          "navy-light": "#d4e5f0",
-          "navy-dark": "#3d7ab8",
+          navy: "#e0f2fe",
+          "navy-light": "#bae6fd",
+          "navy-dark": "#0284c7",
         },
         humanic: {
           green: "#34a86e",
@@ -128,7 +128,7 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, #d4e5f0 0%, #eaf2f8 50%, #f0f7fa 100%)",
+        "hero-gradient": "linear-gradient(135deg, #bae6fd 0%, #e0f2fe 50%, #f0f9ff 100%)",
         "accent-gradient": "linear-gradient(90deg, #34a86e 0%, #84d91c 100%)",
       },
     },

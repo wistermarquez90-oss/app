@@ -35,10 +35,10 @@
     --sidebar-border: 210 20% 88%;
     --sidebar-ring: 82 80% 48%;
     
-    /* Colores institucionales - TEMA CLARO */
-    --ula-navy: #eaf2f8;
-    --ula-navy-light: #d4e5f0;
-    --ula-navy-dark: #3d7ab8;
+    /* Colores institucionales - TEMA CLARO CELESTE */
+    --ula-navy: #e0f2fe;
+    --ula-navy-light: #bae6fd;
+    --ula-navy-dark: #0284c7;
     --humanic-green: #34a86e;
     --humanic-green-light: #4ecb8a;
     --humanic-green-dark: #258a56;
@@ -63,7 +63,7 @@
   body {
     @apply bg-ula-navy text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(180deg, #eaf2f8 0%, #f5f9fb 50%, #eaf2f8 100%);
+    background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 50%, #e0f2fe 100%);
     min-height: 100vh;
   }
   
@@ -137,7 +137,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #d4e5f0;
+  background: #bae6fd;
 }
 
 ::-webkit-scrollbar-thumb {
