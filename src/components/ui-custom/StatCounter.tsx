@@ -37,10 +37,10 @@ export function StatCounter({ label, value, suffix = '', icon }: StatCounterProp
       ref={ref}
       className="group relative p-6 bg-white rounded-2xl border border-slate-200 hover:border-neon-lime/30 transition-all duration-500 hover:shadow-glow"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-humanic-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-humanic-green/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
       <div className="relative flex items-start gap-4">
-        <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-humanic-green/20 to-neon-lime/10 border border-humanic-green/30 group-hover:border-neon-lime/50 transition-colors duration-300">
+        <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-humanic-green/40 to-neon-lime/10 border border-humanic-green/30 group-hover:border-neon-lime/50 transition-colors duration-300">
           <Icon className="w-7 h-7 text-humanic-green group-hover:text-neon-lime transition-colors" />
         </div>
         

@@ -43,8 +43,8 @@ export function QuienesSomos() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-sky-50/80">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+      <section className="relative py-12 lg:py-20 bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
           <SectionHeader
@@ -94,7 +94,7 @@ export function QuienesSomos() {
             </div>
 
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/20 to-neon-lime/10 rounded-3xl blur-2xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/40 to-neon-lime/10 rounded-3xl blur-2xl"></div>
               <div className="relative grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="p-6 bg-white backdrop-blur-sm rounded-2xl border border-slate-200">
@@ -123,7 +123,7 @@ export function QuienesSomos() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 lg:py-20 bg-sky-50/60">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
@@ -289,7 +289,7 @@ export function QuienesSomos() {
       </section>
 
       {/* Research Lines */}
-      <section id="lineas" ref={linesRef} className="py-12 lg:py-20 bg-sky-50/60">
+      <section id="lineas" ref={linesRef} className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <SectionHeader
             title="Líneas de Investigación"

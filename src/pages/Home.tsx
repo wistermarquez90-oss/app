@@ -26,8 +26,8 @@ function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-hero-gradient"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-humanic-green/20 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-neon-lime/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-humanic-green/40 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-neon-lime/30 via-transparent to-transparent"></div>
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -70,7 +70,7 @@ function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold px-8 transition-all duration-300 hover:shadow-glow-strong group"
+                className="bg-neon-lime text-white hover:bg-neon-lime-light font-semibold px-8 transition-all duration-300 hover:shadow-glow-strong group"
                 asChild
               >
                 <Link to="/revista">
@@ -81,7 +81,7 @@ function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-white/40 px-8"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-slate-200 px-8"
                 asChild
               >
                 <Link to="/normas">
@@ -95,7 +95,7 @@ function HeroSection() {
                 {authors.slice(0, 4).map((author) => (
                   <div 
                     key={author.id}
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-humanic-green to-neon-lime border-2 border-ula-navy flex items-center justify-center text-xs font-bold text-ula-navy-dark"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-humanic-green to-neon-lime border-2 border-ula-navy flex items-center justify-center text-xs font-bold text-white"
                   >
                     {author.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                   </div>
@@ -110,10 +110,10 @@ function HeroSection() {
 
           {/* Right Content - Featured Article Card */}
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/20 to-neon-lime/20 rounded-3xl blur-2xl"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/40 to-neon-lime/20 rounded-3xl blur-2xl"></div>
             <div className="relative bg-white backdrop-blur-md rounded-2xl border border-slate-200 p-6 lg:p-8">
               <div className="flex items-center justify-between mb-6">
-                <Badge className="bg-neon-lime/20 text-neon-lime border-neon-lime/30">
+                <Badge className="bg-neon-lime/20 text-slate-800 border-neon-lime/30">
                   <Star className="w-3 h-3 mr-1" />
                   Artículo Destacado
                 </Badge>
@@ -168,8 +168,8 @@ function StatsSectionWrapper() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section className="relative py-16 lg:py-24 bg-sky-50/80">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/5 via-transparent to-transparent"></div>
+    <section className="relative py-16 lg:py-24 bg-white">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/40 via-transparent to-transparent"></div>
       
       <div ref={ref} className="relative w-full section-padding">
         <SectionHeader
@@ -231,7 +231,7 @@ function CategoriesSection() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative py-16 lg:py-24 bg-sky-50/60">
+    <section ref={ref} className="relative py-16 lg:py-24 bg-white">
       <div className="w-full section-padding">
         <SectionHeader
           title="Áreas de Investigación"
@@ -288,8 +288,8 @@ function NewsletterSection() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
 
   return (
-    <section ref={ref} className="relative py-16 lg:py-20 bg-sky-50/80">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/5 via-transparent to-transparent"></div>
+    <section ref={ref} className="relative py-16 lg:py-20 bg-white">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/40 via-transparent to-transparent"></div>
       
       <div className="relative w-full section-padding">
         <div className={`max-w-4xl mx-auto ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -303,8 +303,8 @@ function NewsletterSection() {
 function CTASection() {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-humanic-green/20 to-neon-lime/10"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-humanic-green/40 to-neon-lime/10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-100/40 via-transparent to-transparent"></div>
       
       <div className="relative w-full section-padding">
         <div className="max-w-4xl mx-auto text-center">
@@ -320,7 +320,7 @@ function CTASection() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg"
-              className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold px-8 transition-all duration-300 hover:shadow-glow-strong"
+              className="bg-neon-lime text-white hover:bg-neon-lime-light font-semibold px-8 transition-all duration-300 hover:shadow-glow-strong"
               asChild
             >
               <Link to="/normas">
@@ -331,7 +331,7 @@ function CTASection() {
             <Button 
               size="lg"
               variant="outline"
-              className="border-white/30 text-slate-800 hover:bg-slate-50 px-8"
+              className="border-slate-200 text-slate-800 hover:bg-slate-50 px-8"
               asChild
             >
               <Link to="/contacto">

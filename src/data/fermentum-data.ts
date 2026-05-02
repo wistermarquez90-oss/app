@@ -6,7 +6,7 @@ export const categories: CategoryInfo[] = [
     name: 'Ciencias Sociales',
     description: 'Sociología, Antropología, Psicología, Ciencias Políticas',
     icon: 'Users',
-    color: '#2d8659',
+    color: '#34d399',
   },
   {
     id: 'economia',
@@ -20,28 +20,28 @@ export const categories: CategoryInfo[] = [
     name: 'Humanidades',
     description: 'Filosofía, Historia, Literatura, Arte',
     icon: 'BookOpen',
-    color: '#d4a574',
+    color: '#fdba74',
   },
   {
     id: 'ciencias-naturales',
     name: 'Ciencias Naturales',
     description: 'Biología, Química, Física, Ecología',
     icon: 'Leaf',
-    color: '#3da76f',
+    color: '#6ee7b7',
   },
   {
     id: 'tecnologia',
     name: 'Tecnología',
     description: 'Ingeniería, Informática, Innovación',
     icon: 'Cpu',
-    color: '#84cc16',
+    color: '#86efac',
   },
   {
     id: 'salud',
     name: 'Salud',
     description: 'Medicina, Salud Pública, Nutrición',
     icon: 'Heart',
-    color: '#bef264',
+    color: '#d9f99d',
   },
 ];
 

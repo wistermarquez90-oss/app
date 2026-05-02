@@ -33,7 +33,7 @@ const getIcon = (iconName: string) => {
 
 export function Footer() {
   return (
-    <footer className="bg-ula-navy-dark border-t border-slate-200">
+    <footer className="bg-[#bae6fd] border-t border-sky-200">
       {/* Main Footer */}
       <div className="section-padding py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

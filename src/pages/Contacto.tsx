@@ -64,8 +64,8 @@ export function Contacto() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-sky-50/80">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+      <section className="relative py-12 lg:py-20 bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
           <SectionHeader
@@ -277,7 +277,7 @@ export function Contacto() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold"
+                    className="w-full bg-neon-lime text-white hover:bg-neon-lime-light font-semibold"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -300,7 +300,7 @@ export function Contacto() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 lg:py-20 bg-sky-50/60">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-slate-800 mb-2">
@@ -361,7 +361,7 @@ export function Contacto() {
               </Button>
               <Button 
                 variant="outline"
-                className="border-white/30 text-slate-800 hover:bg-slate-50"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50"
                 asChild
               >
                 <a href="/revista">Explorar Revista</a>

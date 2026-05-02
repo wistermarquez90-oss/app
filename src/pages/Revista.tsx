@@ -138,7 +138,7 @@ function VolumeCard({ volume }: { volume: typeof volumes[0] }) {
   return (
     <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg">
       <div className="aspect-[3/4] bg-gradient-to-br from-ula-navy-light to-ula-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
           <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
           <span className="text-6xl font-bold text-slate-300 font-serif">{volume.number}</span>
@@ -229,8 +229,8 @@ export function Revista() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-sky-50/80">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+      <section className="relative py-12 lg:py-20 bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
           <SectionHeader
@@ -270,7 +270,7 @@ export function Revista() {
                     <Filter className="w-4 h-4 mr-2" />
                     Categorías
                     {selectedCategories.length > 0 && (
-                      <Badge className="ml-2 bg-neon-lime text-ula-navy-dark">
+                      <Badge className="ml-2 bg-neon-lime text-white">
                         {selectedCategories.length}
                       </Badge>
                     )}
@@ -433,7 +433,7 @@ export function Revista() {
       </section>
 
       {/* Volumes Archive */}
-      <section className="py-16 lg:py-24 bg-sky-50/60">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="w-full section-padding">
           <SectionHeader
             title="Archivo de Volúmenes"

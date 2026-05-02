@@ -51,8 +51,8 @@ export function Autores() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-sky-50/80">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+      <section className="relative py-12 lg:py-20 bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
           <SectionHeader
@@ -88,7 +88,7 @@ export function Autores() {
       </section>
 
       {/* All Authors */}
-      <section ref={ref} className="py-12 lg:py-16 bg-sky-50/60">
+      <section ref={ref} className="py-12 lg:py-16 bg-white">
         <div className="w-full section-padding">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
             <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
@@ -252,7 +252,7 @@ export function Autores() {
       {/* CTA Section */}
       <section className="py-16 lg:py-24">
         <div className="w-full section-padding">
-          <div className="max-w-3xl mx-auto text-center p-8 lg:p-12 bg-gradient-to-br from-humanic-green/20 to-neon-lime/10 rounded-2xl border border-humanic-green/30">
+          <div className="max-w-3xl mx-auto text-center p-8 lg:p-12 bg-gradient-to-br from-humanic-green/40 to-neon-lime/10 rounded-2xl border border-humanic-green/30">
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
               ¿Eres investigador y quieres publicar?
             </h2>
@@ -262,7 +262,7 @@ export function Autores() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
-                className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold"
+                className="bg-neon-lime text-white hover:bg-neon-lime-light font-semibold"
                 asChild
               >
                 <Link to="/normas">
@@ -271,7 +271,7 @@ export function Autores() {
               </Button>
               <Button 
                 variant="outline"
-                className="border-white/30 text-slate-800 hover:bg-slate-50"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50"
                 asChild
               >
                 <Link to="/contacto">

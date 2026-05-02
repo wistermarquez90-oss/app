@@ -38,7 +38,7 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
   if (variant === 'featured') {
     return (
       <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-200 hover:border-neon-lime/50 transition-all duration-500 hover:shadow-glow">
-        <div className="absolute inset-0 bg-gradient-to-br from-humanic-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-humanic-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
         <div className="relative p-6 lg:p-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">

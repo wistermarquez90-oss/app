@@ -129,7 +129,7 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button
-              className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold px-6 transition-all duration-300 hover:shadow-glow"
+              className="bg-neon-lime text-white hover:bg-neon-lime-light font-semibold px-6 transition-all duration-300 hover:shadow-glow"
             >
               Enviar Artículo
             </Button>
@@ -184,7 +184,7 @@ export function Navbar() {
               </div>
             ))}
             <Button
-              className="mt-2 bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold"
+              className="mt-2 bg-neon-lime text-white hover:bg-neon-lime-light font-semibold"
             >
               Enviar Artículo
             </Button>

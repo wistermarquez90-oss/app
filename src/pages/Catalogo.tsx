@@ -213,7 +213,7 @@ function ProductCard({ product }: { product: Product }) {
       {/* Featured Badge */}
       {product.featured && (
         <div className="absolute top-3 right-3 z-10">
-          <Badge className="bg-neon-lime/20 text-neon-lime border-neon-lime/30">
+          <Badge className="bg-neon-lime/20 text-slate-800 border-neon-lime/30">
             Destacado
           </Badge>
         </div>
@@ -221,7 +221,7 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Image Placeholder */}
       <div className="aspect-[4/3] bg-gradient-to-br from-ula-navy-light to-ula-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
           <CategoryIcon className="w-12 h-12 text-humanic-green/40 mb-2" />
           <span className="text-slate-300 text-sm font-medium">{product.name}</span>
@@ -322,7 +322,7 @@ export function Catalogo() {
     <main className="min-h-screen pt-24 pb-16">
       {/* Hero */}
       <section className="relative py-12 lg:py-20 bg-gradient-to-b from-ula-navy-dark/50 to-ula-navy">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neon-lime/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neon-lime/30 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
           <SectionHeader
@@ -333,7 +333,7 @@ export function Catalogo() {
 
           {/* Support Banner */}
           <div className="mt-8 max-w-3xl mx-auto">
-            <div className="p-6 bg-gradient-to-r from-humanic-green/20 to-neon-lime/10 rounded-2xl border border-humanic-green/30 flex items-start gap-4">
+            <div className="p-6 bg-gradient-to-r from-humanic-green/40 to-neon-lime/10 rounded-2xl border border-humanic-green/30 flex items-start gap-4">
               <div className="w-12 h-12 bg-humanic-green/30 rounded-xl flex items-center justify-center flex-shrink-0">
                 <Heart className="w-6 h-6 text-neon-lime" />
               </div>
@@ -351,7 +351,7 @@ export function Catalogo() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-12 bg-sky-50/60">
+      <section className="py-12 bg-white">
         <div className="w-full section-padding">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-neon-lime/20 rounded-lg flex items-center justify-center">
@@ -377,7 +377,7 @@ export function Catalogo() {
               variant={activeCategory === 'todos' ? 'default' : 'outline'}
               onClick={() => setActiveCategory('todos')}
               className={activeCategory === 'todos' 
-                ? 'bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light' 
+                ? 'bg-neon-lime text-white hover:bg-neon-lime-light' 
                 : 'border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-800'
               }
             >
@@ -392,7 +392,7 @@ export function Catalogo() {
                   variant={activeCategory === key ? 'default' : 'outline'}
                   onClick={() => setActiveCategory(key)}
                   className={activeCategory === key 
-                    ? 'bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light' 
+                    ? 'bg-neon-lime text-white hover:bg-neon-lime-light' 
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-800'
                   }
                 >
@@ -425,7 +425,7 @@ export function Catalogo() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-12 lg:py-20 bg-sky-50/80">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">

@@ -95,8 +95,8 @@ export function Normas() {
   return (
     <main className="min-h-screen pt-24 pb-16">
       {/* Header */}
-      <section className="relative py-12 lg:py-20 bg-sky-50/80">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/10 via-transparent to-transparent"></div>
+      <section className="relative py-12 lg:py-20 bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         
         <div className="relative w-full section-padding">
           <SectionHeader
@@ -136,7 +136,7 @@ export function Normas() {
       </section>
 
       {/* Evaluation Process */}
-      <section ref={processRef} className="py-12 lg:py-20 bg-sky-50/60">
+      <section ref={processRef} className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <SectionHeader
             title="Proceso de Evaluación"
@@ -234,7 +234,7 @@ export function Normas() {
           </div>
 
           {/* Download Template */}
-          <div className="mt-12 p-8 bg-gradient-to-br from-humanic-green/20 to-neon-lime/10 rounded-2xl border border-humanic-green/30 text-center">
+          <div className="mt-12 p-8 bg-gradient-to-br from-humanic-green/40 to-neon-lime/10 rounded-2xl border border-humanic-green/30 text-center">
             <FileText className="w-12 h-12 text-humanic-green mx-auto mb-4" />
             <h3 className="text-xl font-bold text-slate-800 mb-2">
               Plantilla de Manuscrito
@@ -245,7 +245,7 @@ export function Normas() {
             </p>
             <Button 
               size="lg"
-              className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold"
+              className="bg-neon-lime text-white hover:bg-neon-lime-light font-semibold"
             >
               <Download className="w-5 h-5 mr-2" />
               Descargar Plantilla
@@ -255,7 +255,7 @@ export function Normas() {
       </section>
 
       {/* Detailed Guidelines */}
-      <section className="py-12 lg:py-20 bg-sky-50/60">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <SectionHeader
             title="Normas Detalladas"
@@ -359,7 +359,7 @@ export function Normas() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 lg:py-20 bg-sky-50/80">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="w-full section-padding">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-slate-800 font-serif mb-4">
@@ -371,7 +371,7 @@ export function Normas() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
                 size="lg"
-                className="bg-neon-lime text-ula-navy-dark hover:bg-neon-lime-light font-semibold px-8"
+                className="bg-neon-lime text-white hover:bg-neon-lime-light font-semibold px-8"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Enviar Manuscrito
@@ -379,7 +379,7 @@ export function Normas() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-slate-800 hover:bg-slate-50 px-8"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 px-8"
                 asChild
               >
                 <Link to="/contacto">
