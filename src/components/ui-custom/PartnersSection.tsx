@@ -26,7 +26,7 @@ const partners: Partner[] = [
 
 export function PartnersSection() {
   return (
-    <section className="py-8 bg-[#e0f2fe] border-y border-sky-200">
+    <section className="py-8 bg-slate-50 border-y border-slate-200">
       <div className="w-full section-padding">
         <div className="flex items-center justify-center gap-8 sm:gap-14">
           {partners.map((partner, index) => (
@@ -42,7 +42,7 @@ export function PartnersSection() {
                   src={partner.logo}
                   alt={partner.name}
                   className="h-12 sm:h-16 w-auto object-contain"
-                  style={partner.name === 'Universidad de Los Andes' ? { filter: 'invert(1)' } : undefined}
+                  style={{ filter: 'brightness(0)' }}
                 />
                 <ExternalLink className="w-3 h-3 text-slate-300 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
