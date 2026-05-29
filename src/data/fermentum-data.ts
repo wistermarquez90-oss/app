@@ -1,4 +1,4 @@
-import type { Article, Author, Volume, CategoryInfo, EditorialTeam, ResearchLine, Statistic, PublicationGuideline, SocialLink } from '@/types';
+import type { Article, Author, Issue, CategoryInfo, EditorialTeam, ResearchLine, Statistic, PublicationGuideline, SocialLink } from '@/types';
 
 export const categories: CategoryInfo[] = [
   {
@@ -116,7 +116,7 @@ export const articles: Article[] = [
     authors: [authors[0], authors[1]],
     keywords: ['turismo sostenible', 'desarrollo económico local', 'comunidades andinas', 'post-pandemia', 'ecoturismo'],
     category: 'economia',
-    volume: 45,
+    number: 45,
     issue: 1,
     year: 2024,
     pages: '15-42',
@@ -133,7 +133,7 @@ export const articles: Article[] = [
     authors: [authors[2]],
     keywords: ['páramo', 'cambio climático', 'resiliencia ecológica', 'Pico Bolívar', 'frailejones'],
     category: 'ciencias-naturales',
-    volume: 45,
+    number: 45,
     issue: 1,
     year: 2024,
     pages: '43-68',
@@ -150,7 +150,7 @@ export const articles: Article[] = [
     authors: [authors[3], authors[0]],
     keywords: ['inteligencia artificial', 'educación superior', 'ética digital', 'universidades andinas', 'innovación educativa'],
     category: 'tecnologia',
-    volume: 45,
+    number: 45,
     issue: 1,
     year: 2024,
     pages: '69-95',
@@ -167,7 +167,7 @@ export const articles: Article[] = [
     authors: [authors[4], authors[1]],
     keywords: ['salud mental', 'pueblos indígenas', 'interculturalidad', 'bienestar', 'Andes venezolanos'],
     category: 'salud',
-    volume: 45,
+    number: 45,
     issue: 1,
     year: 2024,
     pages: '96-122',
@@ -184,7 +184,7 @@ export const articles: Article[] = [
     authors: [authors[1]],
     keywords: ['movimientos estudiantiles', 'ciudadanía', 'participación política', 'sociedad civil', 'siglo XXI'],
     category: 'ciencias-sociales',
-    volume: 45,
+    number: 45,
     issue: 1,
     year: 2024,
     pages: '123-149',
@@ -201,7 +201,7 @@ export const articles: Article[] = [
     authors: [authors[5]],
     keywords: ['derechos de la naturaleza', 'Constitución venezolana', 'derecho ambiental', 'jurisprudencia', 'justicia ecológica'],
     category: 'humanidades',
-    volume: 45,
+    number: 45,
     issue: 1,
     year: 2024,
     pages: '150-178',
@@ -218,7 +218,7 @@ export const articles: Article[] = [
     authors: [authors[0], authors[3]],
     keywords: ['transformación digital', 'pymes', 'adopción tecnológica', 'desarrollo empresarial', 'región andina'],
     category: 'economia',
-    volume: 44,
+    number: 44,
     issue: 2,
     year: 2023,
     pages: '89-115',
@@ -235,7 +235,7 @@ export const articles: Article[] = [
     authors: [authors[1], authors[5]],
     keywords: ['patrimonio cultural inmaterial', 'desarrollo territorial', 'ferias tradicionales', 'identidad cultural', 'turismo cultural'],
     category: 'humanidades',
-    volume: 44,
+    number: 44,
     issue: 2,
     year: 2023,
     pages: '116-142',
@@ -247,14 +247,14 @@ export const articles: Article[] = [
   },
 ];
 
-export const volumes: Volume[] = [
+export const issues: Issue[] = [
   {
     id: 45,
     number: 45,
     year: 2024,
     title: 'Vol. 45, N° 1 (2024): Desarrollo Sostenible en los Andes',
-    description: 'Este volumen presenta investigaciones sobre desarrollo sostenible, ecoturismo, cambio climático y transformación digital en la región andina.',
-    articles: articles.filter(a => a.volume === 45),
+    description: 'Este "número" presenta investigaciones sobre desarrollo sostenible, ecoturismo, cambio climático y transformación digital en la región andina.',
+    articles: articles.filter(a => a.number === 45),
     publishedDate: '2024-03-15',
   },
   {
@@ -263,7 +263,7 @@ export const volumes: Volume[] = [
     year: 2023,
     title: 'Vol. 44, N° 2 (2023): Innovación y Sociedad en la Región Andina',
     description: 'Número dedicado a la innovación tecnológica, transformación digital y patrimonio cultural en contextos andinos.',
-    articles: articles.filter(a => a.volume === 44),
+    articles: articles.filter(a => a.number === 44),
     publishedDate: '2023-09-20',
   },
   {
@@ -280,7 +280,7 @@ export const volumes: Volume[] = [
     number: 43,
     year: 2022,
     title: 'Vol. 43 (2022): Diversidad y Conocimiento en los Andes',
-    description: 'Volumen anual con contribuciones sobre biodiversidad, diversidad cultural y sistemas de conocimiento tradicional.',
+    description: '"Número" anual con contribuciones sobre biodiversidad, diversidad cultural y sistemas de conocimiento tradicional.',
     articles: [],
     publishedDate: '2022-12-01',
   },

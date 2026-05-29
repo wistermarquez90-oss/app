@@ -30,7 +30,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { ArticleCard } from '@/components/ui-custom/ArticleCard';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
-import { articles, volumes, categories } from '@/data/fermentum-data';
+import { articles, issues, categories } from '@/data/fermentum-data';
 import type { Article } from '@/types';
 import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 
@@ -71,7 +71,7 @@ function ArticleListItem({ article }: { article: Article }) {
             })}
           </span>
           <span className="text-slate-400 text-xs">
-            Vol. {article.volume}, N° {article.issue}
+            N° {article.number}, N° {article.issue}
           </span>
         </div>
         
@@ -135,27 +135,27 @@ function ArticleListItem({ article }: { article: Article }) {
   );
 }
 
-function VolumeCard({ volume }: { volume: typeof volumes[0] }) {
+function IssueCard({ issue }: { issue: typeof issues[0] }) {
   return (
     <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg">
       <div className="aspect-[3/4] bg-gradient-to-br from-ula-navy-light to-ula-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
           <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
-          <span className="text-6xl font-bold text-slate-300 font-serif">{volume.number}</span>
-          <span className="text-xl text-slate-400 mt-2">{volume.year}</span>
+          <span className="text-6xl font-bold text-slate-300 font-serif">{issue.number}</span>
+          <span className="text-xl text-slate-400 mt-2">{issue.year}</span>
         </div>
       </div>
       <div className="p-5">
         <h3 className="text-slate-800 font-semibold mb-2 line-clamp-2 group-hover:text-neon-lime transition-colors">
-          {volume.title}
+          {issue.title}
         </h3>
         <p className="text-slate-400 text-sm line-clamp-2 mb-4">
-          {volume.description}
+          {issue.description}
         </p>
         <div className="flex items-center justify-between">
           <span className="text-slate-400 text-sm">
-            {volume.articles.length} artículos
+            {issue.articles.length} artículos
           </span>
           <Button 
             size="sm" 
@@ -163,7 +163,7 @@ function VolumeCard({ volume }: { volume: typeof volumes[0] }) {
             className="text-humanic-green hover:text-neon-lime hover:bg-humanic-green/10"
             asChild
           >
-            <Link to={`/revista?volumen=${volume.number}`}>
+            <Link to={`/revista?número=${issue.number}`}>
               Ver contenido
             </Link>
           </Button>
@@ -179,7 +179,7 @@ export function Revista() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState<string>('all');
-  const [selectedVolume, setSelectedVolume] = useState<string>('all');
+  const [selectedNumber, setSelectedNumber] = useState<string>('all');
 
   // Get unique years from articles
   const years = useMemo(() => {
@@ -202,12 +202,12 @@ export function Revista() {
       const matchesYear = selectedYear === 'all' || 
         article.year.toString() === selectedYear;
       
-      const matchesVolume = selectedVolume === 'all' || 
-        article.volume.toString() === selectedVolume;
+      const matchesNumber = selectedNumber === 'all' || 
+        article.number.toString() === selectedNumber;
       
-      return matchesSearch && matchesCategory && matchesYear && matchesVolume;
+      return matchesSearch && matchesCategory && matchesYear && matchesNumber;
     });
-  }, [searchQuery, selectedCategories, selectedYear, selectedVolume]);
+  }, [searchQuery, selectedCategories, selectedYear, selectedNumber]);
 
   const toggleCategory = (categoryId: string) => {
     setSelectedCategories(prev => 
@@ -221,11 +221,11 @@ export function Revista() {
     setSearchQuery('');
     setSelectedCategories([]);
     setSelectedYear('all');
-    setSelectedVolume('all');
+    setSelectedNumber('all');
     setSearchParams({});
   };
 
-  const hasActiveFilters = searchQuery || selectedCategories.length > 0 || selectedYear !== 'all' || selectedVolume !== 'all';
+  const hasActiveFilters = searchQuery || selectedCategories.length > 0 || selectedYear !== 'all' || selectedNumber !== 'all';
 
   return (
     <main className="min-h-screen pt-24 pb-16">
@@ -307,16 +307,16 @@ export function Revista() {
                 </SelectContent>
               </Select>
 
-              {/* Volume Filter */}
-              <Select value={selectedVolume} onValueChange={setSelectedVolume}>
+              {/* Número Filter */}
+              <Select value={selectedNumber} onValueChange={setSelectedNumber}>
                 <SelectTrigger className="w-[140px] bg-white border-slate-200 text-slate-800">
-                  <SelectValue placeholder="Volumen" />
+                  <SelectValue placeholder="Número" />
                 </SelectTrigger>
                 <SelectContent className="bg-ula-navy-light border-slate-200">
                   <SelectItem value="all" className="text-slate-700 hover:bg-slate-50">Todos</SelectItem>
-                  {volumes.map(vol => (
+                  {issues.map(vol => (
                     <SelectItem key={vol.id} value={vol.number.toString()} className="text-slate-700 hover:bg-slate-50">
-                      Vol. {vol.number}
+                      N° {vol.number}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -377,10 +377,10 @@ export function Revista() {
                   <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedYear('all')} />
                 </Badge>
               )}
-              {selectedVolume !== 'all' && (
+              {selectedNumber !== 'all' && (
                 <Badge className="bg-slate-50 text-slate-700 hover:bg-white/20">
-                  Volumen: {selectedVolume}
-                  <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedVolume('all')} />
+                  Número: {selectedNumber}
+                  <X className="w-3 h-3 ml-1 cursor-pointer" onClick={() => setSelectedNumber('all')} />
                 </Badge>
               )}
             </div>
@@ -437,15 +437,15 @@ export function Revista() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="w-full section-padding">
           <SectionHeader
-            title="Archivo de Volúmenes"
+            title="Archivo de Números"
             subtitle="Ediciones Anteriores"
             description="Accede a todas las ediciones publicadas de FERMENTUM"
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {volumes.map((volume) => (
-              <div key={volume.id}>
-                <VolumeCard volume={volume} />
+            {issues.map((number) => (
+              <div key={number.id}>
+                <IssueCard issue={number} />
               </div>
             ))}
           </div>

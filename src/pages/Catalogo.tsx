@@ -33,7 +33,7 @@ const products: Product[] = [
   // Revistas
   {
     id: 'rev-001',
-    name: 'FERMENTUM Vol. 45, N° 1 (2024)',
+    name: 'FERMENTUM N° 45, N° 1 (2024)',
     description: 'Edición impresa de la revista FERMENTUM. Incluye artículos sobre desarrollo sostenible en los Andes, ecoturismo y cambio climático.',
     price: '15,00 $',
     category: 'revistas',
@@ -43,7 +43,7 @@ const products: Product[] = [
   },
   {
     id: 'rev-002',
-    name: 'FERMENTUM Vol. 44, N° 2 (2023)',
+    name: 'FERMENTUM N° 44, N° 2 (2023)',
     description: 'Edición completa con investigaciones sobre economía andina, patrimonio cultural y transformación digital.',
     price: '12,00 $',
     category: 'revistas',
@@ -52,7 +52,7 @@ const products: Product[] = [
   },
   {
     id: 'rev-003',
-    name: 'FERMENTUM Vol. 44, N° 1 (2023)',
+    name: 'FERMENTUM N° 44, N° 1 (2023)',
     description: 'Número especial sobre desarrollo regional y políticas públicas en la región andina.',
     price: '10,00 $',
     category: 'revistas',
@@ -67,7 +67,7 @@ const products: Product[] = [
     category: 'revistas',
     stock: 'preventa',
     featured: true,
-    details: 'Incluye: Vol. 46 (2 números) | Envío incluido | 10% de descuento',
+    details: 'Incluye: N° 46 (2 números) | Envío incluido | 10% de descuento',
   },
   // Libros
   {

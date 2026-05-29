@@ -51,7 +51,7 @@ const evaluationSteps = [
   {
     icon: BookOpen,
     title: 'Publicación',
-    description: 'El artículo aprobado es editado y publicado en el siguiente volumen.',
+    description: 'El artículo aprobado es editado y publicado en el siguiente "número".',
     duration: 'Variable',
   },
 ];

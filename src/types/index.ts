@@ -7,7 +7,7 @@ export interface Article {
   authors: Author[];
   keywords: string[];
   category: Category;
-  volume: number;
+  number: number;
   issue: number;
   year: number;
   pages: string;
@@ -31,7 +31,7 @@ export interface Author {
   articles?: Article[];
 }
 
-export interface Volume {
+export interface Issue {
   id: number;
   number: number;
   year: number;

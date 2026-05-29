@@ -155,7 +155,7 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
               {categoryNames[article.category]}
             </Badge>
             <span className="text-slate-400 text-xs">
-              Vol. {article.volume}, N° {article.issue}
+              N° {article.number}, N° {article.issue}
             </span>
           </div>
           

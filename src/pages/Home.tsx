@@ -8,7 +8,7 @@ import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { NewsletterModal } from '@/components/NewsletterModal';
 import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { articles, volumes, statistics, categories, authors } from '@/data/fermentum-data';
+import { articles, issues, statistics, categories, authors } from '@/data/fermentum-data';
 
 const iconMap: Record<string, React.ElementType> = {
   Users,
@@ -20,7 +20,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 function HeroSection() {
-  const latestVolume = volumes[0];
+  const latestIssue = issues[0];
   const featuredArticles = articles.slice(0, 3);
 
   return (
@@ -47,7 +47,7 @@ function HeroSection() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white backdrop-blur-sm rounded-full border border-slate-200">
               <Sparkles className="w-4 h-4 text-neon-lime" />
-              <span className="text-sm text-slate-700">Nuevo Volumen {latestVolume.year}</span>
+              <span className="text-sm text-slate-700">Nuevo Número {latestIssue.year}</span>
             </div>
 
             <div>
@@ -119,7 +119,7 @@ function HeroSection() {
                   Artículo Destacado
                 </Badge>
                 <span className="text-slate-400 text-sm">
-                  Vol. {latestVolume.number}, N° 1
+                  N° {latestIssue.number}, N° 1
                 </span>
               </div>
 
