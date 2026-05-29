@@ -174,40 +174,7 @@ export function Contacto() {
               </div>
             </div>
 
-            {/* Map Section */}
-        <div className="mt-10">
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-            <div className="aspect-video w-full relative">
-              <iframe
-                src="https://maps.google.com/maps?q=JV76+VXJ,+Caque,+Mérida,+Venezuela&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0"
-                title="Ubicación HUMANIC - ULA"
-              />
-            </div>
-            <div className="p-4 flex items-center justify-between">
-              <p className="text-sm text-slate-500">
-                JV76+VXJ, Casique, Mérida 5101, Mérida
-              </p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=JV76%2BVXJ%2C+Caque%2C+Mérida%2C+Venezuela"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-neon-lime hover:text-neon-lime-dark font-medium flex items-center gap-1"
-              >
-                Ver en Google Maps
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Contact Form */}
+            {/* Contact Form */}
             <div 
               ref={formRef}
               className={`lg:col-span-3 ${formVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}
@@ -345,32 +312,33 @@ export function Contacto() {
             </p>
           </div>
 
-          {/* Map Placeholder */}
-          <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden border border-slate-200">
-            <div className="absolute inset-0 bg-gradient-to-br from-ula-navy-light to-ula-navy flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-humanic-green mx-auto mb-4" />
-                <p className="text-slate-800 font-semibold text-lg">Universidad de Los Andes</p>
-                <p className="text-slate-500">Mérida, Venezuela</p>
-                <a 
-                  href="https://maps.google.com/?q=Universidad+de+Los+Andes+Mérida"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-neon-lime hover:text-neon-lime-light transition-colors"
-                >
-                  Ver en Google Maps
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 opacity-[0.03]" style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: '30px 30px'
-            }}></div>
+          {/* Google Maps Embed */}
+          <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+            <iframe
+              src="https://maps.google.com/maps?q=JV76+VXJ,+Caque,+Mérida,+Venezuela&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+              title="Ubicación HUMANIC - ULA"
+            />
+          </div>
+          <div className="mt-3 flex items-center justify-between">
+            <p className="text-sm text-slate-500">
+              JV76+VXJ, Caque, Mérida 5101, Mérida
+            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=JV76%2BVXJ%2C+Caque%2C+Mérida%2C+Venezuela"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neon-lime hover:text-neon-lime-dark font-medium flex items-center gap-1"
+            >
+              Ver en Google Maps
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
           </div>
         </div>
       </section>
