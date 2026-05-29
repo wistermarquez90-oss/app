@@ -21,13 +21,13 @@ const partners: Partner[] = [
 
 export function PartnersSection() {
   return (
-    <section className="py-5 bg-white border-y border-slate-100">
+    <section className="py-8 bg-white border-y border-slate-100">
       <div className="w-full section-padding">
-        <p className="text-center text-[11px] uppercase tracking-[0.25em] text-slate-400 font-medium mb-3">
+        <p className="text-center text-[11px] uppercase tracking-[0.25em] text-slate-400 font-medium mb-5">
           Con el respaldo institucional de
         </p>
 
-        <div className="flex items-center justify-center gap-6 sm:gap-10">
+        <div className="flex items-center justify-center gap-8 sm:gap-14">
           {partners.map((partner, index) => (
             <>
               <a
@@ -40,7 +40,7 @@ export function PartnersSection() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-8 sm:h-10 w-auto object-contain"
+                  className="h-12 sm:h-16 w-auto object-contain"
                 />
                 <ExternalLink className="w-3 h-3 text-slate-300 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
