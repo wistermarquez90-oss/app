@@ -35,17 +35,14 @@ export function PartnersSection() {
                 href={partner.url}
                 target={partner.url.startsWith('http') ? '_blank' : undefined}
                 rel={partner.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group flex items-center gap-2 transition-opacity duration-300 hover:opacity-100 opacity-60"
+                className="group flex items-center transition-opacity duration-300 hover:opacity-100 opacity-60"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-7 sm:h-9 w-auto object-contain"
+                  className="h-8 sm:h-10 w-auto object-contain"
                 />
-                <span className="text-xs text-slate-500 font-medium hidden sm:inline group-hover:text-slate-800 transition-colors">
-                  {partner.name}
-                </span>
-                <ExternalLink className="w-3 h-3 text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ExternalLink className="w-3 h-3 text-slate-300 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               {index < partners.length - 1 && (
                 <span className="text-slate-300 text-xs">·</span>
