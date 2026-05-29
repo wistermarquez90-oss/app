@@ -8,6 +8,11 @@ interface Partner {
 
 const partners: Partner[] = [
   {
+    name: 'Facultad de Humanidades y Educación',
+    logo: '/app/images/logo-humanidades.png',
+    url: 'https://www.ula.ve/humanidades',
+  },
+  {
     name: 'Universidad de Los Andes',
     logo: '/app/images/logo-ula.png',
     url: 'https://www.ula.ve',
@@ -21,7 +26,7 @@ const partners: Partner[] = [
 
 export function PartnersSection() {
   return (
-    <section className="py-5 bg-white border-y border-slate-100">
+    <section className="py-8 bg-[#e0f2fe] border-y border-sky-200">
       <div className="w-full section-padding">
         <div className="flex items-center justify-center gap-8 sm:gap-14">
           {partners.map((partner, index) => (
