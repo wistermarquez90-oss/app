@@ -21,13 +21,13 @@ const partners: Partner[] = [
 
 export function PartnersSection() {
   return (
-    <section className="py-6 bg-slate-900">
+    <section className="py-5 bg-white border-y border-slate-100">
       <div className="w-full section-padding">
-        <p className="text-center text-[11px] uppercase tracking-[0.25em] text-slate-500 font-medium mb-4">
+        <p className="text-center text-[11px] uppercase tracking-[0.25em] text-slate-400 font-medium mb-3">
           Con el respaldo institucional de
         </p>
 
-        <div className="flex items-center justify-center gap-8 sm:gap-12">
+        <div className="flex items-center justify-center gap-6 sm:gap-10">
           {partners.map((partner, index) => (
             <>
               <a
@@ -35,21 +35,20 @@ export function PartnersSection() {
                 href={partner.url}
                 target={partner.url.startsWith('http') ? '_blank' : undefined}
                 rel={partner.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group flex items-center gap-2 transition-opacity duration-300 hover:opacity-100 opacity-70"
+                className="group flex items-center gap-2 transition-opacity duration-300 hover:opacity-100 opacity-60"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-8 sm:h-10 w-auto object-contain"
-                  style={{ filter: 'brightness(0) invert(1)' }}
+                  className="h-7 sm:h-9 w-auto object-contain"
                 />
-                <span className="text-xs text-slate-400 font-medium hidden sm:inline group-hover:text-white transition-colors">
+                <span className="text-xs text-slate-500 font-medium hidden sm:inline group-hover:text-slate-800 transition-colors">
                   {partner.name}
                 </span>
-                <ExternalLink className="w-3 h-3 text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ExternalLink className="w-3 h-3 text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               {index < partners.length - 1 && (
-                <span className="text-slate-700 text-xs">·</span>
+                <span className="text-slate-300 text-xs">·</span>
               )}
             </>
           ))}
