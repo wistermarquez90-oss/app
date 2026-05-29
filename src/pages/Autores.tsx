@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { AuthorCard } from '@/components/ui-custom/AuthorCard';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 import { authors } from '@/data/fermentum-data';
 
 export function Autores() {
@@ -282,6 +283,7 @@ export function Autores() {
           </div>
         </div>
       </section>
+          <PartnersSection />
     </main>
   );
 }
