@@ -15,6 +15,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import type { LucideIcon } from 'lucide-react';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 
 interface Product {
   id: string;
@@ -464,6 +465,7 @@ export function Catalogo() {
           </div>
         </div>
       </section>
+          <PartnersSection />
     </main>
   );
 }
