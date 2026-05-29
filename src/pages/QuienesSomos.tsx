@@ -4,6 +4,7 @@ import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { editorialTeam, researchLines } from '@/data/fermentum-data';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 
 const values = [
   {
@@ -394,6 +395,7 @@ export function QuienesSomos() {
           </div>
         </div>
       </section>
+          <PartnersSection />
     </main>
   );
 }
