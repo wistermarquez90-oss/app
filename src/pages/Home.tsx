@@ -6,6 +6,7 @@ import { ArticleCard } from '@/components/ui-custom/ArticleCard';
 import { StatsSection } from '@/components/ui-custom/StatCounter';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { NewsletterModal } from '@/components/NewsletterModal';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { articles, volumes, statistics, categories, authors } from '@/data/fermentum-data';
 
@@ -349,6 +350,7 @@ export function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <PartnersSection />
       <StatsSectionWrapper />
       <FeaturedArticlesSection />
       <CategoriesSection />
