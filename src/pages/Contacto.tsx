@@ -174,7 +174,40 @@ export function Contacto() {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Map Section */}
+        <div className="mt-10">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <div className="aspect-video w-full relative">
+              <iframe
+                src="https://maps.google.com/maps?q=JV76+VXJ,+Caque,+Mérida,+Venezuela&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+                title="Ubicación HUMANIC - ULA"
+              />
+            </div>
+            <div className="p-4 flex items-center justify-between">
+              <p className="text-sm text-slate-500">
+                JV76+VXJ, Casique, Mérida 5101, Mérida
+              </p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=JV76%2BVXJ%2C+Caque%2C+Mérida%2C+Venezuela"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neon-lime hover:text-neon-lime-dark font-medium flex items-center gap-1"
+              >
+                Ver en Google Maps
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Form */}
             <div 
               ref={formRef}
               className={`lg:col-span-3 ${formVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}
