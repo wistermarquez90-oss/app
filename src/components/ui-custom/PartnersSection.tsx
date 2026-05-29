@@ -41,7 +41,7 @@ export function PartnersSection() {
               rel={partner.url.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="group flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105"
             >
-              <div className={`relative h-20 w-auto flex items-center justify-center px-4 rounded-lg ${partner.name === 'Universidad de Los Andes' ? 'bg-ula-navy' : ''}`}>
+              <div className={`relative h-20 w-auto flex items-center justify-center px-4 rounded-lg ${partner.name === 'Universidad de Los Andes' ? 'bg-slate-800' : ''}`}>
                 <img
                   src={partner.logo}
                   alt={partner.name}
