@@ -41,7 +41,7 @@ export function PartnersSection() {
       }}></div>
       
       <div className="relative w-full section-padding">
-        <div className="flex flex-wrap items-center justify-end gap-12 sm:gap-16 lg:gap-24">
+        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16 lg:gap-24">
           {partners.map((partner) => (
             <a
               key={partner.name}
