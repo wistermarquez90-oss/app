@@ -32,6 +32,7 @@ import { ArticleCard } from '@/components/ui-custom/ArticleCard';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { articles, volumes, categories } from '@/data/fermentum-data';
 import type { Article } from '@/types';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 
 const categoryNames: Record<string, string> = {
   'ciencias-sociales': 'Ciencias Sociales',
@@ -450,6 +451,7 @@ export function Revista() {
           </div>
         </div>
       </section>
+          <PartnersSection />
     </main>
   );
 }
