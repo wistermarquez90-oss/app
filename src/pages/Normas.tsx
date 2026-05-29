@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 import { publicationGuidelines } from '@/data/fermentum-data';
 import {
   Accordion,
@@ -390,6 +391,7 @@ export function Normas() {
           </div>
         </div>
       </section>
+          <PartnersSection />
     </main>
   );
 }
