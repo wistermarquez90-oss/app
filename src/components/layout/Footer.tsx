@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Building2, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ExternalLink } from 'lucide-react';
 import { contactInfo, socialLinks } from '@/data/fermentum-data';
 
 const quickLinks = [
@@ -40,9 +40,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 group mb-6">
-              <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-humanic-green to-neon-lime rounded-xl transition-transform duration-300 group-hover:scale-105">
-                <Building2 className="w-7 h-7 text-ula-navy-dark" />
-              </div>
+              <img
+                src="/app/images/logo-humanic.png"
+                alt="HUMANIC"
+                className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-slate-800 font-serif">
                   HUMANIC
