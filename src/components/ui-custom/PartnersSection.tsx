@@ -18,6 +18,11 @@ const partners: Partner[] = [
     url: 'https://www.ula.ve',
   },
   {
+    name: 'Saber ULA',
+    logo: '/app/images/logo-saber.png',
+    url: 'http://www.saber.ula.ve',
+  },
+  {
     name: 'FERMENTUM',
     logo: '/app/images/logo-fermentum.png',
     url: '/revista',
@@ -26,30 +31,29 @@ const partners: Partner[] = [
 
 export function PartnersSection() {
   return (
-    <section className="py-8 bg-slate-50 border-y border-slate-200">
+    <section className="py-10 lg:py-14 bg-slate-50 border-y border-slate-200">
       <div className="w-full section-padding">
-        <div className="flex items-center justify-center gap-8 sm:gap-14">
-          {partners.map((partner, index) => (
-            <>
-              <a
-                key={partner.name}
-                href={partner.url}
-                target={partner.url.startsWith('http') ? '_blank' : undefined}
-                rel={partner.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group flex items-center transition-opacity duration-300 hover:opacity-100 opacity-60"
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-12 sm:h-16 w-auto object-contain"
-                  style={{ filter: 'brightness(0)' }}
-                />
-                <ExternalLink className="w-3 h-3 text-slate-300 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              {index < partners.length - 1 && (
-                <span className="text-slate-300 text-xs">·</span>
-              )}
-            </>
+        <p className="text-center text-xs text-slate-400 uppercase tracking-widest mb-6">
+          Instituciones Aliadas
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 lg:gap-14">
+          {partners.map((partner) => (
+            <a
+              key={partner.name}
+              href={partner.url}
+              target={partner.url.startsWith('http') ? '_blank' : undefined}
+              rel={partner.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="group flex items-center gap-2 transition-all duration-300 hover:opacity-100 opacity-55 hover:-translate-y-0.5"
+              title={partner.name}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-10 sm:h-12 lg:h-14 w-auto object-contain max-w-[140px] sm:max-w-[160px]"
+                style={{ filter: 'brightness(0)' }}
+              />
+              <ExternalLink className="w-3 h-3 text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
           ))}
         </div>
       </div>
