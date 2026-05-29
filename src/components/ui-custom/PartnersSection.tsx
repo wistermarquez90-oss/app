@@ -41,6 +41,7 @@ export function PartnersSection() {
                   src={partner.logo}
                   alt={partner.name}
                   className="h-12 sm:h-16 w-auto object-contain"
+                  style={partner.name === 'Universidad de Los Andes' ? { filter: 'invert(1)' } : undefined}
                 />
                 <ExternalLink className="w-3 h-3 text-slate-300 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
