@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { contactInfo, socialLinks } from '@/data/fermentum-data';
+import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 
 const getIcon = (iconName: string) => {
   const icons: Record<string, React.ElementType> = {
@@ -370,6 +371,7 @@ export function Contacto() {
           </div>
         </div>
       </section>
+          <PartnersSection />
     </main>
   );
 }
