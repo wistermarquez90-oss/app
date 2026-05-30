@@ -318,12 +318,6 @@ export function Revista() {
       {/* Volumes Archive Carousel - Moved to top */}
       <section className="py-12 lg:py-16 bg-white border-b border-slate-100">
         <div className="w-full section-padding">
-          <SectionHeader
-            title="Archivo de Números"
-            subtitle="Ediciones Anteriores"
-            description="Accede a todas las ediciones publicadas de FERMENTUM"
-          />
-
           <IssueCarousel issues={issues} />
         </div>
       </section>
