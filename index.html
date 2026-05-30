@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HUMANIC - Centro de Investigaciones en Ciencias Humanas</title>
+    <script type="text/javascript">
+      // SPA Router Fix for GitHub Pages with HashRouter
+      (function() {
+        var path = window.location.pathname;
+        var base = '/app';
+        var hash = window.location.hash;
+        
+        // If we're on the base path but without hash, redirect to #/
+        if (path === base || path === base + '/') {
+          if (!hash || hash === '') {
+            window.location.replace(base + '/#/');
+          }
+        }
+        // If we're on a subpath without hash, add the hash
+        else if (path.indexOf(base + '/') === 0 && !hash) {
+          var subPath = path.replace(base, '');
+          window.location.replace(base + '/#' + subPath + window.location.search);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/app/assets/index-BIbpg2bN.js"></script>
+    <link rel="stylesheet" crossorigin href="/app/assets/index-Dh74lxrt.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
