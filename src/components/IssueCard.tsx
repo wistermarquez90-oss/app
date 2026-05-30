@@ -7,121 +7,77 @@ interface IssueCardProps {
   issue: Issue;
 }
 
-const accentColors = [
-  'from-emerald-500/20 to-teal-600/20',
-  'from-amber-500/20 to-orange-600/20',
-  'from-rose-500/20 to-pink-600/20',
-  'from-sky-500/20 to-blue-600/20',
-  'from-violet-500/20 to-purple-600/20',
-  'from-cyan-500/20 to-teal-600/20',
-];
-
-const borderColors = [
-  'border-emerald-500/30',
-  'border-amber-500/30',
-  'border-rose-500/30',
-  'border-sky-500/30',
-  'border-violet-500/30',
-  'border-cyan-500/30',
-];
-
-const textColors = [
-  'text-emerald-400',
-  'text-amber-400',
-  'text-rose-400',
-  'text-sky-400',
-  'text-violet-400',
-  'text-cyan-400',
-];
-
-const bgColors = [
-  'bg-emerald-500/10',
-  'bg-amber-500/10',
-  'bg-rose-500/10',
-  'bg-sky-500/10',
-  'bg-violet-500/10',
-  'bg-cyan-500/10',
-];
-
 export function IssueCard({ issue }: IssueCardProps) {
-  // Use issue number to pick a color (consistent per number)
-  const colorIndex = (issue.number % accentColors.length);
-
   return (
-    <div className="group relative flex-shrink-0 w-[240px] sm:w-[260px]">
-      <div className={`relative bg-gradient-to-br ${accentColors[colorIndex]} backdrop-blur-sm rounded-2xl overflow-hidden border ${borderColors[colorIndex]} hover:shadow-2xl hover:shadow-${textColors[colorIndex].split('-')[1]}-500/10 transition-all duration-500 hover:-translate-y-2`}>
-
-        {/* Top decorative bar */}
-        <div className={`h-1.5 bg-gradient-to-r ${accentColors[colorIndex].replace('20', '50')}`} />
-
-        {/* Cover area */}
-        <div className="relative px-5 pt-6 pb-4">
-          {/* Issue badge */}
-          <div className="flex items-center justify-between mb-5">
-            <span className={`text-[10px] uppercase tracking-widest font-semibold ${textColors[colorIndex]}`}>
-              Revista FERMENTUM
-            </span>
-            <span className="text-[10px] text-slate-400 uppercase tracking-wider">
-              {issue.year}
-            </span>
-          </div>
-
-          {/* Big number */}
-          <div className="flex items-end justify-between mb-4">
-            <div>
-              <span className="text-[10px] text-slate-400 uppercase tracking-wider">Número</span>
-              <div className={`text-5xl font-bold ${textColors[colorIndex]} leading-none mt-1`}>
-                {issue.number}
+    <div className="group flex-shrink-0 w-[260px] sm:w-[280px]">
+      <div className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        {/* Cover Image */}
+        <div className="aspect-[3/4] bg-gradient-to-br from-ula-navy-light to-ula-navy relative overflow-hidden">
+          {issue.coverImage ? (
+            <img 
+              src={issue.coverImage} 
+              alt={`Portada N° ${issue.number}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
+                <span className="text-6xl font-bold text-slate-300 font-serif">{issue.number}</span>
+                <span className="text-xl text-slate-400 mt-2">{issue.year}</span>
               </div>
-            </div>
-            <div className={`w-10 h-10 rounded-full ${bgColors[colorIndex]} flex items-center justify-center`}>
-              <BookOpen className={`w-5 h-5 ${textColors[colorIndex]}`} />
-            </div>
-          </div>
-
-          {/* Title */}
-          <h3 className="text-slate-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem]">
-            {issue.title}
-          </h3>
-
-          {/* Meta info */}
-          <div className="flex items-center gap-3 mt-4 pt-3 border-t border-white/10">
-            <span className="flex items-center gap-1 text-[11px] text-slate-400">
-              <FileText className="w-3 h-3" />
-              {issue.articles.length} artículos
-            </span>
-            <span className="flex items-center gap-1 text-[11px] text-slate-400">
-              <Calendar className="w-3 h-3" />
-              {issue.year}
-            </span>
+            </>
+          )}
+          
+          {/* Year badge */}
+          <div className="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-md text-xs font-semibold text-slate-700 shadow-sm">
+            {issue.year}
           </div>
         </div>
-
-        {/* Hover action overlay */}
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 rounded-2xl">
-          <Button
-            size="sm"
-            className="bg-white/90 text-slate-900 hover:bg-white hover:scale-105 transition-transform"
-            asChild
-          >
-            <Link to={`/revista/numero/${issue.number}`}>
-              <ArrowRight className="w-4 h-4 mr-1" />
-              Ver contenido
-            </Link>
-          </Button>
-          {issue.pdfUrl && (
-            <Button
-              size="sm"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/20 hover:scale-105 transition-transform"
+        
+        <div className="p-4">
+          <h3 className="text-slate-800 font-semibold mb-2 line-clamp-2 group-hover:text-humanic-green transition-colors text-sm">
+            {issue.title}
+          </h3>
+          
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-slate-400 text-xs flex items-center gap-1">
+              <FileText className="w-3.5 h-3.5" />
+              {issue.articles.length} artículos
+            </span>
+            <span className="text-slate-400 text-xs flex items-center gap-1">
+              <Calendar className="w-3.5 h-3.5" />
+              N° {issue.number}
+            </span>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Button 
+              size="sm" 
+              variant="ghost"
+              className="text-humanic-green hover:text-neon-lime hover:bg-humanic-green/10 text-xs px-2 h-7"
               asChild
             >
-              <a href={issue.pdfUrl} target="_blank" rel="noopener noreferrer">
-                <Download className="w-4 h-4 mr-1" />
-                Descargar PDF
-              </a>
+              <Link to={`/revista/numero/${issue.number}`}>
+                <ArrowRight className="w-3.5 h-3.5 mr-1" />
+                Ver contenido
+              </Link>
             </Button>
-          )}
+            
+            {issue.pdfUrl && (
+              <Button 
+                size="sm" 
+                className="bg-humanic-green hover:bg-humanic-green-light text-white text-xs px-2 h-7"
+                asChild
+              >
+                <a href={issue.pdfUrl} target="_blank" rel="noopener noreferrer">
+                  <Download className="w-3.5 h-3.5 mr-1" />
+                  PDF
+                </a>
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>
