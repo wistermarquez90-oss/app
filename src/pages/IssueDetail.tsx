@@ -80,7 +80,7 @@ function IssueDetail() {
                 </span>
               </div>
               
-              <h1 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
+              <h1 className="text-3xl lg:text-4xl font-bold text-slate-800 font-serif mb-6 leading-tight">
                 {issue.title}
               </h1>
               
@@ -125,7 +125,7 @@ function IssueDetail() {
                     <FileText className="w-4 h-4 text-humanic-green" />
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold text-slate-800">
+                    <h2 className="text-lg font-bold text-slate-800 font-serif">
                       Artículos ({issueArticles.length})
                     </h2>
                     <p className="text-xs text-slate-500">

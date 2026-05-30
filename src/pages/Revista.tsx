@@ -202,7 +202,7 @@ export function Revista() {
               Publicación Académica Arbitrada
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 font-serif mb-4 leading-tight">
               Revista <span className="text-humanic-green">FERMENTUM</span>
             </h1>
             
@@ -419,7 +419,7 @@ export function Revista() {
           ) : (
             <div className="text-center py-16">
               <BookOpen className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-slate-800 text-xl font-semibold mb-2">
+              <h3 className="text-slate-800 text-xl font-semibold font-serif mb-2">
                 No se encontraron artículos
               </h3>
               <p className="text-slate-400 mb-6">
