@@ -27,11 +27,11 @@ export function Autores() {
     return authors.filter(author => {
       const matchesSearch = searchQuery === '' || 
         author.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        author.affiliation.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        author.bio.toLowerCase().includes(searchQuery.toLowerCase());
+        (author.affiliation?.toLowerCase() || "").includes(searchQuery.toLowerCase()) ||
+        (author.bio?.toLowerCase() || "").includes(searchQuery.toLowerCase());
       
       const matchesSpecialty = selectedSpecialty === '' || 
-        author.specialty.includes(selectedSpecialty);
+        author.specialty?.includes(selectedSpecialty);
       
       return matchesSearch && matchesSpecialty;
     });
@@ -39,7 +39,7 @@ export function Autores() {
 
   // Get featured authors (those with most articles)
   const featuredAuthors = useMemo(() => {
-    return [...authors].sort((a, b) => b.articlesCount - a.articlesCount).slice(0, 3);
+    return [...authors].sort((a, b) => (b.articlesCount || 0) - (a.articlesCount || 0)).slice(0, 3);
   }, []);
 
   const clearFilters = () => {
@@ -199,7 +199,7 @@ export function Autores() {
                     </div>
 
                     <div className="flex flex-wrap gap-1 mb-4">
-                      {author.specialty.slice(0, 2).map((spec) => (
+                      {author.specialty?.slice(0, 2).map((spec) => (
                         <span 
                           key={spec}
                           className="px-2 py-0.5 bg-humanic-green/10 rounded text-xs text-humanic-green"

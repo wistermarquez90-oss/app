@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Sparkles, ChevronRight, Star, TrendingUp, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, ChevronRight, Star, TrendingUp, Users, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArticleCard } from '@/components/ui-custom/ArticleCard';
@@ -8,7 +8,7 @@ import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { NewsletterModal } from '@/components/NewsletterModal';
 import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { articles, issues, statistics, categories, authors } from '@/data/fermentum-data';
+import { articles, issues, stats, categories, authors } from '@/data/fermentum-data';
 
 const iconMap: Record<string, React.ElementType> = {
   Users,
@@ -20,8 +20,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 function HeroSection() {
-  const latestIssue = issues[0];
-  const featuredArticles = articles.slice(0, 3);
+  const latestIssue = issues.find(i => i.number === 103) || issues[0];
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -109,53 +108,92 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - Featured Article Card */}
+          {/* Right Content - Featured Issue Card */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-humanic-green/40 to-neon-lime/20 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-white backdrop-blur-md rounded-2xl border border-slate-200 p-6 lg:p-8">
+            <div className="relative bg-white backdrop-blur-md rounded-2xl border border-slate-200 p-4 lg:p-6">
               <div className="flex items-center justify-between mb-6">
                 <Badge className="bg-neon-lime/20 text-slate-800 border-neon-lime/30">
                   <Star className="w-3 h-3 mr-1" />
-                  Artículo Destacado
+                  Número Destacado
                 </Badge>
                 <span className="text-slate-400 text-sm">
-                  N° {latestIssue.number}, N° 1
+                  N° {latestIssue.number}
                 </span>
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-4 line-clamp-3">
-                {featuredArticles[0].title}
-              </h3>
-
-              <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-4">
-                {featuredArticles[0].abstract}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {featuredArticles[0].keywords.slice(0, 4).map((keyword) => (
-                  <span 
-                    key={keyword}
-                    className="px-3 py-1 bg-white rounded-full text-xs text-slate-500"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex items-center justify-between pt-4 border-t border-slate-200">
-                <div className="text-sm text-slate-400">
-                  {featuredArticles[0].authors.map(a => a.name).join(', ')}
+              {/* Número Destacado - Horizontal Layout: Image Left, Text Right */}
+              <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-center">
+                {/* Left - Cover Image */}
+                <div className="w-full lg:w-5/12 flex-shrink-0">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/90 bg-white transform hover:scale-[1.02] transition-transform duration-300">
+                    <img 
+                      src={latestIssue.coverImage || "/app/images/default-cover.jpg"} 
+                      alt={`Portada ${latestIssue.title}`}
+                      className="w-full h-auto object-contain"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/app/images/default-cover.jpg";
+                      }}
+                    />
+                    {/* Badge overlay */}
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-neon-lime/95 text-slate-900 border-0 shadow-lg text-xs font-bold px-3 py-1.5">
+                        <Star className="w-3 h-3 mr-1" />
+                        NÚMERO DESTACADO
+                      </Badge>
+                    </div>
+                  </div>
                 </div>
-                <Button 
-                  size="sm"
-                  className="bg-humanic-green hover:bg-humanic-green-light"
-                  asChild
-                >
-                  <Link to={`/revista/articulo/${featuredArticles[0].id}`}>
-                    Leer más
-                    <ChevronRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </Button>
+
+                {/* Right - Text Content */}
+                <div className="w-full lg:w-7/12 flex flex-col justify-center">
+                  <div className="mb-3">
+                    <span className="text-humanic-green font-bold text-xs tracking-[0.2em] uppercase">
+                      N° {latestIssue.number} — {latestIssue.year}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-4 leading-snug">
+                    {latestIssue.title}
+                  </h3>
+
+                  <p className="text-slate-500 text-sm leading-[1.7] mb-5 text-justify">
+                    {latestIssue.description}
+                  </p>
+
+                  <div className="flex items-center gap-6 mb-5">
+                    <div className="flex items-center gap-2 text-slate-600">
+                      <BookOpen className="w-4 h-4 text-humanic-green" />
+                      <span className="font-semibold text-sm">{latestIssue.articles.length}</span>
+                      <span className="text-sm text-slate-500">artículos</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-slate-600">
+                      <Calendar className="w-4 h-4 text-humanic-green" />
+                      <span className="text-sm text-slate-500">{latestIssue.year}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button 
+                      className="bg-humanic-green hover:bg-humanic-green-light text-white font-semibold px-5 text-sm"
+                      asChild
+                    >
+                      <Link to={`/revista/numero/${latestIssue.id.replace('issue-', '')}`}>
+                        Ver contenido
+                        <ChevronRight className="w-4 h-4 ml-1" />
+                      </Link>
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="border-slate-300 text-slate-700 hover:bg-slate-50 text-sm"
+                      asChild
+                    >
+                      <Link to="/revista">
+                        Todos los números
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -179,7 +217,7 @@ function StatsSectionWrapper() {
           description="Más de cuatro décadas contribuyendo al conocimiento científico sobre la región andina"
         />
         
-        {isVisible && <StatsSection stats={statistics} />}
+        {isVisible && <StatsSection stats={stats} />}
       </div>
     </section>
   );

@@ -13,32 +13,40 @@ export interface Article {
   pages: string;
   pdfUrl: string;
   doi?: string;
-  publishedDate: string;
-  downloads: number;
-  views: number;
+  publishedDate?: string;
+  downloads?: number;
+  views?: number;
+  citations?: number;
 }
 
 export interface Author {
-  id: string;
+  id?: string;
   name: string;
-  email: string;
-  affiliation: string;
-  bio: string;
-  specialty: string[];
+  email?: string;
+  affiliation?: string;
+  bio?: string;
+  specialty?: string[];
   avatar?: string;
   orcid?: string;
-  articlesCount: number;
+  articlesCount?: number;
   articles?: Article[];
+  role?: string;
+}
+
+export interface IssueArticle {
+  id: string;
+  title: string;
 }
 
 export interface Issue {
-  id: number;
+  id: string;
   number: number;
   year: number;
   title: string;
   description: string;
   coverImage?: string;
-  articles: Article[];
+  pdfUrl?: string;
+  articles: IssueArticle[];
   publishedDate: string;
 }
 

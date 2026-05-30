@@ -64,7 +64,7 @@ export function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
         </p>
         
         <div className="flex flex-wrap gap-2 mb-4">
-          {author.specialty.slice(0, 3).map((spec) => (
+          {author.specialty?.slice(0, 3).map((spec) => (
             <Badge 
               key={spec} 
               variant="secondary" 

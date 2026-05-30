@@ -8,6 +8,7 @@ import { QuienesSomos } from '@/pages/QuienesSomos';
 import { Normas } from '@/pages/Normas';
 import { Contacto } from '@/pages/Contacto';
 import { Catalogo } from '@/pages/Catalogo';
+import IssueDetail from '@/pages/IssueDetail';
 import { NewsletterModal } from '@/components/NewsletterModal';
 import { Toaster } from '@/components/ui/sonner';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/revista" element={<Revista />} />
           <Route path="/revista/archivo" element={<Revista />} />
           <Route path="/revista/categorias" element={<Revista />} />
+          <Route path="/revista/numero/:id" element={<IssueDetail />} />
           <Route path="/autores" element={<Autores />} />
           <Route path="/autores/:id" element={<Autores />} />
           <Route path="/quienes-somos" element={<QuienesSomos />} />

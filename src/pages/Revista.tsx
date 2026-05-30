@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { 
   Search, Filter, Calendar, BookOpen, Download, 
-  ChevronDown, Grid3X3, List, X, FileText 
+  ChevronDown, Grid3X3, List, X, FileText
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -29,9 +29,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ArticleCard } from '@/components/ui-custom/ArticleCard';
+import { IssueCarousel } from '@/components/IssueCarousel';
 import { SectionHeader } from '@/components/ui-custom/SectionHeader';
 import { articles, issues, categories } from '@/data/fermentum-data';
-import type { Article } from '@/types';
+import type { Article, Issue } from '@/types';
 import { PartnersSection } from '@/components/ui-custom/PartnersSection';
 
 const categoryNames: Record<string, string> = {
@@ -65,10 +66,10 @@ function ArticleListItem({ article }: { article: Article }) {
           </Badge>
           <span className="text-slate-400 text-xs flex items-center gap-1">
             <Calendar className="w-3 h-3" />
-            {new Date(article.publishedDate).toLocaleDateString('es-ES', { 
+            {article.publishedDate ? new Date(article.publishedDate).toLocaleDateString('es-ES', { 
               year: 'numeric', 
               month: 'short' 
-            })}
+            }) : article.year}
           </span>
           <span className="text-slate-400 text-xs">
             N° {article.number}, N° {article.issue}
@@ -135,16 +136,26 @@ function ArticleListItem({ article }: { article: Article }) {
   );
 }
 
-function IssueCard({ issue }: { issue: typeof issues[0] }) {
+export function IssueCard({ issue }: { issue: Issue }) {
   return (
     <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg">
       <div className="aspect-[3/4] bg-gradient-to-br from-ula-navy-light to-ula-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-          <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
-          <span className="text-6xl font-bold text-slate-300 font-serif">{issue.number}</span>
-          <span className="text-xl text-slate-400 mt-2">{issue.year}</span>
-        </div>
+        {issue.coverImage ? (
+          <img 
+            src={issue.coverImage} 
+            alt={`Portada N° ${issue.number}`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-humanic-green/30 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+              <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
+              <span className="text-6xl font-bold text-slate-300 font-serif">{issue.number}</span>
+              <span className="text-xl text-slate-400 mt-2">{issue.year}</span>
+            </div>
+          </>
+        )}
       </div>
       <div className="p-5">
         <h3 className="text-slate-800 font-semibold mb-2 line-clamp-2 group-hover:text-neon-lime transition-colors">
@@ -153,7 +164,7 @@ function IssueCard({ issue }: { issue: typeof issues[0] }) {
         <p className="text-slate-400 text-sm line-clamp-2 mb-4">
           {issue.description}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-3">
           <span className="text-slate-400 text-sm">
             {issue.articles.length} artículos
           </span>
@@ -163,11 +174,23 @@ function IssueCard({ issue }: { issue: typeof issues[0] }) {
             className="text-humanic-green hover:text-neon-lime hover:bg-humanic-green/10"
             asChild
           >
-            <Link to={`/revista?número=${issue.number}`}>
+            <Link to={`/revista/numero/${issue.number}`}>
               Ver contenido
             </Link>
           </Button>
         </div>
+        {issue.pdfUrl && (
+          <Button 
+            size="sm" 
+            className="w-full bg-humanic-green hover:bg-humanic-green-light"
+            asChild
+          >
+            <a href={issue.pdfUrl} target="_blank" rel="noopener noreferrer">
+              <Download className="w-4 h-4 mr-2" />
+              Descargar Número Completo
+            </a>
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -180,6 +203,8 @@ export function Revista() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState<string>('all');
   const [selectedNumber, setSelectedNumber] = useState<string>('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 9;
 
   // Get unique years from articles
   const years = useMemo(() => {
@@ -223,6 +248,20 @@ export function Revista() {
     setSelectedYear('all');
     setSelectedNumber('all');
     setSearchParams({});
+  };
+
+  // Pagination
+  const totalPages = Math.ceil(filteredArticles.length / ITEMS_PER_PAGE);
+  const paginatedArticles = filteredArticles.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const goToPage = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const hasActiveFilters = searchQuery || selectedCategories.length > 0 || selectedYear !== 'all' || selectedNumber !== 'all';
@@ -389,7 +428,11 @@ export function Revista() {
           {/* Results Count */}
           <div className="flex items-center justify-between mb-6">
             <p className="text-slate-500">
-              Mostrando <span className="text-slate-800 font-semibold">{filteredArticles.length}</span> artículos
+              Mostrando <span className="text-slate-800 font-semibold">{paginatedArticles.length}</span> de{' '}
+              <span className="text-slate-800 font-semibold">{filteredArticles.length}</span> artículos
+              {totalPages > 1 && (
+                <span className="text-slate-400"> — Página {currentPage} de {totalPages}</span>
+              )}
             </p>
           </div>
 
@@ -397,7 +440,7 @@ export function Revista() {
           {filteredArticles.length > 0 ? (
             viewMode === 'grid' ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredArticles.map((article) => (
+                {paginatedArticles.map((article) => (
                   <div key={article.id}>
                     <ArticleCard article={article} />
                   </div>
@@ -405,7 +448,7 @@ export function Revista() {
               </div>
             ) : (
               <div className="flex flex-col gap-4">
-                {filteredArticles.map((article) => (
+                {paginatedArticles.map((article) => (
                   <div key={article.id}>
                     <ArticleListItem article={article} />
                   </div>
@@ -430,10 +473,50 @@ export function Revista() {
               </Button>
             </div>
           )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-10">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-slate-200 text-slate-700 hover:bg-slate-50"
+                onClick={() => goToPage(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                Anterior
+              </Button>
+              
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <Button
+                  key={page}
+                  variant={page === currentPage ? 'default' : 'outline'}
+                  size="sm"
+                  className={page === currentPage 
+                    ? 'bg-humanic-green text-white hover:bg-humanic-green-light' 
+                    : 'border-slate-200 text-slate-700 hover:bg-slate-50'
+                  }
+                  onClick={() => goToPage(page)}
+                >
+                  {page}
+                </Button>
+              ))}
+              
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-slate-200 text-slate-700 hover:bg-slate-50"
+                onClick={() => goToPage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Siguiente
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Volumes Archive */}
+      {/* Volumes Archive Carousel */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="w-full section-padding">
           <SectionHeader
@@ -442,13 +525,7 @@ export function Revista() {
             description="Accede a todas las ediciones publicadas de FERMENTUM"
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {issues.map((number) => (
-              <div key={number.id}>
-                <IssueCard issue={number} />
-              </div>
-            ))}
-          </div>
+          <IssueCarousel issues={issues} />
         </div>
       </section>
           <PartnersSection />

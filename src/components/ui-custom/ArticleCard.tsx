@@ -50,10 +50,10 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             </Badge>
             <span className="text-slate-400 text-sm flex items-center gap-1">
               <Calendar className="w-4 h-4" />
-              {new Date(article.publishedDate).toLocaleDateString('es-ES', { 
+              {article.publishedDate ? new Date(article.publishedDate).toLocaleDateString('es-ES', { 
                 year: 'numeric', 
                 month: 'long' 
-              })}
+              }) : article.year}
             </span>
           </div>
           
@@ -122,19 +122,22 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             
             <Button 
               className="bg-humanic-green hover:bg-humanic-green-light text-white"
+              asChild
             >
-              <Download className="w-4 h-4 mr-2" />
-              Descargar PDF
+              <a href={article.pdfUrl} target="_blank" rel="noopener noreferrer">
+                <Download className="w-4 h-4 mr-2" />
+                Descargar PDF
+              </a>
             </Button>
             
             <div className="flex items-center gap-4 text-slate-400 text-sm ml-auto">
               <span className="flex items-center gap-1">
                 <Eye className="w-4 h-4" />
-                {article.views.toLocaleString()}
+                {article.views?.toLocaleString() || 0}
               </span>
               <span className="flex items-center gap-1">
                 <Download className="w-4 h-4" />
-                {article.downloads.toLocaleString()}
+                {article.downloads?.toLocaleString() || 0}
               </span>
             </div>
           </div>
@@ -172,8 +175,10 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
           <Button size="sm" variant="ghost" className="text-slate-500 hover:text-slate-800 hover:bg-slate-50">
             <Eye className="w-4 h-4" />
           </Button>
-          <Button size="sm" className="bg-humanic-green hover:bg-humanic-green-light">
-            <Download className="w-4 h-4" />
+          <Button size="sm" className="bg-humanic-green hover:bg-humanic-green-light" asChild>
+            <a href={article.pdfUrl} target="_blank" rel="noopener noreferrer">
+              <Download className="w-4 h-4" />
+            </a>
           </Button>
         </div>
       </div>
@@ -192,7 +197,7 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             {categoryNames[article.category]}
           </Badge>
           <span className="text-slate-400 text-xs">
-            {new Date(article.publishedDate).getFullYear()}
+            {article.publishedDate ? new Date(article.publishedDate).getFullYear() : article.year}
           </span>
         </div>
         
@@ -212,11 +217,11 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
           <div className="flex items-center gap-4 text-slate-400 text-xs">
             <span className="flex items-center gap-1">
               <Eye className="w-3 h-3" />
-              {article.views.toLocaleString()}
+              {article.views?.toLocaleString() || 0}
             </span>
             <span className="flex items-center gap-1">
               <Download className="w-3 h-3" />
-              {article.downloads.toLocaleString()}
+              {article.downloads?.toLocaleString() || 0}
             </span>
           </div>
           
