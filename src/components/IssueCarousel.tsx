@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Issue } from '@/types';
-import { IssueCard } from '@/pages/Revista';
+import { IssueCard } from '@/components/IssueCard';
 
 export function IssueCarousel({ issues }: { issues: Issue[] }) {
   const carouselRef = useRef<HTMLDivElement>(null);
