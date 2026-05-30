@@ -80,10 +80,12 @@ function ArticleListItem({ article }: { article: Article }) {
       <div className="flex lg:flex-col items-center lg:items-end gap-2">
         <Button 
           size="sm" 
-          variant="ghost"
-          className="text-slate-500 hover:text-slate-800 hover:bg-slate-50"
+          className="bg-humanic-green hover:bg-humanic-green-light text-white"
+          asChild
         >
-          Ver PDF
+          <a href={article.pdfUrl} download target="_blank" rel="noopener noreferrer">
+            Descargar PDF
+          </a>
         </Button>
       </div>
     </div>

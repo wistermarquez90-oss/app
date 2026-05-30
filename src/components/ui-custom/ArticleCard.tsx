@@ -229,43 +229,56 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             </span>
           </div>
           
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button 
-                size="sm" 
-                variant="ghost" 
-                className="text-humanic-green hover:text-neon-lime hover:bg-humanic-green/10"
-              >
-                <FileText className="w-4 h-4 mr-1" />
-                Abstract
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="bg-ula-navy-light border-slate-200 max-w-2xl max-h-[80vh] overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle className="text-slate-800 text-xl">{article.title}</DialogTitle>
-                <DialogDescription className="text-slate-500">
-                  {article.authors.map(a => a.name).join(', ')}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="mt-4">
-                <h4 className="text-neon-lime font-semibold mb-2">Resumen</h4>
-                <p className="text-slate-700 leading-relaxed">{article.abstract || 'Sin resumen disponible.'}</p>
-                
-                {article.keywords.length > 0 && (
-                  <>
-                    <h4 className="text-neon-lime font-semibold mt-6 mb-2">Palabras Clave</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {article.keywords.map((keyword) => (
-                        <Badge key={keyword} variant="secondary" className="bg-slate-50 text-slate-700">
-                          {keyword}
-                        </Badge>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            </DialogContent>
-          </Dialog>
+          <div className="flex items-center gap-2">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  size="sm" 
+                  variant="ghost" 
+                  className="text-slate-500 hover:text-slate-800 hover:bg-slate-50"
+                >
+                  <FileText className="w-4 h-4 mr-1" />
+                  Abstract
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="bg-ula-navy-light border-slate-200 max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-slate-800 text-xl">{article.title}</DialogTitle>
+                  <DialogDescription className="text-slate-500">
+                    {article.authors.map(a => a.name).join(', ')}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4">
+                  <h4 className="text-neon-lime font-semibold mb-2">Resumen</h4>
+                  <p className="text-slate-700 leading-relaxed">{article.abstract || 'Sin resumen disponible.'}</p>
+                  
+                  {article.keywords.length > 0 && (
+                    <>
+                      <h4 className="text-neon-lime font-semibold mt-6 mb-2">Palabras Clave</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {article.keywords.map((keyword) => (
+                          <Badge key={keyword} variant="secondary" className="bg-slate-50 text-slate-700">
+                            {keyword}
+                          </Badge>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Button 
+              size="sm" 
+              className="bg-humanic-green hover:bg-humanic-green-light text-white"
+              asChild
+            >
+              <a href={article.pdfUrl} download target="_blank" rel="noopener noreferrer">
+                <Download className="w-4 h-4 mr-1" />
+                Descargar
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
