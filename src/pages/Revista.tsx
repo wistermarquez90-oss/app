@@ -264,6 +264,40 @@ export function Revista() {
     }
   };
 
+  // Pagination logic - show limited page buttons
+  const getPaginationRange = () => {
+    const maxVisible = 5; // Maximum page buttons to show
+    const half = Math.floor(maxVisible / 2);
+    
+    let start = Math.max(1, currentPage - half);
+    let end = Math.min(totalPages, start + maxVisible - 1);
+    
+    if (end - start + 1 < maxVisible) {
+      start = Math.max(1, end - maxVisible + 1);
+    }
+    
+    const range = [];
+    
+    // First page
+    if (start > 1) {
+      range.push(1);
+      if (start > 2) range.push('...');
+    }
+    
+    // Middle pages
+    for (let i = start; i <= end; i++) {
+      range.push(i);
+    }
+    
+    // Last page
+    if (end < totalPages) {
+      if (end < totalPages - 1) range.push('...');
+      range.push(totalPages);
+    }
+    
+    return range;
+  };
+
   const hasActiveFilters = searchQuery || selectedCategories.length > 0 || selectedYear !== 'all' || selectedNumber !== 'all';
 
   return (
@@ -278,6 +312,19 @@ export function Revista() {
             subtitle="Publicación del Centro HUMANIC"
             description="Explora nuestro archivo de artículos científicos arbitrados sobre la región andina"
           />
+        </div>
+      </section>
+
+      {/* Volumes Archive Carousel - Moved to top */}
+      <section className="py-12 lg:py-16 bg-white border-b border-slate-100">
+        <div className="w-full section-padding">
+          <SectionHeader
+            title="Archivo de Números"
+            subtitle="Ediciones Anteriores"
+            description="Accede a todas las ediciones publicadas de FERMENTUM"
+          />
+
+          <IssueCarousel issues={issues} />
         </div>
       </section>
 
@@ -474,60 +521,52 @@ export function Revista() {
             </div>
           )}
 
-          {/* Pagination */}
+          {/* Compact Pagination */}
           {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-2 mt-10">
+            <div className="flex items-center justify-center gap-1 mt-10 flex-wrap">
               <Button
                 variant="outline"
                 size="sm"
-                className="border-slate-200 text-slate-700 hover:bg-slate-50"
+                className="border-slate-200 text-slate-700 hover:bg-slate-50 px-3"
                 onClick={() => goToPage(currentPage - 1)}
                 disabled={currentPage === 1}
               >
-                Anterior
+                ← Anterior
               </Button>
               
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <Button
-                  key={page}
-                  variant={page === currentPage ? 'default' : 'outline'}
-                  size="sm"
-                  className={page === currentPage 
-                    ? 'bg-humanic-green text-white hover:bg-humanic-green-light' 
-                    : 'border-slate-200 text-slate-700 hover:bg-slate-50'
-                  }
-                  onClick={() => goToPage(page)}
-                >
-                  {page}
-                </Button>
+              {getPaginationRange().map((item, index) => (
+                item === '...' ? (
+                  <span key={`ellipsis-${index}`} className="px-2 text-slate-400">...</span>
+                ) : (
+                  <Button
+                    key={item}
+                    variant={item === currentPage ? 'default' : 'outline'}
+                    size="sm"
+                    className={item === currentPage 
+                      ? 'bg-humanic-green text-white hover:bg-humanic-green-light px-3 min-w-[36px]' 
+                      : 'border-slate-200 text-slate-700 hover:bg-slate-50 px-3 min-w-[36px]'
+                    }
+                    onClick={() => goToPage(item as number)}
+                  >
+                    {item}
+                  </Button>
+                )
               ))}
               
               <Button
                 variant="outline"
                 size="sm"
-                className="border-slate-200 text-slate-700 hover:bg-slate-50"
+                className="border-slate-200 text-slate-700 hover:bg-slate-50 px-3"
                 onClick={() => goToPage(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
-                Siguiente
+                Siguiente →
               </Button>
             </div>
           )}
         </div>
       </section>
 
-      {/* Volumes Archive Carousel */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="w-full section-padding">
-          <SectionHeader
-            title="Archivo de Números"
-            subtitle="Ediciones Anteriores"
-            description="Accede a todas las ediciones publicadas de FERMENTUM"
-          />
-
-          <IssueCarousel issues={issues} />
-        </div>
-      </section>
           <PartnersSection />
     </main>
   );
