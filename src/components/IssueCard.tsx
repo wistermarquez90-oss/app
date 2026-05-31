@@ -25,14 +25,13 @@ export function IssueCard({ issue }: IssueCardProps) {
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                 <BookOpen className="w-16 h-16 text-humanic-green/50 mb-4" />
                 <span className="text-6xl font-bold text-slate-300 font-serif">{issue.number}</span>
-                <span className="text-xl text-slate-400 mt-2">{issue.year}</span>
               </div>
             </>
           )}
           
-          {/* Year badge */}
+          {/* Number badge */}
           <div className="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-md text-xs font-semibold text-slate-700 shadow-sm">
-            {issue.year}
+            N° {issue.number}
           </div>
         </div>
         

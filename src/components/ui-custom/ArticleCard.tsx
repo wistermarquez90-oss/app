@@ -50,6 +50,10 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             </Badge>
             <span className="text-slate-400 text-sm flex items-center gap-1">
               <Calendar className="w-4 h-4" />
+              N° {article.number}
+            </span>
+            <span className="text-slate-400 text-sm flex items-center gap-1">
+              <Calendar className="w-4 h-4" />
               {article.publishedDate ? new Date(article.publishedDate).toLocaleDateString('es-ES', { 
                 year: 'numeric', 
                 month: 'long' 
@@ -162,7 +166,7 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
               {categoryNames[article.category]}
             </Badge>
             <span className="text-slate-400 text-xs">
-              N° {article.number}, N° {article.issue}
+              N° {article.number}
             </span>
           </div>
           
@@ -193,17 +197,22 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
   return (
     <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-humanic-green/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="p-5">
-        <div className="flex items-center justify-between mb-3">
-          <Badge 
-            variant="outline" 
-            className={`${categoryColors[article.category]}`}
-          >
-            {categoryNames[article.category]}
-          </Badge>
-          <span className="text-slate-400 text-xs">
-            {article.publishedDate ? new Date(article.publishedDate).getFullYear() : article.year}
-          </span>
-        </div>
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <Badge 
+                variant="outline" 
+                className={`${categoryColors[article.category]}`}
+              >
+                {categoryNames[article.category]}
+              </Badge>
+              <span className="text-slate-400 text-xs">
+                N° {article.number}
+              </span>
+            </div>
+            <span className="text-slate-400 text-xs">
+              {article.publishedDate ? new Date(article.publishedDate).getFullYear() : article.year}
+            </span>
+          </div>
         
         <h3 className="text-slate-800 font-semibold group-hover:text-neon-lime transition-colors line-clamp-2 mb-3">
           {article.title}
