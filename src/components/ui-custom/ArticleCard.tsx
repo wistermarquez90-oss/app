@@ -1,4 +1,5 @@
-import { FileText, Download, Eye, Calendar, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { FileText, Download, Eye, Calendar, User, ArrowRight } from 'lucide-react';
 import type { Article } from '@/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -138,6 +139,17 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
               </a>
             </Button>
             
+            <Button
+              variant="outline"
+              className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-humanic-green/50"
+              asChild
+            >
+              <Link to={`/revista/numero/${article.number}`}>
+                <ArrowRight className="w-4 h-4 mr-2" />
+                Revista N° {article.number}
+              </Link>
+            </Button>
+            
             <div className="flex items-center gap-4 text-slate-400 text-sm ml-auto">
               <span className="flex items-center gap-1">
                 <Eye className="w-4 h-4" />
@@ -180,6 +192,11 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
         </div>
         
         <div className="flex sm:flex-col items-center sm:items-end gap-2 sm:gap-1">
+          <Button size="sm" variant="ghost" className="text-slate-500 hover:text-slate-800 hover:bg-slate-50" asChild>
+            <Link to={`/revista/numero/${article.number}`}>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
           <Button size="sm" variant="ghost" className="text-slate-500 hover:text-slate-800 hover:bg-slate-50">
             <Eye className="w-4 h-4" />
           </Button>
@@ -276,6 +293,18 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
                 </div>
               </DialogContent>
             </Dialog>
+
+            <Button 
+              size="sm"
+              variant="outline"
+              className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:border-humanic-green/50"
+              asChild
+            >
+              <Link to={`/revista/numero/${article.number}`}>
+                <ArrowRight className="w-4 h-4 mr-1" />
+                N° {article.number}
+              </Link>
+            </Button>
 
             <Button 
               size="sm" 
